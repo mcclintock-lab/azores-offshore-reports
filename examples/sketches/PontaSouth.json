@@ -1,0 +1,83 @@
+{
+    "type": "Feature",
+    "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+            [
+                [
+                    -25.79092302734355,
+                    37.623200725155584
+                ],
+                [
+                    -25.752470878906053,
+                    37.72320219915908
+                ],
+                [
+                    -25.59316912109356,
+                    37.71451176944286
+                ],
+                [
+                    -25.505278496093563,
+                    37.68408723800486
+                ],
+                [
+                    -25.37344255859357,
+                    37.688434364075576
+                ],
+                [
+                    -25.36245623046857,
+                    37.579679800006474
+                ],
+                [
+                    -25.62063494140606,
+                    37.6014434449859
+                ],
+                [
+                    -25.79092302734355,
+                    37.623200725155584
+                ]
+            ]
+        ],
+        "bbox": [
+            -25.79092302734355,
+            37.579679800006474,
+            -25.36245623046857,
+            37.72320219915908
+        ]
+    },
+    "properties": {
+        "id": "62054c709557604f3e5f6cd1",
+        "name": "PontaSouth",
+        "updatedAt": "2022-02-10T17:33:36.081Z",
+        "createdAt": "2022-02-10T17:33:36.081Z",
+        "sketchClassId": "5f46dd53017aa0388f5f87c5",
+        "isCollection": false,
+        "userAttributes": [
+            {
+                "label": "Aquaculture and Bottom Exploitation",
+                "fieldType": "ChoiceField",
+                "exportId": "AQUACULTURE",
+                "value": "SOME_RESTRICTIONS"
+            },
+            {
+                "label": "Allowed Fishing Gear",
+                "fieldType": "ChoiceField",
+                "exportId": "GEAR_TYPES",
+                "value": "[\"CAST_NETS\",\"FISH_TRAPS\"]"
+            },
+            {
+                "label": "Boating and Anchoring",
+                "fieldType": "ChoiceField",
+                "exportId": "BOATING",
+                "value": "UNREGULATED"
+            }
+        ]
+    },
+    "id": "1",
+    "bbox": [
+        -25.79092302734355,
+        37.579679800006474,
+        -25.36245623046857,
+        37.72320219915908
+    ]
+}
