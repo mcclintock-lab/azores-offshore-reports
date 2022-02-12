@@ -1,73 +1,69 @@
 import React from "react";
+import { ResultsCard, ReportError } from "@seasketch/geoprocessing/client-ui";
 import {
-  ResultsCard,
-  ReportError,
-  useSketchProperties
-} from "@seasketch/geoprocessing/client-ui";
-import { getJsonUserAttribute, getUserAttribute, ReportResult, NullSketch, NullSketchCollection, Metric, keyBy } from "@seasketch/geoprocessing/client-core";
-import { classifyMPA, classifyZone, constants, MpaClassification, Zone } from "mpa-reg-based-classification"
-import { isSketchCollection, Polygon } from "@seasketch/geoprocessing";
+  ReportResult,
+  NullSketch,
+  NullSketchCollection,
+  Metric,
+  isNullSketchCollection,
+  firstMatchingMetric,
+} from "@seasketch/geoprocessing/client-core";
+import { scores } from "mpa-reg-based-classification";
+import { PointyCircle, TwoColorPointyCircle } from "../components/PointyCircle";
+import { regBasedClassificationMetrics } from "../helpers/mpaRegBasedClassification";
 
-const Number = new Intl.NumberFormat("en", { style: "decimal" });
-
-const RegBasedClassification = () => {  
-  const [ { isCollection } ] = useSketchProperties()
+const RegBasedClassification = () => {
   return (
     <ResultsCard title="Zone Classification" functionName="area">
-    {(data: ReportResult) => {      
-      const report = isCollection ? collectionReport(data.sketch as NullSketchCollection, data.metrics) : sketchReport(data.sketch as NullSketch)
-      return (
-        <ReportError>
-          {report}
-        </ReportError>
-      );
-    }}
-  </ResultsCard>
+      {(data: ReportResult) => {
+        const report = isNullSketchCollection(data.sketch)
+          ? collectionReport(data.sketch, data.metrics)
+          : sketchReport(data.sketch);
+        return <ReportError>{report}</ReportError>;
+      }}
+    </ResultsCard>
   );
 };
 
 const sketchReport = (sketch: NullSketch): JSX.Element => {
-  const gearTypes = getJsonUserAttribute<string[]>(sketch.properties, "GEAR_TYPES", [])
-  const boating = getUserAttribute<string>(sketch.properties, "BOATING", "")
-  const aquaculture = getUserAttribute<string>(sketch.properties, "AQUACULTURE", "")
-  const gearTypesMapped = gearTypes.map(gt => constants.GEAR_TYPES[gt])
-  const boatingMapped = constants.BOATING_AND_ANCHORING[boating]
-  const aquacultureMapped = constants.AQUACULTURE_AND_BOTTOM_EXPLOITATION[aquaculture]
+  const regMetrics = regBasedClassificationMetrics(sketch);
+  console.log(regMetrics);
+  const sketchRegMetric = firstMatchingMetric(
+    regMetrics,
+    (m) => m.sketchId === sketch.properties.id
+  );
+  return (
+    <>
+      <PointyCircle size={20} color={scores[sketchRegMetric.value].color}>
+        {sketchRegMetric.value}
+      </PointyCircle>
+    </>
+  );
+};
+
+const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
+  const childMetrics = metrics.filter(
+    (m) => m.sketchId !== sketch.properties.id
+  );
+  const regMetrics = regBasedClassificationMetrics(sketch, childMetrics);
+  console.log(regMetrics);
+  const collRegMetric = firstMatchingMetric(
+    regMetrics,
+    (m) => m.sketchId === sketch.properties.id
+  );
 
   return (
     <>
-      <div>{gearTypes.join()}</div>
-      <div>{boating}</div>
-      <div>{aquaculture}</div>
-      <div>Score: {classifyZone(gearTypesMapped, aquacultureMapped, boatingMapped)}</div>
+      <TwoColorPointyCircle
+        size={30}
+        bottomColor={scores[Math.floor(collRegMetric.value)].color}
+        topColor={scores[Math.ceil(collRegMetric.value)].color}
+        perc={35}
+      >
+        {Math.round(collRegMetric.value * 10) / 10}
+      </TwoColorPointyCircle>
     </>
-  )
-}
-
-const collectionReport = (sketch: NullSketchCollection, metrics: Metric[] ) => {  
-
-  const childMetrics = metrics.filter(m => m.sketchId !== sketch.properties.id)
-  const areaBySketch = keyBy(childMetrics, m => m.sketchId!)
-  
-  const sketchZones: Zone[] = sketch.features.map(sk => {
-    const gearTypes = getJsonUserAttribute<string[]>(sk.properties, "GEAR_TYPES", [])
-    const boating = getUserAttribute<string>(sk.properties, "BOATING", "")
-    const aquaculture = getUserAttribute<string>(sk.properties, "AQUACULTURE", "")
-    const gearTypesMapped = gearTypes.map(gt => constants.GEAR_TYPES[gt])
-    const boatingMapped = constants.BOATING_AND_ANCHORING[boating]
-    const aquacultureMapped = constants.AQUACULTURE_AND_BOTTOM_EXPLOITATION[aquaculture]
-    const sketchArea = areaBySketch[sk.properties.id].value
-    return [gearTypesMapped, aquacultureMapped, boatingMapped, sketchArea]
-  })
-  const collectionResult: MpaClassification = classifyMPA(sketchZones)
-
-  return (
-    <>
-      <div>Zone Scores: {collectionResult.scores.join(',')}</div>
-      <div>Collection score: {Math.round(collectionResult.index)}</div>
-      <div>{collectionResult.indexLabel}</div>
-    </>
-  )  
-}
+  );
+};
 
 export default RegBasedClassification;
