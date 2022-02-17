@@ -23,13 +23,6 @@ export const objectives = {};
 
 //// HABITAT PROTECTION ////
 
-// Multi-class raster (categorical)
-const sccClasses: DataClass[] = Array.from({ length: 75 }, (v, i) => ({
-  numericClassId: i,
-  classId: `Group ${i}`,
-  display: `Group ${i}`,
-}));
- 
 export default {
   STUDY_REGION_AREA_SQ_METERS,
   units,
