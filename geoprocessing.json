@@ -4,6 +4,11 @@
   "region": "ap-southeast-2",
   "clients": [
     {
+      "name": "AllReports",
+      "description": "All reports",
+      "source": "src/clients/AllReports.tsx"
+    },
+    {
       "name": "RegBasedClassification",
       "description": "Calculate regulation-based MPA classification",
       "source": "src/clients/RegBasedClassification.tsx"
