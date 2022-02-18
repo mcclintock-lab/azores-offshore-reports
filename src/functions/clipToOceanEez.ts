@@ -76,7 +76,7 @@ export async function clipToOceanEez(
   }
 
   let clipped = await clipLand(feature);
-  if (clipped) clipped = await clipOutsideEez(clipped, eezFilterByNames);
+  if (clipped) clipped = await clipOutsideEez(clipped, ["Azores"]);
 
   if (!clipped || area(clipped) === 0) {
     throw new ValidationError("Sketch is outside of project boundaries");
