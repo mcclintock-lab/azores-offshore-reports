@@ -13,12 +13,11 @@ import {
 export async function area(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
-  
-  const areaMetrics = await sketchArea(sketch, {includeChildMetrics: true})
-  
+  const areaMetrics = await sketchArea(sketch, { includeChildMetrics: true });
+
   return {
+    metrics: rekeyMetrics(sortMetrics(areaMetrics)),
     sketch: toNullSketch(sketch),
-    metrics: rekeyMetrics(sortMetrics(areaMetrics))
   };
 }
 

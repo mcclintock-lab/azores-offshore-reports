@@ -31,9 +31,8 @@ import { scores } from "mpa-reg-based-classification";
 import { MpaRegLearnMore } from "../components/MpaRegLearnMore";
 
 const RegBasedClassification = () => {
-  const [{ isCollection }] = useSketchProperties();
   return (
-    <ResultsCard title="Classification" functionName="area">
+    <ResultsCard title="Protection Level" functionName="area">
       {(data: ReportResult) => {
         return (
           <ReportError>

@@ -1,0 +1,12 @@
+{
+  "metrics": [
+    {
+      "metricId": "areaOverlap",
+      "sketchId": null,
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1000000
+    }
+  ]
+}

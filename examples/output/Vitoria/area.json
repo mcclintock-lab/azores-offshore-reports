@@ -1,4 +1,40 @@
 {
+  "metrics": [
+    {
+      "metricId": "area",
+      "sketchId": "62055aac9557604f3e5f6d3e",
+      "classId": null,
+      "groupId": null,
+      "geographyId": null,
+      "value": 46019945.50133726,
+      "extra": {
+        "sketchName": "VitoriaNorth"
+      }
+    },
+    {
+      "metricId": "area",
+      "sketchId": "62055ac19557604f3e5f6d43",
+      "classId": null,
+      "groupId": null,
+      "geographyId": null,
+      "value": 10335531.293751433,
+      "extra": {
+        "sketchName": "VitoriaSouth"
+      }
+    },
+    {
+      "metricId": "area",
+      "sketchId": "62055ac79557604f3e5f6d44",
+      "classId": null,
+      "groupId": null,
+      "geographyId": null,
+      "value": 56355476.795085385,
+      "extra": {
+        "sketchName": "Vitoria",
+        "isCollection": true
+      }
+    }
+  ],
   "sketch": {
     "type": "FeatureCollection",
     "properties": {
@@ -88,41 +124,5 @@
         ]
       }
     ]
-  },
-  "metrics": [
-    {
-      "metricId": "area",
-      "sketchId": "62055aac9557604f3e5f6d3e",
-      "classId": null,
-      "groupId": null,
-      "geographyId": null,
-      "value": 46019945.50133726,
-      "extra": {
-        "sketchName": "VitoriaNorth"
-      }
-    },
-    {
-      "metricId": "area",
-      "sketchId": "62055ac19557604f3e5f6d43",
-      "classId": null,
-      "groupId": null,
-      "geographyId": null,
-      "value": 10335531.293751433,
-      "extra": {
-        "sketchName": "VitoriaSouth"
-      }
-    },
-    {
-      "metricId": "area",
-      "sketchId": "62055ac79557604f3e5f6d44",
-      "classId": null,
-      "groupId": null,
-      "geographyId": null,
-      "value": 56355476.795085385,
-      "extra": {
-        "sketchName": "Vitoria",
-        "isCollection": true
-      }
-    }
-  ]
+  }
 }

@@ -2,9 +2,9 @@ import { DataClass, Report } from "@seasketch/geoprocessing";
 
 /**
  * Area of ocean within eez minus land in square miles. Calculated by drawing
- * sketch in seasketch project, exporting the resulting sketch, calling turf/area function on it and converting square
- * meters to square miles */
-export const STUDY_REGION_AREA_SQ_METERS = undefined;
+ * sketch in seasketch project, exporting the resulting sketch, calling turf/area function on it */
+export const STUDY_REGION_AREA_SQ_METERS = 961942457512.9614;
+export const STUDY_REGION_AREA_SQ_KM = STUDY_REGION_AREA_SQ_METERS / 1000;
 
 export const units = "metric";
 
@@ -21,7 +21,25 @@ export const fgbFileSuffix = ".fgb";
 
 export const objectives = {};
 
-//// HABITAT PROTECTION ////
+//// AREA ////
+
+const sizeReport: Report = {
+  reportId: "area",
+  metrics: {
+    areaOverlap: {
+      metricId: "areaOverlap",
+      baseFilename: "nearshore_dissolved",
+      filename: "nearshore_dissolved.fgb",
+      classes: [
+        {
+          classId: "eez",
+          display: "EEZ",
+        },
+      ],
+      layerId: "6164aebea04323106537eb5a",
+    },
+  },
+};
 
 export default {
   STUDY_REGION_AREA_SQ_METERS,
@@ -29,5 +47,7 @@ export default {
   localDataUrl,
   dataBucketUrl,
   objectives,
-  reports: {},
+  reports: {
+    sizeReport,
+  },
 };

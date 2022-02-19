@@ -1,10 +1,23 @@
 {
+  "metrics": [
+    {
+      "metricId": "area",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": null,
+      "groupId": null,
+      "geographyId": null,
+      "value": 417581469.0224072,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    }
+  ],
   "sketch": {
     "type": "Feature",
     "properties": {
       "id": "62054c709557604f3e5f6cd1",
       "name": "PontaSouth",
-      "updatedAt": "2022-02-10T17:33:36.081Z",
+      "updatedAt": "2022-02-18T16:56:59.790Z",
       "createdAt": "2022-02-10T17:33:36.081Z",
       "sketchClassId": "5f46dd53017aa0388f5f87c5",
       "isCollection": false,
@@ -26,6 +39,12 @@
           "fieldType": "ChoiceField",
           "exportId": "BOATING",
           "value": "UNREGULATED"
+        },
+        {
+          "label": "Comments",
+          "fieldType": "TextArea",
+          "exportId": "COMMENTS",
+          "value": "a comment"
         }
       ]
     },
@@ -36,18 +55,5 @@
       -25.36245623046857,
       37.72320219915908
     ]
-  },
-  "metrics": [
-    {
-      "metricId": "area",
-      "sketchId": "62054c709557604f3e5f6cd1",
-      "classId": null,
-      "groupId": null,
-      "geographyId": null,
-      "value": 417581469.0224072,
-      "extra": {
-        "sketchName": "PontaSouth"
-      }
-    }
-  ]
+  }
 }

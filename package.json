@@ -39,6 +39,7 @@
     "@turf/invariant": "6.5.0",
     "@turf/kinks": "6.5.0",
     "mpa-reg-based-classification": "^1.0.1",
+    "simple-statistics": "^7.7.3",
     "union-subdivided-polygons": "^0.9.1"
   },
   "devDependencies": {

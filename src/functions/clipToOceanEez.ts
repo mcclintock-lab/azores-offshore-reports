@@ -64,11 +64,11 @@ export async function clipToOceanEez(
     throw new ValidationError("Input must be a polygon");
   }
 
-  if (area(feature) > MAX_SIZE) {
-    throw new ValidationError(
-      "Please limit sketches to under 500,000 square km"
-    );
-  }
+  // if (area(feature) > MAX_SIZE) {
+  //   throw new ValidationError(
+  //     "Please limit sketches to under 500,000 square km"
+  //   );
+  // }
 
   const kinkPoints = kinks(feature);
   if (kinkPoints.features.length > 0) {
@@ -103,4 +103,5 @@ export default new PreprocessingHandler(clipToOceanEez, {
     "Erases portion of sketch overlapping with land or extending into ocean outsize EEZ boundary",
   timeout: 40,
   requiresProperties: [],
+  memory: 2048,
 });
