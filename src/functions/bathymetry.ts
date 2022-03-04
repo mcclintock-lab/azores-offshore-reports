@@ -6,13 +6,15 @@ import {
   Polygon,
   toSketchArray,
 } from "@seasketch/geoprocessing";
+import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
+import config from "../_config";
+import bbox from "@turf/bbox";
 
 import { min, max, mean } from "simple-statistics";
 
 // @ts-ignore
 import geoblaze, { Georaster } from "geoblaze";
 
-/** Biomass analysis result for a single bathymetry type and region */
 export interface BathymetryResults {
   /** minimum depth in sketch */
   min: number;
@@ -26,22 +28,12 @@ export interface BathymetryResults {
 export async function bathymetry(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<BathymetryResults> {
-  /** Raster datasource, fallback to localhost in test environment */
-  if (!sketch) throw new Error("Feature is missing");
-
-  const bathyFilename = "bathy.tif";
-  const bathyUrl =
-    process.env.NODE_ENV === "test"
-      ? `http://127.0.0.1:8080/${bathyFilename}`
-      : `https://gp-azores-offshore-reports-datasets.s3.ap-southeast-2.amazonaws.com/${bathyFilename}`;
-
   try {
     const sketches = toSketchArray(sketch);
-    const raster = await geoblaze.load(bathyUrl);
-    console.log("sketch");
-    console.log(sketch);
-    console.log("raster");
-    console.log(raster);
+    const box = sketch.bbox || bbox(sketch);
+    const raster = await loadCogWindow(`${config.dataBucketUrl}bathy.tif`, {
+      windowBox: box,
+    });
     return await bathyStats(sketches, raster);
   } catch (err) {
     console.error("bathymetry error", err);
@@ -61,12 +53,12 @@ export async function bathyStats(
   const sketchStats = features.map((feature, index) => {
     try {
       // @ts-ignore
-      const min = geoblaze.min(raster, feature)[0];
-      // @ts-ignore
-      const max = geoblaze.max(raster, feature)[0];
-      // @ts-ignore
-      const mean = geoblaze.mean(raster, feature)[0];
-      return { min, max, mean };
+      const stats = geoblaze.stats(raster, feature, {
+        calcMax: true,
+        calcMean: true,
+        calcMin: true,
+      })[0];
+      return { min: stats.min, max: stats.max, mean: stats.mean };
     } catch (err) {
       if (err === "No Values were found in the given geometry") {
         // Temp workaround
@@ -99,4 +91,5 @@ export default new GeoprocessingHandler(bathymetry, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  memory: 2048,
 });

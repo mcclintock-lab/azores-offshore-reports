@@ -51,7 +51,8 @@ export default new GeoprocessingHandler(minWidth, {
   title: "minWidth",
   description: "Check if meets minimum width guidelines",
   timeout: 20, // seconds
-  executionMode: "sync",
+  executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
+  memory: 2048,
 });

@@ -12,7 +12,7 @@ describe("bathymetry smoke tests", () => {
   it("has a handler function", () => {
     expect(typeof bathymetry).toBe("function");
   });
-  it("find bathymetry for all types", async () => {
+  it("bathymetrySmoke - find bathymetry for all types", async () => {
     const examples = await getExamplePolygonSketchAll();
     for (const example of examples) {
       const result = await bathymetry(example);

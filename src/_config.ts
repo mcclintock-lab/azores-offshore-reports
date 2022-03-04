@@ -12,7 +12,7 @@ export const localDataUrl = `http://127.0.0.1:8080/`;
 export const dataBucketUrl =
   process.env.NODE_ENV === "test"
     ? localDataUrl
-    : `https://gp-azores-offshore-reports-datasets.s3.ap-southeast-2.amazonaws.com/`;
+    : `https://gp-azores-offshore-reports-datasets.s3.eu-west-3.amazonaws.com/`;
 
 export const cogFileSuffix = "_cog.tif";
 export const fgbFileSuffix = ".fgb";

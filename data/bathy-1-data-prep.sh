@@ -6,5 +6,5 @@ if [ ! -d src/bathy ]; then
   exit 0
 fi
 
-# Reproject and remove LZW compression
+# No prep needed, use as is
 cp src/bathy/gebco_2021.tif dist/bathy.tif
