@@ -19,7 +19,10 @@ export const fgbFileSuffix = ".fgb";
 
 //// OBJECTIVES ////
 
-export const objectives = {};
+export const objectives = {
+  eez: 0.3,
+  eezNoTake: 0.15,
+};
 
 //// AREA ////
 

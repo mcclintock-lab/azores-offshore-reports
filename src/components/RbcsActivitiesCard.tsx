@@ -2,7 +2,7 @@ import React from "react";
 import { SketchAttributesCard } from "@seasketch/geoprocessing/client-ui";
 import { constants } from "mpa-reg-based-classification";
 
-export const MpaRegActivitiesCard = () => {
+export const RbcsActivitiesCard = () => {
   const mappings = {
     GEAR_TYPES: constants.GEAR_TYPES,
     AQUACULTURE: constants.AQUACULTURE_AND_BOTTOM_EXPLOITATION,
@@ -12,4 +12,4 @@ export const MpaRegActivitiesCard = () => {
   return <SketchAttributesCard autoHide={true} mappings={mappings} />;
 };
 
-export default MpaRegActivitiesCard;
+export default RbcsActivitiesCard;

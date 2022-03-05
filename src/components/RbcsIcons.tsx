@@ -4,13 +4,13 @@ import { getIndexIconPerc } from "../helpers/mpaRegBasedClassification";
 import { roundDecimal } from "@seasketch/geoprocessing/client-core";
 import { scores } from "mpa-reg-based-classification";
 
-export interface MpaRegIconProps {
+export interface RbcsIconProps {
   value: number;
   size?: number;
   displayValue?: boolean;
 }
 
-export const ZoneRegIcon: React.FunctionComponent<MpaRegIconProps> = ({
+export const ZoneRegIcon: React.FunctionComponent<RbcsIconProps> = ({
   value,
   size = 20,
   displayValue = true,
@@ -33,7 +33,7 @@ export const ZoneRegIcon: React.FunctionComponent<MpaRegIconProps> = ({
   );
 };
 
-export const MpaRegIcon: React.FunctionComponent<MpaRegIconProps> = ({
+export const RbcsIcon: React.FunctionComponent<RbcsIconProps> = ({
   value,
   size = 30,
   displayValue = true,

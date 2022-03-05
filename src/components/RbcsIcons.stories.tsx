@@ -1,10 +1,10 @@
 import React from "react";
 import { ReportDecorator, Card } from "@seasketch/geoprocessing/client-ui";
-import { MpaRegIcon, ZoneRegIcon } from "./MpaRegIcons";
+import { RbcsIcon, ZoneRegIcon } from "./RbcsIcons";
 
 export default {
-  component: MpaRegIcon,
-  title: "Components/MpaRegIcon",
+  component: RbcsIcon,
+  title: "Components/RbcsIcon",
   decorators: [ReportDecorator],
 };
 
@@ -20,13 +20,13 @@ export const simple = () => (
       <ZoneRegIcon value={7} />
       <ZoneRegIcon value={8} />
     </Card>
-    <Card title="MpaRegIcon">
-      <MpaRegIcon value={0} />
-      <MpaRegIcon value={1.5} />
-      <MpaRegIcon value={3.5} />
-      <MpaRegIcon value={5} />
-      <MpaRegIcon value={6.5} />
-      <MpaRegIcon value={8.5} />
+    <Card title="RbcsIcon">
+      <RbcsIcon value={0} />
+      <RbcsIcon value={1.5} />
+      <RbcsIcon value={3.5} />
+      <RbcsIcon value={5} />
+      <RbcsIcon value={6.5} />
+      <RbcsIcon value={8.5} />
     </Card>
   </>
 );

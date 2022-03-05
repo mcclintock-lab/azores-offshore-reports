@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from "react";
-import MpaRegActivitiesCard from "../components/MpaRegActivitiesCard";
-import RegBasedClassification from "./RegBasedClassification";
+import RbcsActivitiesCard from "../components/RbcsActivitiesCard";
+import ProtectionCard from "./ProtectionCard";
 import SizeCard from "./SizeCard";
 import MinWidthCard from "./MinWidthCard";
 import BathymetryCard from "./BathymetryCard";
@@ -15,8 +15,8 @@ const Overview: FunctionComponent<ReportProps> = ({ hidden }) => {
       <SizeCard />
       <MinWidthCard />
       <BathymetryCard />
-      <RegBasedClassification />
-      <MpaRegActivitiesCard />
+      <ProtectionCard />
+      <RbcsActivitiesCard />
     </div>
   );
 };

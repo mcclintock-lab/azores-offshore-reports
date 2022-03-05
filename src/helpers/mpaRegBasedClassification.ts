@@ -47,67 +47,131 @@ export function getClassificationLabel(index: number) {
   }
 }
 
+export const sketchToZone = (sketch: NullSketch, sketchArea: number): Zone => {
+  const gearTypes = getJsonUserAttribute<string[]>(
+    sketch.properties,
+    "GEAR_TYPES",
+    []
+  );
+  const boating = getUserAttribute<string>(sketch.properties, "BOATING", "");
+  const aquaculture = getUserAttribute<string>(
+    sketch.properties,
+    "AQUACULTURE",
+    ""
+  );
+  const gearTypesMapped = gearTypes.map((gt) => constants.GEAR_TYPES[gt]);
+  const boatingMapped = constants.BOATING_AND_ANCHORING[boating];
+  const aquacultureMapped =
+    constants.AQUACULTURE_AND_BOTTOM_EXPLOITATION[aquaculture];
+  return [gearTypesMapped, aquacultureMapped, boatingMapped, sketchArea];
+};
+
 /**
- * Given sketch with reg userAttributes, returns metrics with classification
- * score as value. Collection metric will have combined score index as value
+ * Transforms an rbcs zone object to a metric
+ * @param sketch - single sketch zone
+ * @param zone - rbcs zone
+ * @param score
+ * @returns
+ */
+export const rbcsZoneToMetric = (
+  sketchId: string,
+  zone: Zone,
+  score: number
+): RegBasedClassificationMetric => {
+  return {
+    ...createMetric({ value: score }),
+    metricId: "rbcs",
+    classId: "zone",
+    sketchId,
+    value: score,
+    extra: {
+      gearTypes: zone[0],
+      aquaculture: zone[1],
+      boating: zone[2],
+    },
+  };
+};
+
+export const rbcsMpaToMetric = (
+  sketchId: string,
+  score: number,
+  label: string
+): RegBasedClassificationMetric => {
+  return {
+    ...createMetric({ value: score }),
+    metricId: "rbcs",
+    classId: "mpa",
+    sketchId,
+    extra: {
+      label,
+    },
+  };
+};
+
+/**
+ * Given zone sketch or collection of zone sketches with userAttributes for rcbs activities,
+ * returns metrics with zone classification score as value.
+ * Collection metric will have mpa classification score index as value
  * @param sketch - sketch or sketch collection with GEAR_TYPES (multi),
  * BOATING (single), and AQUACULTURE (single) user attributes
  * @param childMetrics - area metrics for sketches
  */
-export function regBasedClassificationMetrics(
+export function zoneClassMetrics(
   sketch: NullSketchCollection | NullSketch,
   childAreaMetrics?: Metric[]
 ): RegBasedClassificationMetric[] {
   const areaBySketch = keyBy(childAreaMetrics || [], (m) => m.sketchId!);
   const sketches = toNullSketchArray(sketch);
 
-  // Extract user attributes from sketch and classify
-  const sketchZones: Zone[] = sketches.map((sk) => {
-    const gearTypes = getJsonUserAttribute<string[]>(
-      sk.properties,
-      "GEAR_TYPES",
-      []
-    );
-    const boating = getUserAttribute<string>(sk.properties, "BOATING", "");
-    const aquaculture = getUserAttribute<string>(
-      sk.properties,
-      "AQUACULTURE",
-      ""
-    );
-    const gearTypesMapped = gearTypes.map((gt) => constants.GEAR_TYPES[gt]);
-    const boatingMapped = constants.BOATING_AND_ANCHORING[boating];
-    const aquacultureMapped =
-      constants.AQUACULTURE_AND_BOTTOM_EXPLOITATION[aquaculture];
-    const sketchArea = areaBySketch[sk.properties.id]?.value || 10; // make up area for single sketch since unused anyway
-    return [gearTypesMapped, aquacultureMapped, boatingMapped, sketchArea];
-  });
+  // Extract user attributes from sketch and classify zones
+  const sketchZones: Zone[] = sketches.map((sk) =>
+    sketchToZone(sk, areaBySketch[sk.properties.id].value)
+  );
   const collectionResult: MpaClassification = classifyMPA(sketchZones);
 
-  // Transform result to metrics
+  // Transform zone metrics
   const metrics: RegBasedClassificationMetric[] = collectionResult.scores.map(
-    (score, index) => ({
-      ...createMetric({ value: score }),
-      metricId: "regBasedClass",
-      sketchId: sketches[index].properties.id,
-      value: score,
-      extra: {
-        gearTypes: sketchZones[index][0],
-        aquaculture: sketchZones[index][1],
-        boating: sketchZones[index][2],
-      },
-    })
+    (score, index) =>
+      rbcsZoneToMetric(sketches[index].properties.id, sketchZones[index], score)
   );
-
   if (isSketchCollection(sketch) || isNullSketchCollection(sketch)) {
-    metrics.push({
-      ...createMetric({ value: collectionResult.index }),
-      metricId: "regBasedClass",
-      sketchId: sketch.properties.id,
-      extra: {
-        label: collectionResult.indexLabel,
-      },
-    });
+    metrics.push(
+      rbcsMpaToMetric(
+        sketch.properties.id,
+        collectionResult.index,
+        collectionResult.indexLabel
+      )
+    );
   }
+  return metrics;
+}
+
+/**
+ * Given sketch for rbcsMpa or collection of sketches for rbcsMpas with rbcs activity userAttributes,
+ * assumes each mpa is a single zone mpa and returns metrics with mpa classification score
+ * Collection metric will have mpa classification score index as value
+ * @param sketch - sketch or sketch collection with GEAR_TYPES (multi),
+ * BOATING (single), and AQUACULTURE (single) user attributes
+ * @param childMetrics - area metrics for sketches
+ */
+export function mpaClassMetrics(
+  sketch: NullSketchCollection | NullSketch,
+  childAreaMetrics?: Metric[]
+): RegBasedClassificationMetric[] {
+  const areaBySketch = keyBy(childAreaMetrics || [], (m) => m.sketchId!);
+  const sketches = toNullSketchArray(sketch);
+
+  // classify sketches as single zone rcbs mpas
+  const metrics: RegBasedClassificationMetric[] = sketches.map((sk) => {
+    const mpaClass = classifyMPA([
+      sketchToZone(sk, areaBySketch[sk.properties.id].value),
+    ]);
+    return rbcsMpaToMetric(
+      sk.properties.id,
+      mpaClass.index,
+      mpaClass.indexLabel
+    );
+  });
 
   return metrics;
 }

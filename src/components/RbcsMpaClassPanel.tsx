@@ -1,7 +1,7 @@
 import React from "react";
-import { MpaRegIcon } from "./MpaRegIcons";
+import { RbcsIcon } from "./RbcsIcons";
 
-export interface MpaRegSketchCollectionPanelProps {
+export interface RbcsMpaClassPanelProps {
   value: number;
   displayName: string;
   size?: number;
@@ -11,7 +11,7 @@ export interface MpaRegSketchCollectionPanelProps {
 /**
  * Sketch collection status panel for MPA regulation-based classification
  */
-export const MpaRegSketchCollectionPanel: React.FunctionComponent<MpaRegSketchCollectionPanelProps> =
+export const RbcsMpaClassPanel: React.FunctionComponent<RbcsMpaClassPanelProps> =
   ({ value, displayName, size, displayValue = true }) => {
     return (
       <div
@@ -22,7 +22,7 @@ export const MpaRegSketchCollectionPanel: React.FunctionComponent<MpaRegSketchCo
         }}
       >
         <div style={{ paddingRight: 10 }}>
-          <MpaRegIcon value={value} size={size} displayValue={displayValue} />
+          <RbcsIcon value={value} size={size} displayValue={displayValue} />
         </div>
         <div style={{ fontSize: 18 }}>{displayName}</div>
       </div>

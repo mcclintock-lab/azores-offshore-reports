@@ -1,8 +1,8 @@
 import React from "react";
-import { ZoneRegIcon } from "./MpaRegIcons";
+import { ZoneRegIcon } from "./RbcsIcons";
 import { scores } from "mpa-reg-based-classification";
 
-export interface MpaRegPanelProps {
+export interface RbcsPanelProps {
   value: number;
   size?: number;
 }
@@ -10,7 +10,7 @@ export interface MpaRegPanelProps {
 /**
  * Single-sketch status panel for MPA regulation-based classification
  */
-export const MpaRegSketchPanel: React.FunctionComponent<MpaRegPanelProps> = ({
+export const RbcsZoneClassPanel: React.FunctionComponent<RbcsPanelProps> = ({
   value,
   size = 24,
 }) => {
