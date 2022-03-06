@@ -147,6 +147,25 @@ export function zoneClassMetrics(
 }
 
 /**
+ * Given sketch for rbcsMpa with rbcs activity userAttributes,
+ * assumes mpa is a single zone mpa and returns metrics with mpa classification score
+ * @param sketch - sketch with GEAR_TYPES (multi),
+ * BOATING (single), and AQUACULTURE (single) user attributes
+ * @param childAreaMetric - area metric for sketch
+ */
+export function mpaClassMetric(
+  sketch: NullSketch,
+  childAreaMetric: Metric
+): RegBasedClassificationMetric {
+  const mpaClass = classifyMPA([sketchToZone(sketch, childAreaMetric.value)]);
+  return rbcsMpaToMetric(
+    sketch.properties.id,
+    mpaClass.index,
+    mpaClass.indexLabel
+  );
+}
+
+/**
  * Given sketch for rbcsMpa or collection of sketches for rbcsMpas with rbcs activity userAttributes,
  * assumes each mpa is a single zone mpa and returns metrics with mpa classification score
  * Collection metric will have mpa classification score index as value

@@ -1,4 +1,5 @@
 import { DataClass, Report } from "@seasketch/geoprocessing";
+import { ProjectObjectives } from "./types/objective";
 
 /**
  * Area of ocean within eez minus land in square miles. Calculated by drawing
@@ -19,9 +20,27 @@ export const fgbFileSuffix = ".fgb";
 
 //// OBJECTIVES ////
 
-export const objectives = {
-  eez: 0.3,
-  eezNoTake: 0.15,
+export const objectives: ProjectObjectives = {
+  eez: {
+    target: 0.3,
+    countsToward: {
+      1: "no",
+      2: "no",
+      3: "no",
+      4: "yes",
+      5: "yes",
+    },
+  },
+  eezNoTake: {
+    target: 0.15,
+    countsToward: {
+      1: "no",
+      2: "no",
+      3: "no",
+      4: "no",
+      5: "yes",
+    },
+  },
 };
 
 //// AREA ////
@@ -44,6 +63,23 @@ const sizeReport: Report = {
   },
 };
 
+//// PROTECTION ////
+
+const protection: Report = {
+  reportId: "protection",
+  metrics: {
+    areaOverlap: {
+      metricId: "areaOverlap",
+      classes: [
+        {
+          classId: "eez",
+          display: "EEZ",
+        },
+      ],
+    },
+  },
+};
+
 export default {
   STUDY_REGION_AREA_SQ_METERS,
   units,
@@ -52,5 +88,6 @@ export default {
   objectives,
   reports: {
     sizeReport,
+    protection,
   },
 };

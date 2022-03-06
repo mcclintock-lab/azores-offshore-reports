@@ -21,12 +21,19 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import {
   mpaClassMetrics,
+  mpaClassMetric,
   RegBasedClassificationMetric,
 } from "../helpers/mpaRegBasedClassification";
 import { scores } from "mpa-reg-based-classification";
 import { RbcsMpaClassPanel } from "../components/RbcsMpaClassPanel";
 import { RbcsIcon, ZoneRegIcon } from "../components/RbcsIcons";
 import { RbcsLearnMore } from "../components/RbcsLearnMore";
+import config from "../_config";
+import { RbcsMpaObjective } from "../components/RbcsMpaObjective";
+
+const REPORT = config.reports.protection;
+const METRIC = REPORT.metrics.areaOverlap;
+const OBJECTIVES = config.objectives;
 
 const ProtectionCard = () => {
   return (
@@ -53,19 +60,19 @@ const ProtectionCard = () => {
  * Report protection level for sketch as rbcs MPA with single zone
  */
 const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
-  const sketchMetrics = metrics.filter(
+  const sketchMetric = firstMatchingMetric(
+    metrics,
     (m) => m.sketchId === sketch.properties.id
   );
-
-  const sketchRegMetrics = mpaClassMetrics(sketch, sketchMetrics);
-  const sketchRegMetric = firstMatchingMetric(
-    sketchRegMetrics,
-    (m) => m.sketchId === sketch.properties.id
-  );
+  const sketchRegMetric = mpaClassMetric(sketch, sketchMetric);
   console.log("sketchRegMetric", sketchRegMetric);
 
   return (
     <>
+      <RbcsMpaObjective
+        curObjectiveValue={sketchRegMetric.value.toString()}
+        objective={OBJECTIVES.eez}
+      />
       <RbcsMpaClassPanel
         value={sketchRegMetric.value}
         displayName={sketchRegMetric.extra?.label || "Missing label"}
@@ -96,7 +103,7 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
 
   return (
     <>
-      {genMpaSketchTable(sketchesById, regChildMetrics, childAreaPercMetrics)}
+      {genMpaSketchTable(sketchesById, regChildMetrics)}
       {genLearnMore()}
     </>
   );
@@ -112,8 +119,7 @@ const genLearnMore = () => (
 
 const genMpaSketchTable = (
   sketchesById: Record<string, NullSketch>,
-  regMetrics: RegBasedClassificationMetric[],
-  areaPercMetrics: Metric[]
+  regMetrics: RegBasedClassificationMetric[]
 ) => {
   const columns: Column<RegBasedClassificationMetric>[] = [
     {
