@@ -1,6 +1,7 @@
 import React from "react";
 import { RbcsObjective, YES_COUNT_OBJECTIVE } from "../types/objective";
 import { gearTypeScores } from "../helpers/mpaRegBasedClassification";
+import { getKeys } from "../helpers/ts";
 
 export interface RbcsObjectiveProps {
   objectives: Record<string, RbcsObjective>;
@@ -26,18 +27,16 @@ export const RbcsLearnMore: React.FunctionComponent<RbcsObjectiveProps> = ({
           </tr>
         </thead>
         <tbody>
-          {Object.keys(objectives).map((objectiveName, index) => {
+          {getKeys(objectives).map((objectiveName, index) => {
             return (
               <tr key={index}>
                 <td>{objectives[objectiveName].shortDesc}</td>
                 <td>
                   {
-                    Object.keys(objectives[objectiveName].countsToward)[
-                      Object.keys(
-                        objectives[objectiveName].countsToward
-                      ).findIndex(
-                        (countsKey) =>
-                          objectives[objectiveName].countsToward[countsKey] !==
+                    getKeys(objectives[objectiveName].countsToward)[
+                      getKeys(objectives[objectiveName].countsToward).findIndex(
+                        (level) =>
+                          objectives[objectiveName].countsToward[level] !==
                           YES_COUNT_OBJECTIVE
                       ) - 1
                     ]

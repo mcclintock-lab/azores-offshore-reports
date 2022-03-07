@@ -4,11 +4,11 @@ import {
   XCircleFill,
   QuestionCircleFill,
 } from "@styled-icons/bootstrap";
-import { SupportedCount } from "../types/objective";
+import { ObjectiveCountsAnswer } from "../types/objective";
 import styled from "styled-components";
 
 export interface ObjectiveStatusProps {
-  status: SupportedCount;
+  status: ObjectiveCountsAnswer;
   msg: JSX.Element;
   size?: number;
   style?: React.HTMLAttributes<HTMLElement>["style"];

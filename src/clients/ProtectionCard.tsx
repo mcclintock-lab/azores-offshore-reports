@@ -29,9 +29,8 @@ import { scores } from "mpa-reg-based-classification";
 import { RbcsMpaClassPanel } from "../components/RbcsMpaClassPanel";
 import { RbcsIcon, ZoneRegIcon } from "../components/RbcsIcons";
 import { RbcsLearnMore } from "../components/RbcsLearnMore";
+import { AzoresMpaObjectives } from "../components/AzoresMpaObjectives";
 import config from "../_config";
-import { RbcsMpaObjective } from "../components/RbcsMpaObjective";
-import { YES_COUNT_OBJECTIVE, NO_COUNT_OBJECTIVE } from "../types/objective";
 
 const REPORT = config.reports.protection;
 const METRIC = REPORT.metrics.areaOverlap;
@@ -64,63 +63,6 @@ const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
   const sketchRegMetric = mpaClassMetric(sketch, sketchMetric);
   const level = getProtectionLevel(sketchRegMetric.value);
 
-  /** Custom msg render for eez objective */
-  const renderEezMsg = () => {
-    if (OBJECTIVES.eez.countsToward[level] === YES_COUNT_OBJECTIVE) {
-      return (
-        <>
-          This MPA counts towards protecting{" "}
-          <b>{percentWithEdge(OBJECTIVES.eez.target)}</b> of Azorean waters.
-        </>
-      );
-    } else if (OBJECTIVES.eez.countsToward[level] === NO_COUNT_OBJECTIVE) {
-      return (
-        <>
-          This MPA <b>does not</b> count towards protecting{" "}
-          <b>{percentWithEdge(OBJECTIVES.eez.target)}</b> of Azorean waters.
-        </>
-      );
-    } else {
-      return (
-        <>
-          This MPA <b>may</b> count towards protecting{" "}
-          <b>{percentWithEdge(OBJECTIVES.eez.target)}</b> of Azorean waters.
-        </>
-      );
-    }
-  };
-
-  /** Custom msg render for eez no-take objective */
-  const renderEezNoTakeMsg = () => {
-    if (OBJECTIVES.eezNoTake.countsToward[level] === YES_COUNT_OBJECTIVE) {
-      return (
-        <>
-          This MPA counts towards fully protecting{" "}
-          <b>{percentWithEdge(OBJECTIVES.eezNoTake.target)}</b> of Azorean
-          waters as no-take.
-        </>
-      );
-    } else if (
-      OBJECTIVES.eezNoTake.countsToward[level] === NO_COUNT_OBJECTIVE
-    ) {
-      return (
-        <>
-          This MPA <b>does not</b> count towards fully protecting{" "}
-          <b>{percentWithEdge(OBJECTIVES.eezNoTake.target)}</b> of Azorean
-          waters as no-take.
-        </>
-      );
-    } else {
-      return (
-        <>
-          This MPA <b>may</b> count towards fully protecting{" "}
-          <b>{percentWithEdge(OBJECTIVES.eezNoTake.target)}</b> of Azorean
-          waters as no-take.
-        </>
-      );
-    }
-  };
-
   return (
     <>
       <p>Based on allowed activities, this MPA scores as a:</p>
@@ -128,16 +70,8 @@ const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
         value={sketchRegMetric.value}
         displayName={sketchRegMetric.extra?.label || "Missing label"}
       />
-      <RbcsMpaObjective
-        level={getProtectionLevel(sketchRegMetric.value)}
-        objective={OBJECTIVES.eez}
-        renderMsg={renderEezMsg}
-      />
-      <RbcsMpaObjective
-        level={getProtectionLevel(sketchRegMetric.value)}
-        objective={OBJECTIVES.eezNoTake}
-        renderMsg={renderEezNoTakeMsg}
-      />
+      <AzoresMpaObjectives objectives={OBJECTIVES} level={level} />
+
       {genLearnMore()}
     </>
   );

@@ -1,35 +1,38 @@
 import React from "react";
 import {
   RbcsObjective,
-  isRbcsObjectiveKey,
   YES_COUNT_OBJECTIVE,
   NO_COUNT_OBJECTIVE,
+  RbcsMpaProtectionLevel,
 } from "../types/objective";
 import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import { ObjectiveStatus } from "./ObjectiveStatus";
 
-export interface RbcsObjectiveProps {
-  level: string;
+export interface RbcsMpaObjectiveStatusProps {
+  /** RBCS protection level for MPA to give status for */
+  level: RbcsMpaProtectionLevel;
+  /** RBCS objective to weigh protection level against */
   objective: RbcsObjective;
-  /** Optional renderProp for  */
-  renderMsg?: () => React.ReactElement;
+  /** optional custom objective message */
+  renderMsg?: (
+    objective: RbcsObjective,
+    level: RbcsMpaProtectionLevel
+  ) => JSX.Element;
 }
 
-export const RbcsMpaObjective: React.FunctionComponent<RbcsObjectiveProps> = ({
-  level: level,
-  objective,
-  renderMsg,
-}) => {
-  if (isRbcsObjectiveKey(level)) {
-    const msg = renderMsg ? renderMsg() : defaultMsg(level, objective);
+export const RbcsMpaObjectiveStatus: React.FunctionComponent<RbcsMpaObjectiveStatusProps> =
+  ({ level, objective, renderMsg }) => {
+    const msg = renderMsg
+      ? renderMsg(objective, level)
+      : defaultMsg(objective, level);
 
     return <ObjectiveStatus status={objective.countsToward[level]} msg={msg} />;
-  } else {
-    throw new Error(`Invalid objective status, ${level}`);
-  }
-};
+  };
 
-const defaultMsg = (level: string, objective: RbcsObjective) => {
+const defaultMsg = (
+  objective: RbcsObjective,
+  level: RbcsMpaProtectionLevel
+) => {
   if (objective.countsToward[level] === YES_COUNT_OBJECTIVE) {
     return (
       <>
