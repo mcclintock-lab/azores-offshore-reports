@@ -10,7 +10,7 @@ export default {
 
 export const simple = () => (
   <>
-    <Card title="Zone Classification">
+    <Card title="RBCS Zone Classification">
       {Array.from({ length: 8 }, (v, i) => (
         <RbcsZoneClassPanel value={i + 1} />
       ))}

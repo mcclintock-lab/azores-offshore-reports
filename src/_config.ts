@@ -1,5 +1,5 @@
 import { DataClass, Report } from "@seasketch/geoprocessing";
-import { ProjectObjectives } from "./types/objective";
+import { RbcsObjective } from "./types/objective";
 
 /**
  * Area of ocean within eez minus land in square miles. Calculated by drawing
@@ -20,25 +20,32 @@ export const fgbFileSuffix = ".fgb";
 
 //// OBJECTIVES ////
 
+// Build project objectives up using RBCS types
+export const projectObjectiveNames = ["eez", "eezNoTake"] as const;
+export type ProjectObjectiveName = typeof projectObjectiveNames[number];
+export type ProjectObjectives = Record<ProjectObjectiveName, RbcsObjective>;
+
 export const objectives: ProjectObjectives = {
   eez: {
+    shortDesc: "30% of EEZ protected",
     target: 0.3,
     countsToward: {
-      1: "no",
-      2: "no",
-      3: "no",
-      4: "yes",
-      5: "yes",
+      "Fully Protected Area": "yes",
+      "Highly Protected Area": "yes",
+      "Moderately Protected Area": "no",
+      "Poorly Protected Area": "no",
+      "Unprotected Area": "no",
     },
   },
   eezNoTake: {
+    shortDesc: "15% of EEZ no-take protection",
     target: 0.15,
     countsToward: {
-      1: "no",
-      2: "no",
-      3: "no",
-      4: "no",
-      5: "yes",
+      "Fully Protected Area": "yes",
+      "Highly Protected Area": "no",
+      "Moderately Protected Area": "no",
+      "Poorly Protected Area": "no",
+      "Unprotected Area": "no",
     },
   },
 };

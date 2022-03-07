@@ -1,7 +1,7 @@
 import React from "react";
 import { ReportDecorator, Card } from "@seasketch/geoprocessing/client-ui";
 import { RbcsMpaClassPanel } from "./RbcsMpaClassPanel";
-import { getClassificationLabel } from "../helpers/mpaRegBasedClassification";
+import { getProtectionLevel } from "../helpers/mpaRegBasedClassification";
 
 export default {
   component: RbcsMpaClassPanel,
@@ -12,12 +12,15 @@ export default {
 const values = [1.25, 2.35, 3.65, 4.15, 5.85, 6.35, 7.15];
 
 export const simple = () => (
-  <Card title="Network Zone Classification">
+  <Card title="RBCS MPA Classification">
     {values.map((value) => (
-      <RbcsMpaClassPanel
-        value={value}
-        displayName={getClassificationLabel(value)}
-      />
+      <>
+        <p>If MPA has index value: {value}</p>
+        <RbcsMpaClassPanel
+          value={value}
+          displayName={getProtectionLevel(value)}
+        />
+      </>
     ))}
   </Card>
 );

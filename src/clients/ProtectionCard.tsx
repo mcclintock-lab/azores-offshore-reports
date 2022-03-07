@@ -23,6 +23,7 @@ import {
   mpaClassMetrics,
   mpaClassMetric,
   RegBasedClassificationMetric,
+  getProtectionLevel,
 } from "../helpers/mpaRegBasedClassification";
 import { scores } from "mpa-reg-based-classification";
 import { RbcsMpaClassPanel } from "../components/RbcsMpaClassPanel";
@@ -30,6 +31,7 @@ import { RbcsIcon, ZoneRegIcon } from "../components/RbcsIcons";
 import { RbcsLearnMore } from "../components/RbcsLearnMore";
 import config from "../_config";
 import { RbcsMpaObjective } from "../components/RbcsMpaObjective";
+import { YES_COUNT_OBJECTIVE, NO_COUNT_OBJECTIVE } from "../types/objective";
 
 const REPORT = config.reports.protection;
 const METRIC = REPORT.metrics.areaOverlap;
@@ -41,11 +43,6 @@ const ProtectionCard = () => {
       {(data: ReportResult) => {
         return (
           <ReportError>
-            <p>
-              MPAs in this plan have been assigned the following proteBased on
-              allowed MPA activities, this plan has been assigned the following
-              level of protection:
-            </p>
             {isNullSketchCollection(data.sketch)
               ? collectionReport(data.sketch, data.metrics)
               : sketchReport(data.sketch, data.metrics)}
@@ -65,17 +62,81 @@ const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
     (m) => m.sketchId === sketch.properties.id
   );
   const sketchRegMetric = mpaClassMetric(sketch, sketchMetric);
-  console.log("sketchRegMetric", sketchRegMetric);
+  const level = getProtectionLevel(sketchRegMetric.value);
+
+  /** Custom msg render for eez objective */
+  const renderEezMsg = () => {
+    if (OBJECTIVES.eez.countsToward[level] === YES_COUNT_OBJECTIVE) {
+      return (
+        <>
+          This MPA counts towards protecting{" "}
+          <b>{percentWithEdge(OBJECTIVES.eez.target)}</b> of Azorean waters.
+        </>
+      );
+    } else if (OBJECTIVES.eez.countsToward[level] === NO_COUNT_OBJECTIVE) {
+      return (
+        <>
+          This MPA <b>does not</b> count towards protecting{" "}
+          <b>{percentWithEdge(OBJECTIVES.eez.target)}</b> of Azorean waters.
+        </>
+      );
+    } else {
+      return (
+        <>
+          This MPA <b>may</b> count towards protecting{" "}
+          <b>{percentWithEdge(OBJECTIVES.eez.target)}</b> of Azorean waters.
+        </>
+      );
+    }
+  };
+
+  /** Custom msg render for eez no-take objective */
+  const renderEezNoTakeMsg = () => {
+    if (OBJECTIVES.eezNoTake.countsToward[level] === YES_COUNT_OBJECTIVE) {
+      return (
+        <>
+          This MPA counts towards fully protecting{" "}
+          <b>{percentWithEdge(OBJECTIVES.eezNoTake.target)}</b> of Azorean
+          waters as no-take.
+        </>
+      );
+    } else if (
+      OBJECTIVES.eezNoTake.countsToward[level] === NO_COUNT_OBJECTIVE
+    ) {
+      return (
+        <>
+          This MPA <b>does not</b> count towards fully protecting{" "}
+          <b>{percentWithEdge(OBJECTIVES.eezNoTake.target)}</b> of Azorean
+          waters as no-take.
+        </>
+      );
+    } else {
+      return (
+        <>
+          This MPA <b>may</b> count towards fully protecting{" "}
+          <b>{percentWithEdge(OBJECTIVES.eezNoTake.target)}</b> of Azorean
+          waters as no-take.
+        </>
+      );
+    }
+  };
 
   return (
     <>
-      <RbcsMpaObjective
-        curObjectiveValue={sketchRegMetric.value.toString()}
-        objective={OBJECTIVES.eez}
-      />
+      <p>Based on allowed activities, this MPA scores as a:</p>
       <RbcsMpaClassPanel
         value={sketchRegMetric.value}
         displayName={sketchRegMetric.extra?.label || "Missing label"}
+      />
+      <RbcsMpaObjective
+        level={getProtectionLevel(sketchRegMetric.value)}
+        objective={OBJECTIVES.eez}
+        renderMsg={renderEezMsg}
+      />
+      <RbcsMpaObjective
+        level={getProtectionLevel(sketchRegMetric.value)}
+        objective={OBJECTIVES.eezNoTake}
+        renderMsg={renderEezNoTakeMsg}
       />
       {genLearnMore()}
     </>
@@ -113,7 +174,7 @@ export default ProtectionCard;
 
 const genLearnMore = () => (
   <Collapse title="Learn More">
-    <RbcsLearnMore />
+    <RbcsLearnMore objectives={OBJECTIVES} />
   </Collapse>
 );
 

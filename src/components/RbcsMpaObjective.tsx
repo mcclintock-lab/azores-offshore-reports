@@ -9,50 +9,47 @@ import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import { ObjectiveStatus } from "./ObjectiveStatus";
 
 export interface RbcsObjectiveProps {
-  curObjectiveValue: string;
+  level: string;
   objective: RbcsObjective;
+  /** Optional renderProp for  */
+  renderMsg?: () => React.ReactElement;
 }
 
 export const RbcsMpaObjective: React.FunctionComponent<RbcsObjectiveProps> = ({
-  curObjectiveValue,
+  level: level,
   objective,
+  renderMsg,
 }) => {
-  if (isRbcsObjectiveKey(curObjectiveValue)) {
-    console.log("curObjectiveValue", curObjectiveValue);
-    const msg = (() => {
-      if (objective.countsToward[curObjectiveValue] === YES_COUNT_OBJECTIVE) {
-        return (
-          <>
-            This MPA meets the objective of fully protecting{" "}
-            <b>{percentWithEdge(objective.target)}</b> of Azorean waters.
-          </>
-        );
-      } else if (
-        objective.countsToward[curObjectiveValue] === NO_COUNT_OBJECTIVE
-      ) {
-        return (
-          <>
-            This MPA <b>does not</b> meet the objective of fully protecting{" "}
-            <b>{percentWithEdge(objective.target)}</b> of Azorean waters.
-          </>
-        );
-      } else {
-        return (
-          <>
-            This MPA <b>may</b> meet the objective of fully protecting{" "}
-            <b>{percentWithEdge(objective.target)}</b> of Azorean waters.
-          </>
-        );
-      }
-    })();
+  if (isRbcsObjectiveKey(level)) {
+    const msg = renderMsg ? renderMsg() : defaultMsg(level, objective);
 
+    return <ObjectiveStatus status={objective.countsToward[level]} msg={msg} />;
+  } else {
+    throw new Error(`Invalid objective status, ${level}`);
+  }
+};
+
+const defaultMsg = (level: string, objective: RbcsObjective) => {
+  if (objective.countsToward[level] === YES_COUNT_OBJECTIVE) {
     return (
-      <ObjectiveStatus
-        status={objective.countsToward[curObjectiveValue]}
-        msg={msg}
-      />
+      <>
+        This MPA counts towards protecting{" "}
+        <b>{percentWithEdge(objective.target)}</b> of planning area.
+      </>
+    );
+  } else if (objective.countsToward[level] === NO_COUNT_OBJECTIVE) {
+    return (
+      <>
+        This MPA <b>does not</b> count towards protecting{" "}
+        <b>{percentWithEdge(objective.target)}</b> of planning area.
+      </>
     );
   } else {
-    throw new Error(`Invalid objective status, ${curObjectiveValue}`);
+    return (
+      <>
+        This MPA <b>may</b> count towards protecting{" "}
+        <b>{percentWithEdge(objective.target)}</b> of planning area.
+      </>
+    );
   }
 };

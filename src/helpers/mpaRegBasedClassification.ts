@@ -31,9 +31,9 @@ export interface RegBasedClassificationMetric extends Omit<Metric, "extra"> {
 }
 
 /**
- * Returns classification name given MPA classification index value
+ * Returns protection level given MPA classification index value
  */
-export function getClassificationLabel(index: number) {
+export function getProtectionLevel(index: number) {
   if (index < 3) {
     return "Fully Protected Area";
   } else if (index < 5) {
@@ -109,9 +109,9 @@ export const rbcsMpaToMetric = (
 };
 
 /**
- * Given zone sketch or collection of zone sketches with userAttributes for rcbs activities,
+ * Given sketch for rbcsZone or collection of zone sketches with userAttributes for rcbs activities,
  * returns metrics with zone classification score as value.
- * Collection metric will have mpa classification score index as value
+ * If sketch collection, collection metric will have mpa classification score index as value
  * @param sketch - sketch or sketch collection with GEAR_TYPES (multi),
  * BOATING (single), and AQUACULTURE (single) user attributes
  * @param childMetrics - area metrics for sketches
@@ -214,3 +214,30 @@ export function getIndexIconPerc(index: number) {
     return 0;
   }
 }
+
+/**
+ * gear type impact scores.  Not exported from mpa-reg-based-classification
+ */
+export const gearTypeScores: Record<string, number> = {
+  "Beach seines": 8,
+  "Cast nets": 3,
+  "Dredges (bivalves)": 7,
+  "Drift nets": 5,
+  "Fish traps": 6,
+  "Fixed fish traps “madrague”": 6,
+  Gillnets: 6,
+  "Hand dredges (bivalves)": 5,
+  "Hand harvesting": 4,
+  "Intertidal hand captures": 3,
+  "Lines (jigs, hook and line, rod, troll)": 5,
+  "Longlines (bottom)": 5,
+  "Longlines (pelagic)": 4,
+  "Purse seining (bottom)": 9,
+  "Purse seining (pelagic)": 5,
+  "Spearfishing/diving": 3,
+  "Surrounding nets near shore": 8,
+  "Trammel nets": 8,
+  "Traps (lobster/octopus/crab)": 4,
+  "Trawl (bottom)": 9,
+  "Trawl (pelagic)": 5,
+};

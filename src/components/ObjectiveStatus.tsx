@@ -5,6 +5,7 @@ import {
   QuestionCircleFill,
 } from "@styled-icons/bootstrap";
 import { SupportedCount } from "../types/objective";
+import styled from "styled-components";
 
 export interface ObjectiveStatusProps {
   status: SupportedCount;
@@ -13,10 +14,20 @@ export interface ObjectiveStatusProps {
   style?: React.HTMLAttributes<HTMLElement>["style"];
 }
 
+const TableStyled = styled.div`
+  .container {
+    display: flex;
+    margin: 10px 0px 10px 0px;
+  }
+  .icon {
+    padding-right: 10px;
+  }
+`;
+
 export const ObjectiveStatus: React.FunctionComponent<ObjectiveStatusProps> = ({
   status,
   msg,
-  size = 36,
+  size = 30,
   style = {},
 }) => {
   let icon: JSX.Element;
@@ -48,9 +59,11 @@ export const ObjectiveStatus: React.FunctionComponent<ObjectiveStatusProps> = ({
   }
 
   return (
-    <div style={{ display: "flex" }}>
-      <div style={{ paddingRight: 10 }}>{icon}</div>
-      <div>{msg}</div>
-    </div>
+    <TableStyled>
+      <div className="container">
+        <div className="icon">{icon}</div>
+        <div>{msg}</div>
+      </div>
+    </TableStyled>
   );
 };

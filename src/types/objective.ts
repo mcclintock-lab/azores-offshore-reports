@@ -32,6 +32,14 @@ export const rbcsObjectiveKeys = [
 export type RbcsObjectiveKey = typeof rbcsObjectiveKeys[number];
 export type RbcsObjectiveMap = Record<RbcsObjectiveKey, SupportedCount>;
 
+export interface RbcsObjective {
+  /** Value required for objective to be met */
+  target: number;
+  /** Map of protection levels to whether they count towards objective */
+  countsToward: RbcsObjectiveMap;
+  shortDesc: string;
+}
+
 /**
  * Type guard for checking string is one of supported objective IDs
  * Use in conditional block logic to coerce to type RbcsObjectiveKey within the block
@@ -39,16 +47,3 @@ export type RbcsObjectiveMap = Record<RbcsObjectiveKey, SupportedCount>;
 export function isRbcsObjectiveKey(key: string): key is RbcsObjectiveKey {
   return rbcsObjectiveKeys.includes(key as RbcsObjectiveKey);
 }
-
-export interface RbcsObjective {
-  /** Value required for objective to be met */
-  target: number;
-  /** Map of protection levels to whether they count towards objective */
-  countsToward: RbcsObjectiveMap;
-}
-
-//// PROJECT OBJECTIVES ////
-
-export const projectObjectiveNames = ["eez", "eezNoTake"] as const;
-export type ProjectObjectiveName = typeof projectObjectiveNames[number];
-export type ProjectObjectives = Record<ProjectObjectiveName, RbcsObjective>;
