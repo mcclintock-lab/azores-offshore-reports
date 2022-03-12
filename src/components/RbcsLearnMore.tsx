@@ -1,18 +1,20 @@
 import React from "react";
-import { RbcsObjective, YES_COUNT_OBJECTIVE } from "../types/objective";
+import { ObjectiveGroup } from "../types/objective";
+import { getMinYesCountMap } from "../helpers/objective";
 import { gearTypeScores } from "../helpers/mpaRegBasedClassification";
 import { getKeys } from "../helpers/ts";
 
-export interface RbcsObjectiveProps {
-  objectives: Record<string, RbcsObjective>;
+export interface RbcsLearnMoreProps {
+  objectives: ObjectiveGroup;
 }
 
 /**
  * Describes RBCS and lists minimum level of protection required for each objective
  */
-export const RbcsLearnMore: React.FunctionComponent<RbcsObjectiveProps> = ({
+export const RbcsLearnMore: React.FunctionComponent<RbcsLearnMoreProps> = ({
   objectives,
 }) => {
+  const minYesCounts = getMinYesCountMap(objectives);
   return (
     <>
       <p>
@@ -23,49 +25,41 @@ export const RbcsLearnMore: React.FunctionComponent<RbcsObjectiveProps> = ({
         <thead>
           <tr>
             <th>Objective</th>
-            <th>Minimum Level Required</th>
+            <th>Minimum MPA Classification Required</th>
           </tr>
         </thead>
         <tbody>
-          {getKeys(objectives).map((objectiveName, index) => {
+          {getKeys(objectives).map((objectiveId, index) => {
             return (
               <tr key={index}>
-                <td>{objectives[objectiveName].shortDesc}</td>
-                <td>
-                  {
-                    getKeys(objectives[objectiveName].countsToward)[
-                      getKeys(objectives[objectiveName].countsToward).findIndex(
-                        (level) =>
-                          objectives[objectiveName].countsToward[level] !==
-                          YES_COUNT_OBJECTIVE
-                      ) - 1
-                    ]
-                  }
-                </td>
+                <td>{objectives[objectiveId].shortDesc}</td>
+                <td>{minYesCounts[objectiveId]}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
       <p>
-        To increase the protection level and achieve the objective, you must
-        changed the allowed uses of your plan to reduce the impact score.
+        To increase the classification of an MPA in your plan such that it
+        counts toward an objective, you must change the allowed activities for
+        the MPA to reduce the impact to a level acceptable for the
+        classification you want to achieve.
       </p>
       <p>
         {" "}
-        A protection level is assigned to each MPA or zone within an MPA based
-        on 1) the number of fishing gears allowed, 2) the highest impact fishing
-        gear and 3) the impact of allowed aquaculture/bottom exploitation. For
-        no-take zones, a fourth criteria is added, the impact of allowed
-        boating/anchoring. The higher the impact of the allowed uses in a given
-        MPA or Zone, the lower the classification.
+        A classification is assigned to each MPA based on 1) the number of
+        fishing gears allowed, 2) the highest impact fishing gear and 3) the
+        impact of allowed aquaculture/bottom exploitation. For no-take, a fourth
+        criteria is added, the impact of allowed boating/anchoring. The higher
+        the impact of the allowed uses in a given MPA or Zone, the lower the
+        classification.
       </p>
 
       <b>Zone Classification</b>
       <p>
-        Zones are assigned 1 of 8 <em>zone classifications</em>. If users can
-        create MPA's but not Zones, then they will be scored as a single Zone
-        MPA. The Zone classification is assigned based on 4 criteria:
+        Zones are assigned 1 of 8 <em>classifications</em> based on the
+        activities allowed in that Zone. The classification is assigned based on
+        4 criteria:
       </p>
       <ol>
         <li>Number of fishing gear types</li>
@@ -73,6 +67,11 @@ export const RbcsLearnMore: React.FunctionComponent<RbcsObjectiveProps> = ({
         <li>Allowed aquaculture / bottom exploitation</li>
         <li>Allowed boating / anchoring</li>
       </ol>
+      <p>
+        If you only have the option to create MPAs for this SeaSketch project
+        and not Zones, your MPAs are scored as having a single Zone with the
+        activities of the MPA.
+      </p>
       <p>Zones are classified based on the following decision tree:</p>
       <p>
         <img
@@ -86,7 +85,7 @@ export const RbcsLearnMore: React.FunctionComponent<RbcsObjectiveProps> = ({
           image source
         </a>
       </p>
-      <p>The impact score each each allowed activity is as follows:</p>
+      <p>The impact score for each allowed activity is as follows:</p>
       <table>
         <thead>
           <tr>
@@ -107,11 +106,17 @@ export const RbcsLearnMore: React.FunctionComponent<RbcsObjectiveProps> = ({
       </table>
       <b>MPA Classification</b>
       <p>
-        MPA Network plans are assigned 1 of 5 <em>MPA classifications</em>. This
-        MPA classification is based on an index score, which is derived from the
-        zone classification of each MPA and the size of the MPA relative to the
-        overall network area. The larger An MPAs area proportional to the total,
-        the more weight it carries in the index score.
+        An MPA is assigned 1 of 5 <em>classifications</em>. The classification
+        is based on an index score calculated for the MPA, which is a
+        combination of the Zone scores for each MPA, and the size of those Zones
+        relative to each other. The larger the area of a Zone relative to the
+        others in the MPA, the more weight its impact carries in the MPA index
+        score.
+      </p>
+      <p>
+        Note again that if this SeaSketch Project does not allow you to create
+        Zones, then each of your MPAs will be scored as having a single Zone
+        with the activities of the MPA.
       </p>
       <p>
         <img

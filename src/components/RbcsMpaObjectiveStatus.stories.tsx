@@ -3,7 +3,7 @@ import { RbcsMpaObjectiveStatus } from "./RbcsMpaObjectiveStatus";
 import { ReportDecorator, Card } from "@seasketch/geoprocessing/client-ui";
 import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import { RbcsObjective, RbcsMpaProtectionLevel } from "../types/objective";
-import { YES_COUNT_OBJECTIVE, NO_COUNT_OBJECTIVE } from "../types/objective";
+import { OBJECTIVE_YES, OBJECTIVE_NO } from "../types/objective";
 import { getKeys } from "../helpers/ts";
 
 export default {
@@ -13,6 +13,7 @@ export default {
 };
 
 const objective: RbcsObjective = {
+  id: "eez",
   shortDesc: "30% protected",
   target: 0.3,
   countsToward: {
@@ -62,14 +63,14 @@ const customRenderMsg = (
   objective: RbcsObjective,
   level: RbcsMpaProtectionLevel
 ) => {
-  if (objective.countsToward[level] === YES_COUNT_OBJECTIVE) {
+  if (objective.countsToward[level] === OBJECTIVE_YES) {
     return (
       <>
         This most definitely counts towards protecting{" "}
         <b>{percentWithEdge(objective.target)}</b> of Lunar waters 🌙.
       </>
     );
-  } else if (objective.countsToward[level] === NO_COUNT_OBJECTIVE) {
+  } else if (objective.countsToward[level] === OBJECTIVE_NO) {
     return (
       <>
         This most definitely <b>does not</b> count towards protecting{" "}

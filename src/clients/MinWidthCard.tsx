@@ -28,19 +28,13 @@ const MinWidthCard = () => (
             Compact shapes (e.g. squares or circles) minimize edge effects by
             improving the spillover of adults and juveniles more than other
             shapes (e.g. long thin rectangles), which helps maintain the
-            integrity of Marine management areas. The current recommended
-            minimum width is{" "}
-            <b>
-              {MIN_RECOMMENDED_MIN_WIDTH} {MIN_WIDTH_UNIT}
-            </b>
+            integrity of Marine management areas.
           </p>
           <KeySection>
             This design has a minimum width of{" "}
             <b>
               {minWidthDisplay} {MIN_WIDTH_UNIT}
             </b>
-            , which is <b>{minWidthDirection}</b> the minimum recommended
-            diameter.
           </KeySection>
           <div
             style={{

@@ -1,7 +1,7 @@
 import React from "react";
 import { ReportDecorator, Card } from "@seasketch/geoprocessing/client-ui";
 import { RbcsMpaClassPanel } from "./RbcsMpaClassPanel";
-import { getProtectionLevel } from "../helpers/mpaRegBasedClassification";
+import { getMpaClassificationName } from "../helpers/mpaRegBasedClassification";
 
 export default {
   component: RbcsMpaClassPanel,
@@ -18,7 +18,7 @@ export const simple = () => (
         <p>If MPA has index value: {value}</p>
         <RbcsMpaClassPanel
           value={value}
-          displayName={getProtectionLevel(value)}
+          displayName={getMpaClassificationName(value)}
         />
       </>
     ))}

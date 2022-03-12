@@ -9,16 +9,21 @@ import {
   isNullSketchCollection,
   toNullSketchArray,
   createMetric,
+  Sketch,
+  SketchCollection,
 } from "@seasketch/geoprocessing/client-core";
 import {
   classifyMPA,
   constants,
   MpaClassification,
+  scores,
   Zone,
 } from "mpa-reg-based-classification";
+import { RbcsMpaProtectionLevel } from "../types/objective";
+import { getSketchFeatures } from "./sketch";
 
 /**
- * Extended metric for mpa-reg-based-classification results
+ * Extended metric for mpa-reg-based-classification results, either zone or mpa classification
  */
 export interface RegBasedClassificationMetric extends Omit<Metric, "extra"> {
   sketchId: string;
@@ -33,7 +38,7 @@ export interface RegBasedClassificationMetric extends Omit<Metric, "extra"> {
 /**
  * Returns protection level given MPA classification index value
  */
-export function getProtectionLevel(index: number) {
+export function getMpaClassificationName(index: number) {
   if (index < 3) {
     return "Fully Protected Area";
   } else if (index < 5) {
@@ -47,7 +52,14 @@ export function getProtectionLevel(index: number) {
   }
 }
 
-export const sketchToZone = (sketch: NullSketch, sketchArea: number): Zone => {
+export function getZoneClassificationName(zoneId: number) {
+  return scores[zoneId].label;
+}
+
+export const sketchToZone = (
+  sketch: Sketch | NullSketch,
+  sketchArea: number
+): Zone => {
   const gearTypes = getJsonUserAttribute<string[]>(
     sketch.properties,
     "GEAR_TYPES",
@@ -65,6 +77,47 @@ export const sketchToZone = (sketch: NullSketch, sketchArea: number): Zone => {
     constants.AQUACULTURE_AND_BOTTOM_EXPLOITATION[aquaculture];
   return [gearTypesMapped, aquacultureMapped, boatingMapped, sketchArea];
 };
+
+/**
+ * Returns object mapping sketch id to MPA classification
+ * given sketch for rbcsMpa or collection of sketches for rbcsMpas with rbcs activity userAttributes,
+ * and area metrics for each sketch, assumes each mpa is a single zone mpa
+ * @param sketch - sketch or sketch collection with GEAR_TYPES (multi),
+ * BOATING (single), and AQUACULTURE (single) user attributes
+ * @param childMetrics - area metrics for sketches
+ */
+export function getSketchToMpaProtectionLevel(
+  sketch: Sketch | SketchCollection | NullSketchCollection | NullSketch,
+  metrics: Metric[]
+): Record<string, RbcsMpaProtectionLevel> {
+  // Extract sketch features
+  const sketchFeatures = getSketchFeatures(sketch);
+  const sketchFeatureIds = sketchFeatures.map((sk) => sk.properties.id);
+  const sketchFeatureAreaMetrics = metrics.filter((m) =>
+    sketchFeatureIds.includes(m.sketchId!)
+  );
+  const areaBySketchFeature = keyBy(
+    sketchFeatureAreaMetrics,
+    (m) => m.sketchId!
+  );
+
+  // classify sketch features as single zone rbcs mpas
+  const mpaClasses = sketchFeatures.map((sk) => {
+    return classifyMPA([
+      sketchToZone(sk, areaBySketchFeature[sk.properties.id].value),
+    ]);
+  });
+  const mapping = mpaClasses.reduce<Record<string, RbcsMpaProtectionLevel>>(
+    (mapSoFar, mpaClass, index) => ({
+      ...mapSoFar,
+      [sketchFeatures[index].properties.id]:
+        mpaClass.indexLabel as RbcsMpaProtectionLevel,
+    }),
+    {}
+  );
+
+  return mapping;
+}
 
 /**
  * Transforms an rbcs zone object to a metric
@@ -156,13 +209,16 @@ export function zoneClassMetrics(
 export function mpaClassMetric(
   sketch: NullSketch,
   childAreaMetric: Metric
-): RegBasedClassificationMetric {
-  const mpaClass = classifyMPA([sketchToZone(sketch, childAreaMetric.value)]);
-  return rbcsMpaToMetric(
-    sketch.properties.id,
-    mpaClass.index,
-    mpaClass.indexLabel
-  );
+): RegBasedClassificationMetric[] {
+  const zoneClass = sketchToZone(sketch, childAreaMetric.value);
+  const mpaClass = classifyMPA([zoneClass]);
+  return [
+    // Convert all zone scores but will only be 1
+    ...mpaClass.scores.map((zoneScore) =>
+      rbcsZoneToMetric(sketch.properties.id, zoneClass, zoneScore)
+    ),
+    rbcsMpaToMetric(sketch.properties.id, mpaClass.index, mpaClass.indexLabel),
+  ];
 }
 
 /**

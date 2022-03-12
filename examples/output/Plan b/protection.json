@@ -1,0 +1,486 @@
+{
+  "metrics": [
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 91845732270.84148,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "eez",
+      "groupId": "Fully Protected Area",
+      "geographyId": null,
+      "value": 91845732270.84148,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 91515349909.68886,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "eez",
+      "groupId": "Highly Protected Area",
+      "geographyId": null,
+      "value": 91515349909.68886,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 352031670521.6982,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "eez",
+      "groupId": "Fully Protected Area",
+      "geographyId": null,
+      "value": 91845732270.84148,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "eez",
+      "groupId": "Highly Protected Area",
+      "geographyId": null,
+      "value": 218029539597.164,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "eez",
+      "groupId": "Moderately Protected Area",
+      "geographyId": null,
+      "value": 42156398653.69228,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "eez",
+      "groupId": "Poorly Protected Area",
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "eez",
+      "groupId": "Unprotected Area",
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 42156398653.69225,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "eez",
+      "groupId": "Moderately Protected Area",
+      "geographyId": null,
+      "value": 42156398653.69225,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 91515349909.68886,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "eez",
+      "groupId": "Highly Protected Area",
+      "geographyId": null,
+      "value": 91515349909.68886,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 48196559934.91962,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "eez",
+      "groupId": "Highly Protected Area",
+      "geographyId": null,
+      "value": 48196559934.91962,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 78317629752.55685,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "eez",
+      "groupId": "Highly Protected Area",
+      "geographyId": null,
+      "value": 78317629752.55685,
+      "extra": {
+        "sketchName": "High B"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "FeatureCollection",
+    "properties": {
+      "id": "622bcc099bebba5441ad7a2e",
+      "name": "Plan b",
+      "updatedAt": "2022-03-12T12:13:29.787Z",
+      "createdAt": "2022-03-11T22:24:09.566Z",
+      "sketchClassId": "5f46dd57017aa0388f5f87cd",
+      "isCollection": true,
+      "userAttributes": []
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622bcbcd9bebba5441ad7a2a",
+          "name": "Full A",
+          "updatedAt": "2022-03-12T12:00:43.640Z",
+          "createdAt": "2022-03-11T22:23:09.353Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": ""
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "1",
+        "bbox": [
+          -28.926146416013914,
+          38.73078165204215,
+          -22.401640800781394,
+          42.07605128679705
+        ]
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622bcbfd9bebba5441ad7a2d",
+          "name": "High A",
+          "updatedAt": "2022-03-12T12:00:58.751Z",
+          "createdAt": "2022-03-11T22:23:57.736Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "2",
+        "bbox": [
+          -30.048125175779223,
+          34.064316089120766,
+          -25.302031425780566,
+          37.10146256471699
+        ]
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8bac9bebba5441ad7c32",
+          "name": "Moderate A",
+          "updatedAt": "2022-03-12T12:02:29.835Z",
+          "createdAt": "2022-03-12T12:01:48.984Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"DRIFT_NETS\",\"FISH_TRAPS\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "3",
+        "bbox": [
+          -24.862578300780683,
+          34.536252835165904,
+          -22.44558611328137,
+          36.82054893954891
+        ]
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8bee53322a4154af6d0a",
+          "name": "High A Copy",
+          "updatedAt": "2022-03-12T12:03:09.401Z",
+          "createdAt": "2022-03-11T22:23:57.736Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "4",
+        "bbox": [
+          -30.048125175779223,
+          34.064316089120766,
+          -25.302031425780566,
+          37.10146256471699
+        ]
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8c239bebba5441ad7c3a",
+          "name": "High B",
+          "updatedAt": "2022-03-12T12:03:55.492Z",
+          "createdAt": "2022-03-12T12:03:47.768Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "5",
+        "bbox": [
+          -24.554961113280775,
+          36.50328422531132,
+          -21.259062675781706,
+          38.765054917557954
+        ]
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8e619bebba5441ad7c58",
+          "name": "High B",
+          "updatedAt": "2022-03-12T12:13:29.820Z",
+          "createdAt": "2022-03-12T12:13:21.088Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"HAND_HARVESTING\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "6",
+        "bbox": [
+          -34.882109550777855,
+          39.07277330557226,
+          -30.88308611327899,
+          41.781804495196965
+        ]
+      }
+    ]
+  }
+}

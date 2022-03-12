@@ -11,6 +11,7 @@ export default {
 
 const objectives: Record<string, RbcsObjective> = {
   eez: {
+    id: "eez",
     shortDesc: "30% of EEZ protected",
     target: 0.3,
     countsToward: {
@@ -22,6 +23,7 @@ const objectives: Record<string, RbcsObjective> = {
     },
   },
   eezNoTake: {
+    id: "eezNoTake",
     shortDesc: "15% of EEZ no-take protection",
     target: 0.15,
     countsToward: {

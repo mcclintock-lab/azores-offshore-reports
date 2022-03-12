@@ -1,4 +1,7 @@
 declare module "mpa-reg-based-classification" {
+  type ZoneId = number;
+  type ZoneName = string;
+  type ZoneColor = string;
   type Zone = [string[], string, string, number];
   type MpaClassification = {
     scores: any[];
@@ -22,5 +25,5 @@ declare module "mpa-reg-based-classification" {
     export const BOATING_AND_ANCHORING: Record<string, string>;
   }
 
-  export const scores: Record<number, { label: string; color: string }>;
+  export const scores: Record<ZoneId, { label: ZoneName; color: ZoneColor }>;
 }

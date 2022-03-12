@@ -1,6 +1,6 @@
 import React from "react";
 import { ResultsCard, KeySection } from "@seasketch/geoprocessing/client-ui";
-import { BathymetryResults } from "../functions/bathymetry";
+import { BathymetryResults } from "../_config";
 
 const Percent = new Intl.NumberFormat("en", {
   style: "percent",

@@ -1,12 +1,17 @@
 import React from "react";
 import {
   RbcsObjective,
-  YES_COUNT_OBJECTIVE,
-  NO_COUNT_OBJECTIVE,
+  OBJECTIVE_YES,
+  OBJECTIVE_NO,
   RbcsMpaProtectionLevel,
 } from "../types/objective";
 import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import { ObjectiveStatus } from "./ObjectiveStatus";
+
+export type RenderMsgFunction = (
+  objective: RbcsObjective,
+  level: RbcsMpaProtectionLevel
+) => JSX.Element;
 
 export interface RbcsMpaObjectiveStatusProps {
   /** RBCS protection level for MPA to give status for */
@@ -14,10 +19,7 @@ export interface RbcsMpaObjectiveStatusProps {
   /** RBCS objective to weigh protection level against */
   objective: RbcsObjective;
   /** optional custom objective message */
-  renderMsg?: (
-    objective: RbcsObjective,
-    level: RbcsMpaProtectionLevel
-  ) => JSX.Element;
+  renderMsg?: RenderMsgFunction;
 }
 
 export const RbcsMpaObjectiveStatus: React.FunctionComponent<RbcsMpaObjectiveStatusProps> =
@@ -33,14 +35,14 @@ const defaultMsg = (
   objective: RbcsObjective,
   level: RbcsMpaProtectionLevel
 ) => {
-  if (objective.countsToward[level] === YES_COUNT_OBJECTIVE) {
+  if (objective.countsToward[level] === OBJECTIVE_YES) {
     return (
       <>
         This MPA counts towards protecting{" "}
         <b>{percentWithEdge(objective.target)}</b> of planning area.
       </>
     );
-  } else if (objective.countsToward[level] === NO_COUNT_OBJECTIVE) {
+  } else if (objective.countsToward[level] === OBJECTIVE_NO) {
     return (
       <>
         This MPA <b>does not</b> count towards protecting{" "}

@@ -7,23 +7,13 @@ import {
   toSketchArray,
 } from "@seasketch/geoprocessing";
 import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
-import config from "../_config";
+import config, { BathymetryResults } from "../_config";
 import bbox from "@turf/bbox";
 
 import { min, max, mean } from "simple-statistics";
 
 // @ts-ignore
 import geoblaze, { Georaster } from "geoblaze";
-
-export interface BathymetryResults {
-  /** minimum depth in sketch */
-  min: number;
-  /** maximum depth in sketch */
-  max: number;
-  /** avg depth in sketch */
-  mean: number;
-  units: string;
-}
 
 export async function bathymetry(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>

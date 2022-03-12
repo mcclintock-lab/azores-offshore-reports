@@ -21,12 +21,21 @@ export const fgbFileSuffix = ".fgb";
 //// OBJECTIVES ////
 
 // Build project objectives up using RBCS types
-export const projectObjectiveNames = ["eez", "eezNoTake"] as const;
-export type ProjectObjectiveName = typeof projectObjectiveNames[number];
-export type ProjectObjectives = Record<ProjectObjectiveName, RbcsObjective>;
+export const projectObjectiveIds = ["eez", "eezNoTake"] as const;
+export type ProjectObjectiveId = typeof projectObjectiveIds[number];
+export type ProjectObjectives = Record<ProjectObjectiveId, RbcsObjective>;
+
+/**
+ * Type guard for checking string is one of supported objective IDs
+ * Use in conditional block logic to coerce to type RbcsObjectiveKey within the block
+ */
+export function isProjectObjectiveId(key: string): key is ProjectObjectiveId {
+  return projectObjectiveIds.includes(key as ProjectObjectiveId);
+}
 
 export const objectives: ProjectObjectives = {
   eez: {
+    id: "eez",
     shortDesc: "30% of EEZ protected",
     target: 0.3,
     countsToward: {
@@ -38,6 +47,7 @@ export const objectives: ProjectObjectives = {
     },
   },
   eezNoTake: {
+    id: "eezNoTake",
     shortDesc: "15% of EEZ no-take protection",
     target: 0.15,
     countsToward: {
@@ -86,6 +96,18 @@ const protection: Report = {
     },
   },
 };
+
+//// BATHYMETRY ////
+
+export interface BathymetryResults {
+  /** minimum depth in sketch */
+  min: number;
+  /** maximum depth in sketch */
+  max: number;
+  /** avg depth in sketch */
+  mean: number;
+  units: string;
+}
 
 export default {
   STUDY_REGION_AREA_SQ_METERS,

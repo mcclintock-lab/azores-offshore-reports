@@ -1,6 +1,6 @@
 # Azores Offshore Reports
 
-Report analytics for the Azores Offshore planning process.
+Report analytics for the Azores Offshore marine planning process.
 
 Integrates with [Seasketch](https://github.com/mcclintock-lab/SeaSketch) and [SeasketchNext](https://github.com/seasketch/next)
 

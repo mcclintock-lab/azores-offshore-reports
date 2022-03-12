@@ -1,6 +1,7 @@
 import React from "react";
 import { ZoneRegIcon } from "./RbcsIcons";
 import { scores } from "mpa-reg-based-classification";
+import { getZoneClassificationName } from "../helpers/mpaRegBasedClassification";
 
 export interface RbcsPanelProps {
   value: number;
@@ -25,7 +26,7 @@ export const RbcsZoneClassPanel: React.FunctionComponent<RbcsPanelProps> = ({
       <div style={{ paddingRight: 10 }}>
         <ZoneRegIcon value={value} size={size} />
       </div>
-      <div style={{ fontSize: 18 }}>{scores[value].label}</div>
+      <div style={{ fontSize: 18 }}>{getZoneClassificationName(value)}</div>
     </div>
   );
 };
