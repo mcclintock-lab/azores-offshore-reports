@@ -103,7 +103,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   }
   .legend li {
     display: inline-block;
-    padding: 0.25em 0.7em;
+    padding: 0.25em 0.8em;
     line-height: 1em;
   }
   .legend li:before {
@@ -189,7 +189,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
       font-size: 1em;
     }
     .legend {
-      width: 90%;
+      width: 100%;
     }
   }
 `;

@@ -32,7 +32,8 @@ import {
 } from "../helpers/mpaRegBasedClassification";
 import { scores } from "mpa-reg-based-classification";
 import { RbcsMpaClassPanel } from "../components/RbcsMpaClassPanel";
-import { RbcsIcon, ZoneRegIcon } from "../components/RbcsIcons";
+import { ZoneRegIcon } from "../components/RbcsIcons";
+import { PointyCircle } from "../components/PointyCircle";
 import { RbcsLearnMore } from "../components/RbcsLearnMore";
 import { AzoresMpaObjectives } from "../components/AzoresMpaObjectives";
 import {
@@ -56,6 +57,14 @@ const precalcTotals = protectionTotals as ReportResultBase;
 const REPORT = config.reports.protection;
 const METRIC = REPORT.metrics.areaOverlap;
 const OBJECTIVES = config.objectives;
+
+const groupColorMap: Record<string, string> = {
+  "Fully Protected Area": "#BEE4BE",
+  "Highly Protected Area": "#FFE1A3",
+  "Moderately Protected Area": "#F7A6B4",
+  "Poorly Protected Area": "#F7A6B4",
+  "Unprotected Area": "#F7A6B4",
+};
 
 import styled from "styled-components";
 
@@ -108,17 +117,36 @@ const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
   return (
     <>
       <p>This MPA is classified by its allowed actitivities as follows:</p>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <span style={{ paddingBottom: 10, width: 60 }}>Zone:</span>
-        <RbcsZoneClassPanel value={sketchRegZoneMetric.value} />
-      </div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <span style={{ paddingBottom: 10, width: 60 }}>MPA:</span>
-        <RbcsMpaClassPanel
-          value={sketchRegMpaMetric.value}
-          displayName={sketchRegMpaMetric.extra?.label || "Missing label"}
-          displayValue={false}
-        />
+      <div style={{ padding: 10, border: "1px dotted #aaa", borderRadius: 10 }}>
+        <div
+          style={{
+            padding: "0px 10px 10px 10px",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <span style={{ width: 60 }}>MPA:</span>
+          <RbcsMpaClassPanel
+            value={sketchRegMpaMetric.value}
+            size={18}
+            displayName={sketchRegMpaMetric.extra?.label || "Missing label"}
+            displayValue={false}
+            group={sketchRegMpaMetric.extra?.label}
+            groupColorMap={groupColorMap}
+          />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            border: "1px dotted #ddd",
+            borderRadius: 10,
+            padding: 10,
+          }}
+        >
+          <span style={{ width: 60 }}>Zone:</span>
+          <RbcsZoneClassPanel value={sketchRegZoneMetric.value} size={18} />
+        </div>
       </div>
       <p>Based on those assigned classifications:</p>
       <AzoresMpaObjectives
@@ -212,9 +240,9 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
     max: 100,
   };
 
-  const blueColors = ["#4292c6", "#6baed6", "#9ecae1", "#c6dbef", "#eff3ff"];
+  const groupColors = Object.values(groupColorMap);
   const blockGroupNames = ["Full", "High", "Moderate", "Poor", "Unprotected"];
-  const blockGroupStyles = blueColors.map((curBlue) => ({
+  const blockGroupStyles = groupColors.map((curBlue) => ({
     backgroundColor: curBlue,
   }));
   const valueFormatter = (value: number) => percentWithEdge(value / 100);
@@ -233,7 +261,7 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
     <>
       <p>
         Plans must provide sufficient protection to meet network size
-        objectives.
+        objectives. This plans MPAs provide the following levels of protection:
       </p>
       <HorizontalStackedBar
         {...chartAllConfig}
@@ -300,14 +328,22 @@ const genMpaSketchTable = (
       accessor: (row) => sketchesById[row.sketchId].properties.name,
     },
     {
-      Header: "Protection Level",
-      accessor: (row) => row.extra?.label,
-    },
-    {
       Header: "Index Score",
       accessor: (row) => {
-        return <RbcsIcon value={row.value} size={20} />;
+        return (
+          <PointyCircle
+            color={
+              row.extra?.label ? groupColorMap[row.extra.label] : undefined
+            }
+          >
+            {row.value}
+          </PointyCircle>
+        );
       },
+    },
+    {
+      Header: "Protection Level",
+      accessor: (row) => row.extra?.label,
     },
   ];
 
@@ -376,7 +412,7 @@ const genGroupLevelTable = (levelAggs: GroupMetricAgg[]) => {
       accessor: (row) => (
         <GroupCircleRow
           group={row.groupId}
-          groupColorMap={{}}
+          groupColorMap={groupColorMap}
           circleText={`${row.numSketches}`}
           rowText={
             <>
@@ -393,7 +429,7 @@ const genGroupLevelTable = (levelAggs: GroupMetricAgg[]) => {
       Header: "% EEZ",
       accessor: (row) => {
         return (
-          <GroupPill groupColorMap={{}} group={row.groupId}>
+          <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
             {percentWithEdge(row.percValue as number)}
           </GroupPill>
         );

@@ -20,7 +20,6 @@ export const RbcsZoneClassPanel: React.FunctionComponent<RbcsPanelProps> = ({
       style={{
         display: "flex",
         alignItems: "center",
-        paddingBottom: 10,
       }}
     >
       <div style={{ paddingRight: 10 }}>
