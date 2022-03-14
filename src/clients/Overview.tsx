@@ -2,7 +2,6 @@ import React, { FunctionComponent } from "react";
 import RbcsActivitiesCard from "../components/RbcsActivitiesCard";
 import ProtectionCard from "./ProtectionCard";
 import SizeCard from "./SizeCard";
-import MinWidthCard from "./MinWidthCard";
 import BathymetryCard from "./BathymetryCard";
 
 interface ReportProps {
@@ -13,9 +12,8 @@ const Overview: FunctionComponent<ReportProps> = ({ hidden }) => {
   return (
     <div style={{ display: hidden ? "none" : "block" }}>
       <SizeCard />
-      <MinWidthCard />
-      <BathymetryCard />
       <ProtectionCard />
+      <BathymetryCard />
       <RbcsActivitiesCard />
     </div>
   );

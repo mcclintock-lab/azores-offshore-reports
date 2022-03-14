@@ -20,7 +20,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   h6 {
     font-size: 0.8em;
     padding: 0 0.5em 0.5em 0;
-    width: 5em;
+    width: 6em;
     text-align: right;
     color: #666;
   }
@@ -103,7 +103,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   }
   .legend li {
     display: inline-block;
-    padding: 0.25em 1em;
+    padding: 0.25em 0.7em;
     line-height: 1em;
   }
   .legend li:before {
@@ -182,14 +182,14 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   @media screen and (min-width: 768px) {
     h6 {
       padding: 0 0.5em 0.5em 0;
-      width: 5em;
+      width: 6em;
       float: left;
     }
     .block {
       font-size: 1em;
     }
     .legend {
-      width: 50%;
+      width: 90%;
     }
   }
 `;
@@ -283,8 +283,12 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
                     ))
                   )}
                   <div className="zero-marker" />
-                  <div className="marker" />
-                  <div className="marker-label">Goal</div>
+                  {target && (
+                    <>
+                      <div className="marker" />
+                      <div className="marker-label">Goal</div>
+                    </>
+                  )}
                   <div className="total-label">
                     {valueFormatter
                       ? valueFormatter(rowTotals[rowNumber])

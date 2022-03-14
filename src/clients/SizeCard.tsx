@@ -29,14 +29,14 @@ const SizeCard = () => (
       return (
         <>
           <p>
-            Marine management areas must be large enough to sustain focal
-            species within their boundaries during their adult and juvenile life
-            history phases. Different species move different distances as adults
-            and juveniles, so larger areas may include more species.
+            Marine protected areas must be large enough to sustain focal species
+            within their boundaries during their adult and juvenile life history
+            phases. Different species move different distances as adults and
+            juveniles, so larger areas may include more species.
           </p>
 
           <KeySection>
-            This design is{" "}
+            This plan is{" "}
             <b>
               {areaDisplay} {areaUnitDisplay}
             </b>

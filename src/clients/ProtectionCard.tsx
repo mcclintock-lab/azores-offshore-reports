@@ -180,11 +180,21 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
 
   // Objective charts
 
+  const chartAllConfig = {
+    rows: [groupLevelAggs.map((agg) => [agg.percValue * 100])],
+    rowConfigs: [
+      {
+        title: "% EEZ within plan",
+      },
+    ],
+    max: 100,
+  };
+
   const chart1Config = {
     rows: [totalsByObjective["eez"].map((value) => [value * 100])],
     rowConfigs: [
       {
-        title: "30% of EEZ",
+        title: "",
       },
     ],
     target: OBJECTIVES["eez"].target * 100,
@@ -195,7 +205,7 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
     rows: [totalsByObjective["eezNoTake"].map((value) => [value * 100])],
     rowConfigs: [
       {
-        title: "15% of EEZ as no-take",
+        title: "",
       },
     ],
     target: OBJECTIVES["eezNoTake"].target * 100,
@@ -203,7 +213,7 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
   };
 
   const blueColors = ["#4292c6", "#6baed6", "#9ecae1", "#c6dbef", "#eff3ff"];
-  const blockGroupNames = ["Fully Protected", "Highly Protected"];
+  const blockGroupNames = ["Full", "High", "Moderate", "Poor", "Unprotected"];
   const blockGroupStyles = blueColors.map((curBlue) => ({
     backgroundColor: curBlue,
   }));
@@ -221,6 +231,22 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
 
   return (
     <>
+      <p>
+        Plans must provide sufficient protection to meet network size
+        objectives.
+      </p>
+      <HorizontalStackedBar
+        {...chartAllConfig}
+        blockGroupNames={blockGroupNames}
+        blockGroupStyles={blockGroupStyles}
+        showLegend={false}
+        showTitle={true}
+        valueFormatter={valueFormatter}
+      />
+      <ChartLegend
+        blockGroupNames={blockGroupNames}
+        blockGroupStyles={blockGroupStyles}
+      />
       <AzoresNetworkObjectiveStatus
         objective={OBJECTIVES.eez}
         objectiveMet={eezMet}
@@ -230,7 +256,6 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
         blockGroupNames={blockGroupNames}
         blockGroupStyles={blockGroupStyles}
         showLegend={false}
-        showTitle={false}
         valueFormatter={valueFormatter}
       />
       <AzoresNetworkObjectiveStatus
@@ -242,21 +267,17 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
         blockGroupNames={blockGroupNames}
         blockGroupStyles={blockGroupStyles}
         showLegend={false}
-        showTitle={false}
         valueFormatter={valueFormatter}
       />
 
-      <ChartLegend
-        blockGroupNames={blockGroupNames}
-        blockGroupStyles={blockGroupStyles}
-      />
-
-      {genGroupLevelTable(groupLevelAggs)}
+      {genLearnMore()}
+      <Collapse title="Show by Protection Level">
+        {genGroupLevelTable(groupLevelAggs)}
+      </Collapse>
 
       <Collapse title="Show by MPA">
         {genMpaSketchTable(sketchesById, regChildMetrics)}
       </Collapse>
-      {genLearnMore()}
     </>
   );
 };
