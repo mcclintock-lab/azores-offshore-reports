@@ -9,7 +9,7 @@ const Percent = new Intl.NumberFormat("en", {
 
 const formatDepth = (val: number) => {
   const baseVal = Math.abs(parseInt(val.toString()));
-  return val <= 0 ? `${baseVal}m` : `+${baseVal}m`;
+  return val <= 0 ? `-${baseVal}m` : `+${baseVal}m`;
 };
 
 const BathymetryCard = () => (
