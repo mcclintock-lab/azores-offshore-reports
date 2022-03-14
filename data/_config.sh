@@ -1,1 +1,1 @@
-DATASET_S3_BUCKET=gp-azores-offshore-reports-datasets
+DATASET_S3_BUCKET=gp-azores-offshore-reports-2-datasets

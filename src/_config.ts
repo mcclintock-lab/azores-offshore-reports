@@ -1,5 +1,7 @@
-import { DataClass, Report } from "@seasketch/geoprocessing";
+import { Report } from "@seasketch/geoprocessing";
 import { RbcsObjective } from "./types/objective";
+import packageJson from "../package.json";
+import geoprocessingJson from "../geoprocessing.json";
 
 /**
  * Area of ocean within eez minus land in square miles. Calculated by drawing
@@ -13,7 +15,7 @@ export const localDataUrl = `http://127.0.0.1:8080/`;
 export const dataBucketUrl =
   process.env.NODE_ENV === "test"
     ? localDataUrl
-    : `https://gp-azores-offshore-reports-datasets.s3.eu-west-3.amazonaws.com/`;
+    : `https://gp-${packageJson.name}-datasets.s3.${geoprocessingJson.region}.amazonaws.com/`;
 
 export const cogFileSuffix = "_cog.tif";
 export const fgbFileSuffix = ".fgb";

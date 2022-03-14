@@ -1,7 +1,7 @@
 {
   "author": "Tim Welch <tim.j.welch@gmail.com>",
   "organization": "SeaSketch",
-  "region": "eu-west-3",
+  "region": "us-east-1",
   "clients": [
     {
       "name": "AllReports",
@@ -9,9 +9,9 @@
       "source": "src/clients/AllReports.tsx"
     },
     {
-      "name": "RegBasedClassification",
+      "name": "ProtectionCard",
       "description": "Calculate regulation-based MPA classification",
-      "source": "src/clients/RegBasedClassification.tsx"
+      "source": "src/clients/ProtectionCard.tsx"
     },
     {
       "name": "SketchAttributes",
@@ -25,7 +25,6 @@
   "geoprocessingFunctions": [
     "src/functions/area.ts",
     "src/functions/bathymetry.ts",
-    "src/functions/minWidth.ts",
     "src/functions/protection.ts"
   ]
 }

@@ -1,7 +1,7 @@
 {
-  "name": "azores-offshore-reports",
+  "name": "azores-offshore-reports-2",
   "version": "1.0.0",
-  "description": "Seasketch next reports for NZ national project",
+  "description": "Seasketch geoprocessing report stack for Azores",
   "main": "src/index.js",
   "scripts": {
     "ts-node": "ts-node --transpile-only --compiler-options '{\"esModuleInterop\":true, \"module\":\"commonjs\"}'",
@@ -43,7 +43,7 @@
     "union-subdivided-polygons": "^0.9.1"
   },
   "devDependencies": {
-    "@seasketch/geoprocessing": "0.14.1-alpha.0",
+    "@seasketch/geoprocessing": "0.14.1-alpha.1",
     "@turf/boolean-disjoint": "6.5.0",
     "@turf/boolean-valid": "6.5.0",
     "http-server": "^0.12.3",
