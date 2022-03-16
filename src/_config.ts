@@ -1,4 +1,4 @@
-import { Report } from "@seasketch/geoprocessing";
+import { DataClass, MetricGroup, Report } from "@seasketch/geoprocessing";
 import { RbcsObjective } from "./types/objective";
 import packageJson from "../package.json";
 import geoprocessingJson from "../geoprocessing.json";
@@ -19,6 +19,13 @@ export const dataBucketUrl =
 
 export const cogFileSuffix = "_cog.tif";
 export const fgbFileSuffix = ".fgb";
+
+//// EXTERNAL RESOURCES ////
+
+const externalLinks = {
+  scpReport:
+    "https://s3.amazonaws.com/SeaSketch/SCP_Azores_final+report_v3.1.pdf",
+};
 
 //// OBJECTIVES ////
 
@@ -111,14 +118,56 @@ export interface BathymetryResults {
   units: string;
 }
 
+//// FISHING IMPACT ////
+
+const oceanUseClasses: DataClass[] = [
+  {
+    baseFilename: "bottom_longline_footprint",
+    classId: "bottom_longline_footprint",
+    display: "Fishing Footprint (area)",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "6216c0f5824398156adaa071",
+  },
+  {
+    baseFilename: "bottom_longline_effort",
+    classId: "bottom_longline_effort",
+    display: "Fishing Effort (value)",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "6216c0f5824398156adaa073",
+  },
+];
+
+const oceanUseMG: Record<string, MetricGroup> = {
+  valueOverlap: {
+    metricId: "valueOverlap",
+    datasourceId: "oceanUse",
+    classes: oceanUseClasses.map((curClass) => {
+      return {
+        ...curClass,
+        filename: `${curClass.baseFilename}${cogFileSuffix}`,
+      };
+    }),
+  },
+};
+
+const fishingImpactReport: Report = {
+  reportId: "fishingImpact",
+  metrics: oceanUseMG,
+};
+
 export default {
   STUDY_REGION_AREA_SQ_METERS,
   units,
   localDataUrl,
   dataBucketUrl,
   objectives,
+  externalLinks,
   reports: {
     sizeReport,
     protection,
+    fishingImpact: fishingImpactReport,
+  },
+  metricGroups: {
+    oceanUse: oceanUseMG,
   },
 };

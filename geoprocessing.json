@@ -17,6 +17,11 @@
       "name": "SketchAttributes",
       "description": "Display sketch attributes",
       "source": "src/clients/SketchAttributes.tsx"
+    },
+    {
+      "name": "FishingImpact",
+      "description": "Calculate impact to fishing",
+      "source": "src/clients/FishingImpact.tsx"
     }
   ],
   "preprocessingFunctions": [
@@ -25,6 +30,7 @@
   "geoprocessingFunctions": [
     "src/functions/area.ts",
     "src/functions/bathymetry.ts",
-    "src/functions/protection.ts"
+    "src/functions/protection.ts",
+    "src/functions/oceanUse.ts"
   ]
 }

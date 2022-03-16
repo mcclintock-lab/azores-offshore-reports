@@ -1,0 +1,20 @@
+{
+  "metrics": [
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "bottom_longline_footprint",
+      "groupId": null,
+      "geographyId": null,
+      "value": 886
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "bottom_longline_effort",
+      "groupId": null,
+      "geographyId": null,
+      "value": 172.27530534325342
+    }
+  ]
+}
