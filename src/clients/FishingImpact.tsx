@@ -107,6 +107,7 @@ const FishingImpact = () => {
               </Collapse>
 
               <ClassTable
+                titleText=" "
                 valueColText="Within Plan"
                 rows={parentMetrics}
                 dataGroup={METRIC}
