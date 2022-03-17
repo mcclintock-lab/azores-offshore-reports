@@ -342,7 +342,7 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
                           <div className="marker-label">
                             {targetValueFormatter
                               ? targetValueFormatter(rowTotals[rowNumber])
-                              : "Goal"}
+                              : "Target"}
                           </div>
                         )}
                       </>

@@ -140,7 +140,7 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
                 barHeight={20}
                 target={goal || undefined}
                 targetValueFormatter={(value: number) =>
-                  `Goal - ${percentWithEdge(goal / 100)}`
+                  `Target - ${percentWithEdge(goal / 100)}`
                 }
                 targetReachedColor={OBJECTIVE_GREEN}
               />
