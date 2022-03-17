@@ -12,8 +12,9 @@ import {
   GreenPill,
   ReportTableStyled,
 } from "@seasketch/geoprocessing/client-ui";
-import { XCircleFill, CheckCircleFill } from "@styled-icons/bootstrap";
+import { CheckCircleFill } from "@styled-icons/bootstrap";
 import { HorizontalStackedBar } from "./HorizontalStackedBar";
+import { OBJECTIVE_GREEN } from "../types/objective";
 
 export interface ClassTableProps {
   /** Table row objects, each expected to have a classId and value. Defaults to "Class" */
@@ -95,12 +96,12 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
     {
       Header: valueColText,
       style: { textAlign: "center", width: colWidths.percColWidth },
-      accessor: (row) => {
+      accessor: (row, rowIndex) => {
         const valueDisplay = formatPerc
           ? percentWithEdge(row.value)
           : row.value;
         // @ts-ignore: need to add objective to type
-        const goal = dataGroup.objective.target * 100 || 0;
+        const goal = dataGroup.objective ? dataGroup.objective.target * 100 : 0;
 
         const chartAllConfig = {
           rows: [[[row.value * 100]]],
@@ -108,11 +109,13 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
             {
               title: (value: number) => (
                 <>
-                  {value >= goal && (
+                  {goal && value >= goal ? (
                     <CheckCircleFill
                       size={14}
                       style={{ color: "#78c679", paddingRight: 5 }}
                     />
+                  ) : (
+                    <></>
                   )}
                   {percentWithEdge(value / 100)}
                 </>
@@ -131,10 +134,15 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
                 blockGroupStyles={[{ backgroundColor: "#ddd" }]}
                 showTitle={true}
                 showLegend={false}
-                showTargetLabel={false}
+                showTargetLabel={rowIndex === rows.length - 1 ? true : false}
+                targetLabelPosition="bottom"
                 showTotalLabel={false}
                 barHeight={20}
-                target={goal}
+                target={goal || undefined}
+                targetValueFormatter={(value: number) =>
+                  `Goal - ${percentWithEdge(goal / 100)}`
+                }
+                targetReachedColor={OBJECTIVE_GREEN}
               />
             </div>
           </div>

@@ -1,9 +1,7 @@
 import React from "react";
 import {
   Collapse,
-  ClassTable,
   ResultsCard,
-  Skeleton,
   SketchClassTable,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
@@ -15,6 +13,7 @@ import {
   metricsWithSketchId,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
+import { ClassTable } from "../components/ClassTable";
 import config from "../_config";
 
 import oceanUseTotals from "../../data/precalc/oceanUseTotals.json";

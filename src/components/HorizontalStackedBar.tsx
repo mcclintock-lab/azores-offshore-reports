@@ -1,6 +1,7 @@
 import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import React from "react";
 import styled from "styled-components";
+import { OBJECTIVE_GREEN } from "../types/objective";
 
 export interface StyledHorizontalStackedBarProps {
   rowTotals: number[];
@@ -8,6 +9,7 @@ export interface StyledHorizontalStackedBarProps {
   showTitle: boolean;
   target?: number;
   barHeight?: number;
+  targetLabelPosition?: "top" | "bottom";
 }
 
 const defaults = {
@@ -165,10 +167,10 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
       ? `
         .marker-label {
           position: absolute;
-          top: -18px;
-          left: ${props.target ? props.target - 5 : 0}%;
-          width: 10%;
-          text-align: center;
+          ${props.targetLabelPosition || "top"}: -18px;
+          left: ${props.target ? props.target : 0}%;
+          width: 100px;
+          text-align: left;
           font-size: 0.8em;
           color: #999;
         }
@@ -232,14 +234,17 @@ export interface HorizontalStackedBarProps {
   max: number;
   blockGroupNames: string[];
   /** Style for each block group */
-  blockGroupStyles?: NonNullable<React.HTMLAttributes<HTMLElement>["style"]>[];
+  blockGroupStyles?: React.CSSProperties[];
   barHeight?: number;
   target?: number;
   showTargetLabel?: boolean;
   showTitle?: boolean;
   showLegend?: boolean;
   showTotalLabel?: boolean;
+  targetLabelPosition?: "top" | "bottom";
   valueFormatter?: (value: number) => string | JSX.Element;
+  targetValueFormatter?: (value: number) => string | JSX.Element;
+  targetReachedColor?: string;
 }
 
 /**
@@ -255,9 +260,12 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
     showTitle = true,
     showTotalLabel = true,
     showTargetLabel = true,
+    targetLabelPosition = "top",
     target,
     blockGroupNames,
     valueFormatter,
+    targetValueFormatter,
+    targetReachedColor,
     ...rest
   }) => {
     const numBlockGroups = rows[0].length;
@@ -290,6 +298,7 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
         blockGroupColors={blockGroupStyles
           .map((style) => style.backgroundColor)
           .slice(0, numBlockGroups)}
+        targetLabelPosition={targetLabelPosition}
       >
         <>
           <div className="graphic">
@@ -302,6 +311,7 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
                   return () => titleProp;
                 }
               })();
+              const targetReached = target && rowTotals[rowNumber] >= target;
               return (
                 <div className={`row row-${rowNumber}`}>
                   {showTitle && (
@@ -316,6 +326,9 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
                           style={{
                             width: `${blockValue}%`,
                             ...blockGroupStyles[blockGroupNumber],
+                            ...(targetReached && targetReachedColor
+                              ? { backgroundColor: targetReachedColor }
+                              : {}),
                           }}
                           className={`block-group-${blockGroupNumber} block-${blockNumber} block`}
                         ></span>
@@ -326,7 +339,11 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
                       <>
                         <div className="marker" />
                         {showTargetLabel && (
-                          <div className="marker-label">Goal</div>
+                          <div className="marker-label">
+                            {targetValueFormatter
+                              ? targetValueFormatter(rowTotals[rowNumber])
+                              : "Goal"}
+                          </div>
                         )}
                       </>
                     )}
