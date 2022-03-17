@@ -67,6 +67,7 @@ const groupColorMap: Record<string, string> = {
 };
 
 import styled from "styled-components";
+import { ReportChartFigure } from "../components/ReportChartFigure";
 
 export const SmallReportTableStyled = styled(ReportTableStyled)`
   .styled {
@@ -263,40 +264,42 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
         Plans must provide sufficient protection to meet network size
         objectives. This plans MPAs provide the following levels of protection:
       </p>
-      <HorizontalStackedBar
-        {...chartAllConfig}
-        blockGroupNames={blockGroupNames}
-        blockGroupStyles={blockGroupStyles}
-        showLegend={false}
-        showTitle={true}
-        valueFormatter={valueFormatter}
-      />
-      <ChartLegend
-        blockGroupNames={blockGroupNames}
-        blockGroupStyles={blockGroupStyles}
-      />
+      <ReportChartFigure>
+        <HorizontalStackedBar
+          {...chartAllConfig}
+          blockGroupNames={blockGroupNames}
+          blockGroupStyles={blockGroupStyles}
+          showLegend={true}
+          showTitle={true}
+          valueFormatter={valueFormatter}
+        />
+      </ReportChartFigure>
       <AzoresNetworkObjectiveStatus
         objective={OBJECTIVES.eez}
         objectiveMet={eezMet}
       />
-      <HorizontalStackedBar
-        {...chart1Config}
-        blockGroupNames={blockGroupNames}
-        blockGroupStyles={blockGroupStyles}
-        showLegend={false}
-        valueFormatter={valueFormatter}
-      />
+      <ReportChartFigure>
+        <HorizontalStackedBar
+          {...chart1Config}
+          blockGroupNames={blockGroupNames}
+          blockGroupStyles={blockGroupStyles}
+          showLegend={false}
+          valueFormatter={valueFormatter}
+        />
+      </ReportChartFigure>
       <AzoresNetworkObjectiveStatus
         objective={OBJECTIVES.eezNoTake}
         objectiveMet={eezNoTakeMet}
       />
-      <HorizontalStackedBar
-        {...chart2Config}
-        blockGroupNames={blockGroupNames}
-        blockGroupStyles={blockGroupStyles}
-        showLegend={false}
-        valueFormatter={valueFormatter}
-      />
+      <ReportChartFigure>
+        <HorizontalStackedBar
+          {...chart2Config}
+          blockGroupNames={blockGroupNames}
+          blockGroupStyles={blockGroupStyles}
+          showLegend={false}
+          valueFormatter={valueFormatter}
+        />
+      </ReportChartFigure>
 
       {genLearnMore()}
       <Collapse title="Show by Protection Level">

@@ -5,7 +5,7 @@ import {
   RbcsObjective,
   ObjectiveAnswer,
 } from "../types/objective";
-import { isProjectObjectiveId, ProjectObjectiveId } from "../_config";
+import { isProjectSizeObjectiveId, ProjectSizeObjectiveId } from "../_config";
 import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import { ObjectiveStatus } from "./ObjectiveStatus";
 import { RbcsNetworkObjectiveStatus } from "./RbcsNetworkObjectiveStatus";
@@ -16,7 +16,7 @@ export type RenderMsgFunction = (
 ) => JSX.Element;
 
 /** Custom msg render for objectives */
-const msgs: Record<ProjectObjectiveId, RenderMsgFunction> = {
+const msgs: Record<ProjectSizeObjectiveId, RenderMsgFunction> = {
   eez: (objective: RbcsObjective, objectiveMet: ObjectiveAnswer) => {
     if (objectiveMet === OBJECTIVE_YES) {
       return (
@@ -83,7 +83,7 @@ export interface AzoresNetworkObjectiveProps {
 export const AzoresNetworkObjectiveStatus: React.FunctionComponent<AzoresNetworkObjectiveProps> =
   ({ objective, objectiveMet }) => {
     const objectiveId = (() => {
-      if (isProjectObjectiveId(objective.id)) {
+      if (isProjectSizeObjectiveId(objective.id)) {
         return objective.id;
       } else {
         throw new Error("Not a valid objective ID");

@@ -4,12 +4,9 @@ import ProtectionCard from "./ProtectionCard";
 import SizeCard from "./SizeCard";
 import BathymetryCard from "./BathymetryCard";
 import FishingImpact from "./FishingImpact";
+import { ReportPageProps } from "../types/ReportPage";
 
-interface ReportProps {
-  hidden: boolean;
-}
-
-const Overview: FunctionComponent<ReportProps> = ({ hidden }) => {
+const ReportPage: FunctionComponent<ReportPageProps> = ({ hidden }) => {
   return (
     <div style={{ display: hidden ? "none" : "block" }}>
       <SizeCard />
@@ -21,4 +18,4 @@ const Overview: FunctionComponent<ReportProps> = ({ hidden }) => {
   );
 };
 
-export default Overview;
+export default ReportPage;

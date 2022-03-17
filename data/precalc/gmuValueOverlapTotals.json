@@ -1,0 +1,76 @@
+{
+  "metrics": [
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 47
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 189
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 243
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 896
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 54
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 484
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3086
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 25577
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": null,
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3614
+    }
+  ]
+}

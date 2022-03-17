@@ -9,12 +9,12 @@ import {
   RbcsMpaProtectionLevel,
   RbcsObjective,
 } from "../types/objective";
-import { ProjectObjectives, ProjectObjectiveId } from "../_config";
+import { ProjectObjectives, ProjectSizeObjectiveId } from "../_config";
 import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
 import { getKeys } from "../helpers/ts";
 
 /** Custom msg render for eez objective */
-const msgs: Record<ProjectObjectiveId, RenderMsgFunction> = {
+const msgs: Record<ProjectSizeObjectiveId, RenderMsgFunction> = {
   eez: (objective: RbcsObjective, level: RbcsMpaProtectionLevel) => {
     if (objective.countsToward[level] === OBJECTIVE_YES) {
       return (

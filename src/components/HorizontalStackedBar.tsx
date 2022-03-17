@@ -5,8 +5,14 @@ import styled from "styled-components";
 export interface StyledHorizontalStackedBarProps {
   rowTotals: number[];
   blockGroupColors: (string | undefined)[];
+  showTitle: boolean;
   target?: number;
+  barHeight?: number;
 }
+
+const defaults = {
+  barHeight: 30,
+};
 
 const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   h3,
@@ -20,7 +26,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   h6 {
     font-size: 0.8em;
     padding: 0 0.5em 0.5em 0;
-    width: 6em;
+    width: 20%;
     text-align: right;
     color: #666;
   }
@@ -33,16 +39,27 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
     padding-left: 10px;
   }
   .row {
-    margin-bottom: 1em;
     display: flex;
     align-items: center;
   }
+
+  .title {
+    font-size: 0.9em;
+    width: 30%;
+    padding-right: 5px;
+    text-align: right;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  }
+
   @keyframes expand {
     from {
       width: 0%;
     }
     to {
-      width: calc(100% - 5em);
+      width: ${(props) => (props.showTitle ? 80 : 100)}%;
     }
   }
   @media screen and (min-width: 768px) {
@@ -51,7 +68,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
         width: 0%;
       }
       to {
-        width: calc(100% - 5em);
+        width: ${(props) => (props.showTitle ? 70 : 100)}%;
       }
     }
   }
@@ -75,7 +92,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
+    height: ${(props) => props.barHeight || defaults.barHeight}px;
     color: #333;
     font-size: 0.75em;
     float: left;
@@ -93,7 +110,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
 
   .x-axis {
     text-align: center;
-    padding: 0.5em 0 2em;
+    padding: 0.5em 0 0.5em;
   }
 
   .legend {
@@ -118,10 +135,10 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
   .zero-marker {
     position: absolute;
     left: 0;
-    height: 46px;
+    height: ${(props) => (props.barHeight || defaults.barHeight) * 1.5}px;
     width: 1.5px;
     background-color: #aaa;
-    top: -8px;
+    top: -${(props) => (props.barHeight || defaults.barHeight) * 0.25}px;
   }
 
   ${(props) =>
@@ -136,7 +153,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
           text-shadow: 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF, 0 0 2px #FFF;
           font-weight: bold;
           color: #666;
-          height: 30px;
+          height: ${props.barHeight || defaults.barHeight}px;
           display: flex;
           align-items: center;
         }
@@ -159,7 +176,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
         .marker {
           position: absolute;
           left: ${props.target}%;
-          height: 34px;
+          height: ${(props.barHeight || defaults.barHeight) + 4}px;
           width: 3px;
           background-color: #000;
           opacity: 0.35;
@@ -202,7 +219,7 @@ export type BlockGroup = Block[];
 export type Row = BlockGroup[];
 
 export type RowConfig = {
-  title: string;
+  title: string | ((value: number) => string | JSX.Element);
 };
 
 export interface HorizontalStackedBarProps {
@@ -210,15 +227,19 @@ export interface HorizontalStackedBarProps {
   rows: Row[];
   /** row config */
   rowConfigs: RowConfig[];
+  /** height of row bar in pixels */
   /** Maximum value for each row */
   max: number;
   blockGroupNames: string[];
   /** Style for each block group */
   blockGroupStyles?: NonNullable<React.HTMLAttributes<HTMLElement>["style"]>[];
+  barHeight?: number;
   target?: number;
+  showTargetLabel?: boolean;
   showTitle?: boolean;
   showLegend?: boolean;
-  valueFormatter?: (value: number) => string;
+  showTotalLabel?: boolean;
+  valueFormatter?: (value: number) => string | JSX.Element;
 }
 
 /**
@@ -229,8 +250,11 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
     rows,
     rowConfigs,
     max = 100,
+    barHeight = 30,
     showLegend = true,
     showTitle = true,
+    showTotalLabel = true,
+    showTargetLabel = true,
     target,
     blockGroupNames,
     valueFormatter,
@@ -261,42 +285,62 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
       <StyledHorizontalStackedBar
         rowTotals={rowTotals}
         target={target}
+        barHeight={barHeight}
+        showTitle={showTitle}
         blockGroupColors={blockGroupStyles
           .map((style) => style.backgroundColor)
           .slice(0, numBlockGroups)}
       >
-        <figure>
+        <>
           <div className="graphic">
-            {rows.map((row, rowNumber) => (
-              <div className={`row row-${rowNumber}`}>
-                {showTitle && <h6>{rowConfigs[rowNumber].title}</h6>}
-                <div className="chart">
-                  {row.map((blockGroup, blockGroupNumber) =>
-                    blockGroup.map((blockValue, blockNumber) => (
-                      <span
-                        style={{
-                          width: `${blockValue}%`,
-                          ...blockGroupStyles[blockGroupNumber],
-                        }}
-                        className={`block-group-${blockGroupNumber} block-${blockNumber} block`}
-                      ></span>
-                    ))
+            {rows.map((row, rowNumber) => {
+              const titleProp = rowConfigs[rowNumber].title;
+              const titleValue = (() => {
+                if (typeof titleProp === "function") {
+                  return titleProp;
+                } else {
+                  return () => titleProp;
+                }
+              })();
+              return (
+                <div className={`row row-${rowNumber}`}>
+                  {showTitle && (
+                    <div className="title">
+                      {titleValue(rowTotals[rowNumber])}
+                    </div>
                   )}
-                  <div className="zero-marker" />
-                  {target && (
-                    <>
-                      <div className="marker" />
-                      <div className="marker-label">Goal</div>
-                    </>
-                  )}
-                  <div className="total-label">
-                    {valueFormatter
-                      ? valueFormatter(rowTotals[rowNumber])
-                      : rowTotals[rowNumber]}
+                  <div className="chart">
+                    {row.map((blockGroup, blockGroupNumber) =>
+                      blockGroup.map((blockValue, blockNumber) => (
+                        <span
+                          style={{
+                            width: `${blockValue}%`,
+                            ...blockGroupStyles[blockGroupNumber],
+                          }}
+                          className={`block-group-${blockGroupNumber} block-${blockNumber} block`}
+                        ></span>
+                      ))
+                    )}
+                    <div className="zero-marker" />
+                    {target && (
+                      <>
+                        <div className="marker" />
+                        {showTargetLabel && (
+                          <div className="marker-label">Goal</div>
+                        )}
+                      </>
+                    )}
+                    {showTotalLabel && (
+                      <div className="total-label">
+                        {valueFormatter
+                          ? valueFormatter(rowTotals[rowNumber])
+                          : rowTotals[rowNumber]}
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {showLegend && (
@@ -308,7 +352,7 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
               </ul>
             </div>
           )}
-        </figure>
+        </>
       </StyledHorizontalStackedBar>
     );
   };

@@ -30,9 +30,24 @@ const externalLinks = {
 //// OBJECTIVES ////
 
 // Build project objectives up using RBCS types
-export const projectObjectiveIds = ["eez", "eezNoTake"] as const;
+export const projectSizeObjectiveIds = ["eez", "eezNoTake"] as const;
+export const projectObjectiveIds = [
+  ...projectSizeObjectiveIds,
+  "benthicHabitat",
+] as const;
+export type ProjectSizeObjectiveId = typeof projectSizeObjectiveIds[number];
 export type ProjectObjectiveId = typeof projectObjectiveIds[number];
 export type ProjectObjectives = Record<ProjectObjectiveId, RbcsObjective>;
+
+/**
+ * Type guard for checking string is one of supported objective IDs
+ * Use in conditional block logic to coerce to type RbcsObjectiveKey within the block
+ */
+export function isProjectSizeObjectiveId(
+  key: string
+): key is ProjectSizeObjectiveId {
+  return projectSizeObjectiveIds.includes(key as ProjectSizeObjectiveId);
+}
 
 /**
  * Type guard for checking string is one of supported objective IDs
@@ -58,6 +73,18 @@ export const objectives: ProjectObjectives = {
   eezNoTake: {
     id: "eezNoTake",
     shortDesc: "15% of EEZ no-take protection",
+    target: 0.15,
+    countsToward: {
+      "Fully Protected Area": "yes",
+      "Highly Protected Area": "no",
+      "Moderately Protected Area": "no",
+      "Poorly Protected Area": "no",
+      "Unprotected Area": "no",
+    },
+  },
+  benthicHabitat: {
+    id: "benthic",
+    shortDesc: "15% of each benthic habitat type",
     target: 0.15,
     countsToward: {
       "Fully Protected Area": "yes",
@@ -137,7 +164,7 @@ const oceanUseClasses: DataClass[] = [
   },
 ];
 
-const oceanUseMG: Record<string, MetricGroup> = {
+const oceanUseGroups: Record<string, MetricGroup> = {
   valueOverlap: {
     metricId: "valueOverlap",
     datasourceId: "oceanUse",
@@ -152,7 +179,90 @@ const oceanUseMG: Record<string, MetricGroup> = {
 
 const fishingImpactReport: Report = {
   reportId: "fishingImpact",
-  metrics: oceanUseMG,
+  metrics: oceanUseGroups,
+};
+
+//// GEOMORPHIC ////
+
+// Multi-class raster (categorical)
+const geomorphicClasses: DataClass[] = [
+  {
+    numericClassId: 1000,
+    classId: "Island Shelf",
+    display: "Island Shelf",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 1100,
+    classId: "Island Shelf Unit",
+    display: "Island Shelf Unit",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 2001,
+    classId: "High Relief",
+    display: "High Relief",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 2101,
+    classId: "High Relief Unit",
+    display: "High Relief Unit",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 3001,
+    classId: "Low Relief",
+    display: "Low Relief",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 3101,
+    classId: "Low Relief Unit",
+    display: "Low Relief Unit",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 4001,
+    classId: "Depression",
+    display: "Depression",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 5001,
+    classId: "Flat Areas",
+    display: "Flat Areas",
+    goalValue: 0.15,
+  },
+  {
+    numericClassId: 6001,
+    classId: "Hill and Lower Slopes",
+    display: "Hill and Lower Slopes",
+    goalValue: 0.15,
+  },
+];
+
+const gmuValueOverlap: MetricGroup = {
+  metricId: "gmuValueOverlap",
+  baseFilename: "geomorphic_units",
+  filename: `geomorphic_units${cogFileSuffix}`,
+  datasourceId: "geomorphic",
+  // @ts-ignore: need to add objective to type
+  objective: objectives.benthicHabitat,
+  layerId: "6216c0f5824398156adaa06f",
+  classes: geomorphicClasses.map((curClass) => {
+    return {
+      ...curClass,
+      filename: `${curClass.baseFilename}${cogFileSuffix}`,
+    };
+  }),
+};
+
+const habitatProtection: Report = {
+  reportId: "habitatProtection",
+  metrics: {
+    gmuValueOverlap,
+  },
 };
 
 export default {
@@ -168,6 +278,7 @@ export default {
     fishingImpact: fishingImpactReport,
   },
   metricGroups: {
-    oceanUse: oceanUseMG,
+    oceanUse: oceanUseGroups,
+    gmuValueOverlap,
   },
 };

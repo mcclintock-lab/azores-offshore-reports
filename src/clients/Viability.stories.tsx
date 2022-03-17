@@ -1,4 +1,4 @@
-import Overview from "./Overview";
+import Viability from "./Viability";
 import { registerExampleStories } from "@seasketch/geoprocessing/storybook";
 
-registerExampleStories("Reports/Overview", Overview);
+registerExampleStories("Reports/Viability", Viability);

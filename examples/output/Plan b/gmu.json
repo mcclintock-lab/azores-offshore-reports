@@ -1,0 +1,990 @@
+{
+  "metrics": [
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 68,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 372,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 645,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 97,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 372,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 82,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 26,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3021,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2512,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 10967,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1159,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2512,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1474,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2801,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 28,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 36,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 66,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 36,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 28,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 71,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 120,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 11,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 71,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 10,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 317,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 234,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 952,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 176,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 234,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 147,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 78,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 26,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 13,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 10,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 37,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 31,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 205,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 59,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 31,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 62,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 16,
+      "extra": {
+        "sketchName": "High B"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "FeatureCollection",
+    "properties": {
+      "id": "622bcc099bebba5441ad7a2e",
+      "name": "Plan b",
+      "updatedAt": "2022-03-12T12:13:29.787Z",
+      "createdAt": "2022-03-11T22:24:09.566Z",
+      "sketchClassId": "5f46dd57017aa0388f5f87cd",
+      "isCollection": true,
+      "userAttributes": []
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622bcbcd9bebba5441ad7a2a",
+          "name": "Full A",
+          "updatedAt": "2022-03-12T12:00:43.640Z",
+          "createdAt": "2022-03-11T22:23:09.353Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": ""
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "1",
+        "bbox": [
+          -28.926146416013914,
+          38.73078165204215,
+          -22.401640800781394,
+          42.07605128679705
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622bcbfd9bebba5441ad7a2d",
+          "name": "High A",
+          "updatedAt": "2022-03-12T12:00:58.751Z",
+          "createdAt": "2022-03-11T22:23:57.736Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "2",
+        "bbox": [
+          -30.048125175779223,
+          34.064316089120766,
+          -25.302031425780566,
+          37.10146256471699
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8bac9bebba5441ad7c32",
+          "name": "Moderate A",
+          "updatedAt": "2022-03-12T12:02:29.835Z",
+          "createdAt": "2022-03-12T12:01:48.984Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"DRIFT_NETS\",\"FISH_TRAPS\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "3",
+        "bbox": [
+          -24.862578300780683,
+          34.536252835165904,
+          -22.44558611328137,
+          36.82054893954891
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8bee53322a4154af6d0a",
+          "name": "High A Copy",
+          "updatedAt": "2022-03-12T12:03:09.401Z",
+          "createdAt": "2022-03-11T22:23:57.736Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "4",
+        "bbox": [
+          -30.048125175779223,
+          34.064316089120766,
+          -25.302031425780566,
+          37.10146256471699
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8c239bebba5441ad7c3a",
+          "name": "High B",
+          "updatedAt": "2022-03-12T12:03:55.492Z",
+          "createdAt": "2022-03-12T12:03:47.768Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "5",
+        "bbox": [
+          -24.554961113280775,
+          36.50328422531132,
+          -21.259062675781706,
+          38.765054917557954
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8e619bebba5441ad7c58",
+          "name": "High B",
+          "updatedAt": "2022-03-12T12:13:29.820Z",
+          "createdAt": "2022-03-12T12:13:21.088Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"HAND_HARVESTING\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "6",
+        "bbox": [
+          -34.882109550777855,
+          39.07277330557226,
+          -30.88308611327899,
+          41.781804495196965
+        ],
+        "geometry": null
+      }
+    ]
+  }
+}
