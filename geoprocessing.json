@@ -32,6 +32,6 @@
     "src/functions/bathymetry.ts",
     "src/functions/protection.ts",
     "src/functions/oceanUse.ts",
-    "src/functions/gmu"
+    "src/functions/gmu.ts"
   ]
 }
