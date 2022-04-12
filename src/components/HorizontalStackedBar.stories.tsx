@@ -1,5 +1,5 @@
 import React from "react";
-import { HorizontalStackedBar, Row, RowConfig } from "./HorizontalStackedBar";
+import { HorizontalStackedBar, RowConfig } from "./HorizontalStackedBar";
 import { ReportDecorator, Card } from "@seasketch/geoprocessing/client-ui";
 
 export default {

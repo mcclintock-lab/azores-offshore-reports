@@ -136,7 +136,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
 
   .zero-marker {
     position: absolute;
-    left: 0;
+    left: -1.5px;
     height: ${(props) => (props.barHeight || defaults.barHeight) * 1.5}px;
     width: 1.5px;
     background-color: #aaa;
@@ -218,7 +218,7 @@ export type Block = number;
 /** Group of blocks with the same color */
 export type BlockGroup = Block[];
 /** One or more BlockGroups forming a single linear stacked row */
-export type Row = BlockGroup[];
+export type HorizontalStackedBarRow = BlockGroup[];
 
 export type RowConfig = {
   title: string | ((value: number) => string | JSX.Element);
@@ -226,7 +226,7 @@ export type RowConfig = {
 
 export interface HorizontalStackedBarProps {
   /** row data */
-  rows: Row[];
+  rows: HorizontalStackedBarRow[];
   /** row config */
   rowConfigs: RowConfig[];
   /** height of row bar in pixels */
@@ -363,9 +363,11 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
           {showLegend && (
             <div className="x-axis">
               <ul className="legend">
-                {blockGroupNames.map((blockGroupName) => (
-                  <li>{blockGroupName}</li>
-                ))}
+                {blockGroupNames
+                  .slice(0, numBlockGroups)
+                  .map((blockGroupName) => (
+                    <li>{blockGroupName}</li>
+                  ))}
               </ul>
             </div>
           )}
@@ -375,7 +377,7 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
   };
 
 /** Sum row values */
-const sumRow = (row: Row): number =>
+const sumRow = (row: HorizontalStackedBarRow): number =>
   row.reduce(
     (rowSumSoFar, blockGroup) => rowSumSoFar + sumBlockGroup(blockGroup),
     0

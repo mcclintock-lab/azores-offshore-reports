@@ -60,8 +60,9 @@ const BenthicHabitat = () => {
                 <p>
                   🎯 Planning Objective: Ensure that at least 15% of all
                   deep-sea benthic habitats and associated ecosystems are
-                  protected by 2023. The objective is met if the plan includes
-                  15% of each benthic habitat type.
+                  protected by 2023. This has been interpreted as the objective
+                  is met if the plan includes 15% of <b>each</b> benthic habitat
+                  type.
                 </p>
                 <p>
                   🗺️ Source Data: The analysis chosen for this report is

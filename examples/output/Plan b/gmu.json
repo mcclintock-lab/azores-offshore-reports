@@ -28,7 +28,7 @@
       "classId": "Depression",
       "groupId": null,
       "geographyId": null,
-      "value": 645,
+      "value": 727,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -80,6 +80,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Depression",
+      "groupId": null,
+      "geographyId": null,
+      "value": 82,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "Flat Areas",
       "groupId": null,
@@ -106,7 +117,7 @@
       "classId": "Flat Areas",
       "groupId": null,
       "geographyId": null,
-      "value": 10967,
+      "value": 11063,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -158,6 +169,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Flat Areas",
+      "groupId": null,
+      "geographyId": null,
+      "value": 96,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "High Relief",
       "groupId": null,
@@ -184,7 +206,7 @@
       "classId": "High Relief",
       "groupId": null,
       "geographyId": null,
-      "value": 66,
+      "value": 71,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -236,6 +258,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "High Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 5,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "High Relief Unit",
       "groupId": null,
@@ -262,7 +295,7 @@
       "classId": "High Relief Unit",
       "groupId": null,
       "geographyId": null,
-      "value": 120,
+      "value": 161,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -314,6 +347,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "High Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 41,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "Hill and Lower Slopes",
       "groupId": null,
@@ -340,7 +384,7 @@
       "classId": "Hill and Lower Slopes",
       "groupId": null,
       "geographyId": null,
-      "value": 952,
+      "value": 1071,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -392,6 +436,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Hill and Lower Slopes",
+      "groupId": null,
+      "geographyId": null,
+      "value": 119,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "Island Shelf",
       "groupId": null,
@@ -470,6 +525,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Island Shelf",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "Island Shelf Unit",
       "groupId": null,
@@ -544,6 +610,17 @@
       "value": 0,
       "extra": {
         "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Island Shelf Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
       }
     },
     {
@@ -626,6 +703,17 @@
     },
     {
       "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Low Relief",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gmuValueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
       "classId": "Low Relief Unit",
       "groupId": null,
@@ -652,7 +740,7 @@
       "classId": "Low Relief Unit",
       "groupId": null,
       "geographyId": null,
-      "value": 205,
+      "value": 212,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -701,6 +789,17 @@
       "extra": {
         "sketchName": "High B"
       }
+    },
+    {
+      "metricId": "gmuValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "Low Relief Unit",
+      "groupId": null,
+      "geographyId": null,
+      "value": 7,
+      "extra": {
+        "sketchName": "Poor A"
+      }
     }
   ],
   "sketch": {
@@ -708,7 +807,7 @@
     "properties": {
       "id": "622bcc099bebba5441ad7a2e",
       "name": "Plan b",
-      "updatedAt": "2022-03-12T12:13:29.787Z",
+      "updatedAt": "2022-03-21T17:13:39.160Z",
       "createdAt": "2022-03-11T22:24:09.566Z",
       "sketchClassId": "5f46dd57017aa0388f5f87cd",
       "isCollection": true,
@@ -945,7 +1044,7 @@
         "properties": {
           "id": "622c8e619bebba5441ad7c58",
           "name": "High B",
-          "updatedAt": "2022-03-12T12:13:29.820Z",
+          "updatedAt": "2022-03-12T12:16:08.316Z",
           "createdAt": "2022-03-12T12:13:21.088Z",
           "sketchClassId": "5f46dd53017aa0388f5f87c5",
           "isCollection": false,
@@ -982,6 +1081,51 @@
           39.07277330557226,
           -30.88308611327899,
           41.781804495196965
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "6238b1979089cd4e3e1f23ee",
+          "name": "Poor A",
+          "updatedAt": "2022-03-21T17:13:39.162Z",
+          "createdAt": "2022-03-21T17:10:47.104Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "SOME_RESTRICTIONS"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"DREDGES\",\"DRIFT_NETS\",\"PURSE_SEINING_BOTTOM\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "FULLY_REGULATED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "7",
+        "bbox": [
+          -31.259882835690878,
+          37.93133108053503,
+          -29.7437695544413,
+          39.23663622317214
         ],
         "geometry": null
       }

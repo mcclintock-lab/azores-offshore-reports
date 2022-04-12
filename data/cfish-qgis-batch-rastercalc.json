@@ -1,0 +1,74 @@
+[
+    {
+        "PARAMETERS": {
+            "EXPRESSION": "'(\\\"HSM_fish_5km@1\\\" <= 0.11) * 0 + (\\\"HSM_fish_5km@1\\\" > 0.11) * 1'",
+            "LAYERS": "['/Users/twelch/Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif']",
+            "CELLSIZE": "0",
+            "EXTENT": "None",
+            "CRS": "None"
+        },
+        "OUTPUTS": {
+            "OUTPUT": "/Users/twelch/Box Sync/GIS/Waitt/Azores/Analytics/cfish_1.tif"
+        }
+    },
+    {
+        "PARAMETERS": {
+            "EXPRESSION": "'(\\\"HSM_fish_5km@2\\\" <= 0.10) * 0 + (\\\"HSM_fish_5km@2\\\" > 0.10) * 1'",
+            "LAYERS": "['/Users/twelch/Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif']",
+            "CELLSIZE": "0",
+            "EXTENT": "None",
+            "CRS": "None"
+        },
+        "OUTPUTS": {
+            "OUTPUT": "/Users/twelch/Box Sync/GIS/Waitt/Azores/Analytics/cfish_2.tif"
+        }
+    },
+    {
+        "PARAMETERS": {
+            "EXPRESSION": "'(\\\"HSM_fish_5km@3\\\" <= 0.52) * 0 + (\\\"HSM_fish_5km@3\\\" > 0.52) * 1'",
+            "LAYERS": "['/Users/twelch/Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif']",
+            "CELLSIZE": "0",
+            "EXTENT": "None",
+            "CRS": "None"
+        },
+        "OUTPUTS": {
+            "OUTPUT": "/Users/twelch/Box Sync/GIS/Waitt/Azores/Analytics/cfish_3.tif"
+        }
+    },
+    {
+        "PARAMETERS": {
+            "EXPRESSION": "'(\\\"HSM_fish_5km@4\\\" <= 0.04) * 0 + (\\\"HSM_fish_5km@4\\\" > 0.04) * 1'",
+            "LAYERS": "['/Users/twelch/Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif']",
+            "CELLSIZE": "0",
+            "EXTENT": "None",
+            "CRS": "None"
+        },
+        "OUTPUTS": {
+            "OUTPUT": "/Users/twelch/Box Sync/GIS/Waitt/Azores/Analytics/cfish_4.tif"
+        }
+    },
+    {
+        "PARAMETERS": {
+            "EXPRESSION": "'(\\\"HSM_fish_5km@5\\\" <= 0.50) * 0 + (\\\"HSM_fish_5km@5\\\" > 0.50) * 1'",
+            "LAYERS": "['/Users/twelch/Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif']",
+            "CELLSIZE": "0",
+            "EXTENT": "None",
+            "CRS": "None"
+        },
+        "OUTPUTS": {
+            "OUTPUT": "/Users/twelch/Box Sync/GIS/Waitt/Azores/Analytics/cfish_5.tif"
+        }
+    },
+    {
+        "PARAMETERS": {
+            "EXPRESSION": "'(\\\"HSM_fish_5km@6\\\" <= 0.12) * 0 + (\\\"HSM_fish_5km@6\\\" > 0.12) * 1'",
+            "LAYERS": "['/Users/twelch/Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif']",
+            "CELLSIZE": "0",
+            "EXTENT": "None",
+            "CRS": "None"
+        },
+        "OUTPUTS": {
+            "OUTPUT": "/Users/twelch/Box Sync/GIS/Waitt/Azores/Analytics/cfish_6.tif"
+        }
+    }
+]

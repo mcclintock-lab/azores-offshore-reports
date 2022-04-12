@@ -50,7 +50,11 @@ import protectionTotals from "../../data/precalc/protectionTotals.json";
 import { RbcsZoneClassPanel } from "../components/RbcsZoneClassPanel";
 import { AzoresNetworkObjectiveStatus } from "../components/AzoresNetworkObjectives";
 import { getKeys } from "../helpers/ts";
-import { HorizontalStackedBar } from "../components/HorizontalStackedBar";
+import {
+  BlockGroup,
+  HorizontalStackedBar,
+  HorizontalStackedBarRow,
+} from "../components/HorizontalStackedBar";
 import { ChartLegend } from "../components/ChartLegend";
 const precalcTotals = protectionTotals as ReportResultBase;
 
@@ -62,8 +66,8 @@ const groupColorMap: Record<string, string> = {
   "Fully Protected Area": "#BEE4BE",
   "Highly Protected Area": "#FFE1A3",
   "Moderately Protected Area": "#F7A6B4",
-  "Poorly Protected Area": "#F7A6B4",
-  "Unprotected Area": "#F7A6B4",
+  "Poorly Protected Area": "#ccc",
+  "Unprotected Area": "#ccc",
 };
 
 import styled from "styled-components";
@@ -209,8 +213,19 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
 
   // Objective charts
 
+  // Convert to row of block roups and filter out zero values so they don't show up in the legend
+  const rowBlocks: HorizontalStackedBarRow = groupLevelAggs.reduce<
+    Array<Array<number>>
+  >((blockSoFar, agg) => {
+    if (agg.percValue > 0) {
+      return [...blockSoFar, [agg.percValue * 100]];
+    } else {
+      return blockSoFar;
+    }
+  }, []);
+
   const chartAllConfig = {
-    rows: [groupLevelAggs.map((agg) => [agg.percValue * 100])],
+    rows: [rowBlocks],
     rowConfigs: [
       {
         title: "% EEZ within plan",

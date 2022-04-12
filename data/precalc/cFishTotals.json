@@ -1,0 +1,52 @@
+{
+  "metrics": [
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 157
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 42
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 191
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "americanus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 113
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 58
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": null,
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 190
+    }
+  ]
+}

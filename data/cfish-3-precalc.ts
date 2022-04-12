@@ -1,5 +1,5 @@
 // Run inside workspace
-// Precalculates overall metrics used by habitat function
+// Precalculates overall stats used by habitat function
 
 import fs from "fs";
 import config from "../src/_config";
@@ -14,7 +14,7 @@ import {
   rekeyMetrics,
 } from "@seasketch/geoprocessing";
 
-const REPORT = config.reports.fishingImpact;
+const REPORT = config.reports.cFish;
 const METRIC = REPORT.metrics.valueOverlap;
 const DEST_PATH = `${__dirname}/precalc/${METRIC.datasourceId}Totals.json`;
 

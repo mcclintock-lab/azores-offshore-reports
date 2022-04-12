@@ -1,0 +1,34 @@
+All data prep done in QGIS
+
+Commercially important species are 1 per band from cfish.tif source raster in following order:
+Beryx_splendens
+Pontinus_kuhlii
+Helicolenus_dactylopterus
+Polyprion_americanus
+Pagellus_bogaraveo
+Beryx_decadactylus
+
+Calculate presence/absence with published thresholds for each band
+
+Drafted as:
+("HSM_fish_5km@1" <= 0.11) * 0 + ("HSM_fish_5km@1" > 0.11) * 1
+("HSM_fish_5km@2" <= 0.10) * 0 + ("HSM_fish_5km@2" > 0.10) * 1
+("HSM_fish_5km@3" <= 0.52) * 0 + ("HSM_fish_5km@3" > 0.52) * 1
+("HSM_fish_5km@4" <= 0.04) * 0 + ("HSM_fish_5km@4" > 0.04) * 1
+("HSM_fish_5km@5" <= 0.50) * 0 + ("HSM_fish_5km@5" > 0.50) * 1
+("HSM_fish_5km@6" <= 0.12) * 0 + ("HSM_fish_5km@6" > 0.12) * 1
+
+see cfish-0-batch-rastercalc.json implementation saved from qgis raster calculator batch processor
+Load this json file and rerun as needed, paths may need updating
+
+Sum presence/absence binary rasters above to produce an N species raster
+
+"cfish_1@1" + "cfish_2@1" + "cfish_3@1" + "cfish_4@1" + "cfish_5@1" + "cfish_6@1"
+
+Alternative version tested without use of threshold values, presence is simply an value > 0
+("HSM_fish_5km@1" > 0) * 1
+("HSM_fish_5km@2" > 0) * 1
+("HSM_fish_5km@3" > 0) * 1
+("HSM_fish_5km@4" > 0) * 1
+("HSM_fish_5km@5" > 0) * 1
+("HSM_fish_5km@6" > 0) * 1

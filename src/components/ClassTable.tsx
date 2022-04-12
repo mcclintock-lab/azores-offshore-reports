@@ -131,7 +131,7 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
               <HorizontalStackedBar
                 {...chartAllConfig}
                 blockGroupNames={["foo"]}
-                blockGroupStyles={[{ backgroundColor: "#ddd" }]}
+                blockGroupStyles={[{ backgroundColor: "#cfd8dc" }]}
                 showTitle={true}
                 showLegend={false}
                 showTargetLabel={rowIndex === rows.length - 1 ? true : false}

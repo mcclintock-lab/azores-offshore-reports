@@ -3,10 +3,10 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622bcbcd9bebba5441ad7a2a",
-      "classId": "bottom_longline_effort",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 2.51182855173829,
+      "value": 0,
       "extra": {
         "sketchName": "Full A"
       }
@@ -14,10 +14,10 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622bcbfd9bebba5441ad7a2d",
-      "classId": "bottom_longline_effort",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 1.9444200424477458,
+      "value": 3,
       "extra": {
         "sketchName": "High A"
       }
@@ -25,10 +25,10 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622bcc099bebba5441ad7a2e",
-      "classId": "bottom_longline_effort",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 19.66780140969786,
+      "value": 4,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -37,96 +37,7 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622c8bac9bebba5441ad7c32",
-      "classId": "bottom_longline_effort",
-      "groupId": null,
-      "geographyId": null,
-      "value": 0.08326007891446352,
-      "extra": {
-        "sketchName": "Moderate A"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622c8bee53322a4154af6d0a",
-      "classId": "bottom_longline_effort",
-      "groupId": null,
-      "geographyId": null,
-      "value": 1.9444200424477458,
-      "extra": {
-        "sketchName": "High A Copy"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622c8c239bebba5441ad7c3a",
-      "classId": "bottom_longline_effort",
-      "groupId": null,
-      "geographyId": null,
-      "value": 0.18415894452482462,
-      "extra": {
-        "sketchName": "High B"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622c8e619bebba5441ad7c58",
-      "classId": "bottom_longline_effort",
-      "groupId": null,
-      "geographyId": null,
-      "value": 2.686169156804681,
-      "extra": {
-        "sketchName": "High B"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "6238b1979089cd4e3e1f23ee",
-      "classId": "bottom_longline_effort",
-      "groupId": null,
-      "geographyId": null,
-      "value": 12.257964635267854,
-      "extra": {
-        "sketchName": "Poor A"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622bcbcd9bebba5441ad7a2a",
-      "classId": "bottom_longline_footprint",
-      "groupId": null,
-      "geographyId": null,
-      "value": 21,
-      "extra": {
-        "sketchName": "Full A"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622bcbfd9bebba5441ad7a2d",
-      "classId": "bottom_longline_footprint",
-      "groupId": null,
-      "geographyId": null,
-      "value": 19,
-      "extra": {
-        "sketchName": "High A"
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622bcc099bebba5441ad7a2e",
-      "classId": "bottom_longline_footprint",
-      "groupId": null,
-      "geographyId": null,
-      "value": 94,
-      "extra": {
-        "sketchName": "Plan b",
-        "isCollection": true
-      }
-    },
-    {
-      "metricId": "valueOverlap",
-      "sketchId": "622c8bac9bebba5441ad7c32",
-      "classId": "bottom_longline_footprint",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
       "value": 0,
@@ -137,10 +48,10 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622c8bee53322a4154af6d0a",
-      "classId": "bottom_longline_footprint",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 19,
+      "value": 3,
       "extra": {
         "sketchName": "High A Copy"
       }
@@ -148,10 +59,10 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622c8c239bebba5441ad7c3a",
-      "classId": "bottom_longline_footprint",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 1,
+      "value": 0,
       "extra": {
         "sketchName": "High B"
       }
@@ -159,10 +70,10 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "622c8e619bebba5441ad7c58",
-      "classId": "bottom_longline_footprint",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 8,
+      "value": 0,
       "extra": {
         "sketchName": "High B"
       }
@@ -170,10 +81,455 @@
     {
       "metricId": "valueOverlap",
       "sketchId": "6238b1979089cd4e3e1f23ee",
-      "classId": "bottom_longline_footprint",
+      "classId": "americanus",
       "groupId": null,
       "geographyId": null,
-      "value": 45,
+      "value": 1,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "bogaraveo",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 7,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "dactylopterus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 6,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "decadactylus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "kuhlii",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 8,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "valueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "splendens",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3,
       "extra": {
         "sketchName": "Poor A"
       }

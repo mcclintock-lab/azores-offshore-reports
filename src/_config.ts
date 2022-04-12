@@ -34,6 +34,7 @@ export const projectSizeObjectiveIds = ["eez", "eezNoTake"] as const;
 export const projectObjectiveIds = [
   ...projectSizeObjectiveIds,
   "benthicHabitat",
+  "cFish",
 ] as const;
 export type ProjectSizeObjectiveId = typeof projectSizeObjectiveIds[number];
 export type ProjectObjectiveId = typeof projectObjectiveIds[number];
@@ -65,7 +66,7 @@ export const objectives: ProjectObjectives = {
     countsToward: {
       "Fully Protected Area": "yes",
       "Highly Protected Area": "yes",
-      "Moderately Protected Area": "no",
+      "Moderately Protected Area": "yes",
       "Poorly Protected Area": "no",
       "Unprotected Area": "no",
     },
@@ -85,6 +86,18 @@ export const objectives: ProjectObjectives = {
   benthicHabitat: {
     id: "benthic",
     shortDesc: "15% of each benthic habitat type",
+    target: 0.15,
+    countsToward: {
+      "Fully Protected Area": "yes",
+      "Highly Protected Area": "no",
+      "Moderately Protected Area": "no",
+      "Poorly Protected Area": "no",
+      "Unprotected Area": "no",
+    },
+  },
+  cFish: {
+    id: "cFish",
+    shortDesc: "15% of each species",
     target: 0.15,
     countsToward: {
       "Fully Protected Area": "yes",
@@ -265,6 +278,68 @@ const habitatProtection: Report = {
   },
 };
 
+//// COMMERCIALLY IMPORTANT SPECIES ////
+
+const cFishClasses: DataClass[] = [
+  {
+    baseFilename: "cfish_1",
+    classId: "splendens",
+    display: "Alfonsins (B. splendens)",
+    noDataValue: -3.39999995214436425e38,
+  },
+  {
+    baseFilename: "cfish_2",
+    classId: "kuhlii",
+    display: "Cântaro (P. kuhlii)",
+    noDataValue: -3.39999995214436425e38,
+  },
+  {
+    baseFilename: "cfish_3",
+    classId: "dactylopterus",
+    display: "Boca-negra (H. dactylopterus)",
+    noDataValue: -3.39999995214436425e38,
+  },
+  {
+    baseFilename: "cfish_4",
+    classId: "americanus",
+    display: "Cherne (P. americanus)",
+    noDataValue: -3.39999995214436425e38,
+  },
+  {
+    baseFilename: "cfish_5",
+    classId: "bogaraveo",
+    display: "Goraz (P. bogaraveo)",
+    noDataValue: -3.39999995214436425e38,
+  },
+  {
+    baseFilename: "cfish_6",
+    classId: "decadactylus",
+    display: "Alfonsins (B. decadactylus)",
+    noDataValue: -3.39999995214436425e38,
+  },
+];
+
+const cFishGroups: Record<string, MetricGroup> = {
+  valueOverlap: {
+    metricId: "valueOverlap",
+    datasourceId: "cFish",
+    // @ts-ignore: need to add objective to type
+    objective: objectives.cFish,
+    layerId: "621ac583075911e90781aeb0",
+    classes: cFishClasses.map((curClass) => {
+      return {
+        ...curClass,
+        filename: `${curClass.baseFilename}${cogFileSuffix}`,
+      };
+    }),
+  },
+};
+
+const commSigSpecies: Report = {
+  reportId: "commSigSpecies",
+  metrics: cFishGroups,
+};
+
 export default {
   STUDY_REGION_AREA_SQ_METERS,
   units,
@@ -276,9 +351,11 @@ export default {
     sizeReport,
     protection,
     fishingImpact: fishingImpactReport,
+    commSigSpecies,
   },
   metricGroups: {
     oceanUse: oceanUseGroups,
     gmuValueOverlap,
+    cFishGroups,
   },
 };

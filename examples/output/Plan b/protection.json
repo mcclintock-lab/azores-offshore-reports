@@ -50,7 +50,7 @@
       "classId": "eez",
       "groupId": null,
       "geographyId": null,
-      "value": 352031670521.6982,
+      "value": 361091047250.72565,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -98,7 +98,7 @@
       "classId": "eez",
       "groupId": "Poorly Protected Area",
       "geographyId": null,
-      "value": 0,
+      "value": 9059376729.027458,
       "extra": {
         "sketchName": "Plan b",
         "isCollection": true
@@ -203,6 +203,28 @@
       "extra": {
         "sketchName": "High B"
       }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "eez",
+      "groupId": null,
+      "geographyId": null,
+      "value": 9059376729.027458,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "areaOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "eez",
+      "groupId": "Poorly Protected Area",
+      "geographyId": null,
+      "value": 9059376729.027458,
+      "extra": {
+        "sketchName": "Poor A"
+      }
     }
   ],
   "sketch": {
@@ -210,7 +232,7 @@
     "properties": {
       "id": "622bcc099bebba5441ad7a2e",
       "name": "Plan b",
-      "updatedAt": "2022-03-12T12:13:29.787Z",
+      "updatedAt": "2022-03-21T17:13:39.160Z",
       "createdAt": "2022-03-11T22:24:09.566Z",
       "sketchClassId": "5f46dd57017aa0388f5f87cd",
       "isCollection": true,
@@ -442,7 +464,7 @@
         "properties": {
           "id": "622c8e619bebba5441ad7c58",
           "name": "High B",
-          "updatedAt": "2022-03-12T12:13:29.820Z",
+          "updatedAt": "2022-03-12T12:16:08.316Z",
           "createdAt": "2022-03-12T12:13:21.088Z",
           "sketchClassId": "5f46dd53017aa0388f5f87c5",
           "isCollection": false,
@@ -479,6 +501,50 @@
           39.07277330557226,
           -30.88308611327899,
           41.781804495196965
+        ]
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "6238b1979089cd4e3e1f23ee",
+          "name": "Poor A",
+          "updatedAt": "2022-03-21T17:13:39.162Z",
+          "createdAt": "2022-03-21T17:10:47.104Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "SOME_RESTRICTIONS"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"DREDGES\",\"DRIFT_NETS\",\"PURSE_SEINING_BOTTOM\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "FULLY_REGULATED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "7",
+        "bbox": [
+          -31.259882835690878,
+          37.93133108053503,
+          -29.7437695544413,
+          39.23663622317214
         ]
       }
     ]

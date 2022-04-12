@@ -14,9 +14,9 @@ import { loadCogWindow } from "@seasketch/geoprocessing/dataproviders";
 import bbox from "@turf/bbox";
 import config from "../_config";
 
-const METRIC = config.metricGroups.oceanUse.valueOverlap;
+const METRIC = config.metricGroups.cFishGroups.valueOverlap;
 
-export async function oceanUse(
+export async function cFish(
   sketch: Sketch<Polygon> | SketchCollection<Polygon>
 ): Promise<ReportResult> {
   const box = sketch.bbox || bbox(sketch);
@@ -56,9 +56,9 @@ export async function oceanUse(
   };
 }
 
-export default new GeoprocessingHandler(oceanUse, {
-  title: "oceanUse",
-  description: "ocean use metrics",
+export default new GeoprocessingHandler(cFish, {
+  title: "cFish",
+  description: "commercially important fish species metrics",
   timeout: 60, // seconds
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
