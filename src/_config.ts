@@ -286,7 +286,7 @@ const gmuValueOverlap: MetricGroup = {
   filename: `geomorphic_units${cogFileSuffix}`,
   datasourceId: "geomorphic",
   // @ts-ignore: need to add objective to type
-  objective: objectives.benthicHabitat,
+  // objective: objectives.benthicHabitat,
   layerId: "6216c0f5824398156adaa06f",
   classes: geomorphicClasses.map((curClass) => {
     return {
