@@ -1,0 +1,12 @@
+{
+  "metrics": [
+    {
+      "metricId": "priorityModelAreaOverlap",
+      "sketchId": null,
+      "classId": "fishbasedSolution",
+      "groupId": null,
+      "geographyId": null,
+      "value": 133665439494.43747
+    }
+  ]
+}

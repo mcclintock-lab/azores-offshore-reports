@@ -1,0 +1,60 @@
+{
+  "metrics": [
+    {
+      "metricId": "priorityModelAreaOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "fishbasedSolution",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62054c709557604f3e5f6cd1",
+      "name": "PontaSouth",
+      "updatedAt": "2022-02-18T16:56:59.790Z",
+      "createdAt": "2022-02-10T17:33:36.081Z",
+      "sketchClassId": "5f46dd53017aa0388f5f87c5",
+      "isCollection": false,
+      "userAttributes": [
+        {
+          "label": "Aquaculture and Bottom Exploitation",
+          "fieldType": "ChoiceField",
+          "exportId": "AQUACULTURE",
+          "value": "SOME_RESTRICTIONS"
+        },
+        {
+          "label": "Allowed Fishing Gear",
+          "fieldType": "ChoiceField",
+          "exportId": "GEAR_TYPES",
+          "value": "[\"CAST_NETS\",\"FISH_TRAPS\"]"
+        },
+        {
+          "label": "Boating and Anchoring",
+          "fieldType": "ChoiceField",
+          "exportId": "BOATING",
+          "value": "UNREGULATED"
+        },
+        {
+          "label": "Comments",
+          "fieldType": "TextArea",
+          "exportId": "COMMENTS",
+          "value": "a comment"
+        }
+      ]
+    },
+    "id": "1",
+    "bbox": [
+      -25.79092302734355,
+      37.579679800006474,
+      -25.36245623046857,
+      37.72320219915908
+    ],
+    "geometry": null
+  }
+}

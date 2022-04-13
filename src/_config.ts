@@ -195,6 +195,31 @@ const fishingImpactReport: Report = {
   metrics: oceanUseGroups,
 };
 
+//// PRIORITIZATION MODEL SOLUTIONS
+
+const priorityModelClasses: DataClass[] = [
+  {
+    classId: "fishbasedSolution",
+    display: "Fisheries-based Solution",
+  },
+];
+
+const priorityModelGroups: Record<string, MetricGroup> = {
+  priorityModelAreaOverlap: {
+    metricId: "priorityModelAreaOverlap",
+    baseFilename: "ST_fishbased_solution",
+    filename: "ST_fishbased_solution.fgb",
+    classes: priorityModelClasses,
+    layerId: "621d2020d885856e59f8a0f0",
+    datasourceId: "priorityModel",
+  },
+};
+
+const priorityModelReport: Report = {
+  reportId: "priorityModel",
+  metrics: priorityModelGroups,
+};
+
 //// GEOMORPHIC ////
 
 // Multi-class raster (categorical)
@@ -352,10 +377,12 @@ export default {
     protection,
     fishingImpact: fishingImpactReport,
     commSigSpecies,
+    priorityModelReport,
   },
   metricGroups: {
     oceanUse: oceanUseGroups,
     gmuValueOverlap,
     cFishGroups,
+    priorityModelGroups,
   },
 };

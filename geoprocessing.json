@@ -22,6 +22,11 @@
       "name": "FishingImpact",
       "description": "Calculate impact to fishing",
       "source": "src/clients/FishingImpact.tsx"
+    },
+    {
+      "name": "PriorityModel",
+      "description": "Calculate prioritization model overlap",
+      "source": "src/clients/PriorityModel.tsx"
     }
   ],
   "preprocessingFunctions": [
@@ -33,6 +38,7 @@
     "src/functions/protection.ts",
     "src/functions/oceanUse.ts",
     "src/functions/gmu.ts",
-    "src/functions/cFish.ts"
+    "src/functions/cFish.ts",
+    "src/functions/priorityModel.ts"
   ]
 }
