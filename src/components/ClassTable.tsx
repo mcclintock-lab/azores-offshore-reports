@@ -4,17 +4,26 @@ import {
   DataGroup,
   Metric,
   keyBy,
+  nestMetrics,
 } from "@seasketch/geoprocessing/client-core";
 import {
   Column,
   Table,
   LayerToggle,
-  GreenPill,
-  ReportTableStyled,
+  SmallReportTableStyled,
 } from "@seasketch/geoprocessing/client-ui";
 import { CheckCircleFill } from "@styled-icons/bootstrap";
 import { HorizontalStackedBar } from "./HorizontalStackedBar";
 import { OBJECTIVE_GREEN } from "../types/objective";
+
+const Number = new Intl.NumberFormat("en", { style: "decimal" });
+
+/**
+ * Stories to create
+ * percent value
+ * nopercent value
+ * area column and not
+ */
 
 export interface ClassTableProps {
   /** Table row objects, each expected to have a classId and value. Defaults to "Class" */
@@ -31,32 +40,45 @@ export interface ClassTableProps {
   layerColText?: string;
   /** Whether to show goal column.  Data classes must have a goalValue defined. Defaults to false */
   showGoal?: boolean;
+  /** Whether to show area column.   */
+  showArea?: boolean;
   /** Text to display for value column.  Defaults to "Within Plan" */
   valueColText?: string;
+  /** Text to display for area column, if visible.  Defaults to "%" */
+  percColText?: string;
   /** Text to display for goal column.  Defaults to "Goal" */
   goalColText?: string;
+  metricIdName?: string;
+  percMetricIdName?: string;
+  unitLabel?: string;
   /** Override column widths */
   options?: {
     classColWidth?: string;
     percColWidth?: string;
     showMapWidth?: string;
     goalWidth?: string;
+    areaWidth?: string;
   };
 }
 
 /**
- * Table displaying class metrics, one class per table row
+ * Table displaying class metrics, one class per table row.  Must add metricIdName or percMetricIdName
  */
 export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
   titleText = "Class",
   rows,
   dataGroup,
   formatPerc = false,
-  valueColText = "Within Plan",
+  valueColText = "Area Within Plan",
+  percColText = "% Within Plan",
   showLayerToggle = false,
   layerColText = "Show Map",
   showGoal = false,
   goalColText = "Goal",
+  showArea = false,
+  unitLabel = "sq. meters",
+  metricIdName,
+  percMetricIdName,
   options,
 }) => {
   // Use user-defined width, otherwise sane default depending on whether goal
@@ -81,30 +103,67 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
       : showGoal
       ? "20%"
       : "50%",
+    areaWidth: options?.areaWidth
+      ? options?.areaWidth
+      : showArea
+      ? "10%"
+      : "20%",
   };
   const classesByName = keyBy(
     dataGroup.classes,
     (curClass) => curClass.classId
   );
-  const columns: Column<Metric>[] = [
+
+  const metricsByClassByMetric = nestMetrics(rows, ["classId", "metricId"]);
+  const metricsByMetricByClass = nestMetrics(rows, ["metricId", "classId"]);
+
+  // Use sketch ID for each table row, use index to lookup into nested metrics
+  const tableRows = Object.keys(metricsByClassByMetric).map((classId) => ({
+    classId,
+  }));
+
+  let columns: Column<{ classId: string }>[] = [
     {
       Header: titleText,
       accessor: (row) =>
         classesByName[row.classId || "missing"]?.display || "missing",
       style: { width: colWidths.classColWidth },
     },
-    {
+  ];
+
+  if (metricIdName) {
+    columns.push({
+      Header: percColText,
+      accessor: (row) => {
+        const value =
+          metricsByClassByMetric[row.classId][metricIdName][0].value;
+        return Number.format(Math.round(value)) + ` ${unitLabel}`;
+      },
+      style: { width: colWidths.areaWidth },
+    });
+  }
+
+  if (percMetricIdName) {
+    columns.push({
       Header: valueColText,
       style: { textAlign: "center", width: colWidths.percColWidth },
       accessor: (row, rowIndex) => {
-        const valueDisplay = formatPerc
-          ? percentWithEdge(row.value)
-          : row.value;
+        const value =
+          metricsByClassByMetric[row.classId][percMetricIdName][0].value;
+        // const valueDisplay = formatPerc
+        //   ? percentWithEdge(value)
+        //   : value;
         // @ts-ignore: need to add objective to type
-        const goal = dataGroup.objective ? dataGroup.objective.target * 100 : 0;
+        const goal = dataGroup.objective
+          ? formatPerc
+            ? // @ts-ignore: need to add objective to type
+              dataGroup.objective.target * 100
+            : // @ts-ignore: need to add objective to type
+              dataGroup.objective.target
+          : 0;
 
         const chartAllConfig = {
-          rows: [[[row.value * 100]]],
+          rows: [[[formatPerc ? value * 100 : value]]],
           rowConfigs: [
             {
               title: (value: number) => (
@@ -131,13 +190,13 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
               <HorizontalStackedBar
                 {...chartAllConfig}
                 blockGroupNames={["foo"]}
-                blockGroupStyles={[{ backgroundColor: "#cfd8dc" }]}
+                blockGroupStyles={[{ backgroundColor: "#ACD0DE" }]}
                 showTitle={true}
                 showLegend={false}
                 showTargetLabel={rowIndex === rows.length - 1 ? true : false}
                 targetLabelPosition="bottom"
                 showTotalLabel={false}
-                barHeight={20}
+                barHeight={15}
                 target={goal || undefined}
                 targetValueFormatter={(value: number) =>
                   `Target - ${percentWithEdge(goal / 100)}`
@@ -148,8 +207,8 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
           </div>
         );
       },
-    },
-  ];
+    });
+  }
 
   // Optionally insert layer toggle column
   if (showLayerToggle) {
@@ -200,8 +259,8 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
   }
 
   return (
-    <ReportTableStyled>
-      <Table className="styled" columns={columns} data={rows} />
-    </ReportTableStyled>
+    <SmallReportTableStyled>
+      <Table className="styled" columns={columns} data={tableRows} />
+    </SmallReportTableStyled>
   );
 };

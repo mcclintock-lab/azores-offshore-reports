@@ -105,6 +105,7 @@ const CommSigSpecies = () => {
                 valueColText="Within Plan"
                 rows={parentMetrics}
                 dataGroup={METRIC}
+                percMetricIdName={METRIC.metricId}
                 showLayerToggle={false}
                 formatPerc
               />

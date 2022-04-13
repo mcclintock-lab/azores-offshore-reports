@@ -94,6 +94,7 @@ const PriorityModel = () => {
                 valueColText="Within Plan"
                 rows={parentMetrics}
                 dataGroup={METRIC}
+                percMetricIdName={METRIC.metricId}
                 showLayerToggle
                 formatPerc
               />

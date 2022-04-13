@@ -103,6 +103,7 @@ const BenthicHabitat = () => {
                 showGoal={false}
                 showLayerToggle={false}
                 formatPerc
+                percMetricIdName={METRIC.metricId}
                 options={{
                   classColWidth: "45%",
                   percColWidth: "55%",
