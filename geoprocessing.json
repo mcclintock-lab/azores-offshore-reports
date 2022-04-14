@@ -27,6 +27,11 @@
       "name": "PriorityModel",
       "description": "Calculate prioritization model overlap",
       "source": "src/clients/PriorityModel.tsx"
+    },
+    {
+      "name": "Essential Habitat",
+      "description": "Calculate essential habitat overlap",
+      "source": "src/clients/EssentialHabitat.tsx"
     }
   ],
   "preprocessingFunctions": [
@@ -39,6 +44,7 @@
     "src/functions/oceanUse.ts",
     "src/functions/gmu.ts",
     "src/functions/cFish.ts",
-    "src/functions/priorityModel.ts"
+    "src/functions/priorityModel.ts",
+    "src/functions/essentialHabitat.ts"
   ]
 }

@@ -34,6 +34,7 @@ export const projectSizeObjectiveIds = ["eez", "eezNoTake"] as const;
 export const projectObjectiveIds = [
   ...projectSizeObjectiveIds,
   "benthicHabitat",
+  "essentialHabitat",
   "cFish",
 ] as const;
 export type ProjectSizeObjectiveId = typeof projectSizeObjectiveIds[number];
@@ -87,6 +88,18 @@ export const objectives: ProjectObjectives = {
     id: "benthic",
     shortDesc: "15% of each benthic habitat type",
     target: 0.15,
+    countsToward: {
+      "Fully Protected Area": "yes",
+      "Highly Protected Area": "no",
+      "Moderately Protected Area": "no",
+      "Poorly Protected Area": "no",
+      "Unprotected Area": "no",
+    },
+  },
+  essentialHabitat: {
+    id: "essential",
+    shortDesc: "75% of each essential habitat type",
+    target: 0.75,
     countsToward: {
       "Fully Protected Area": "yes",
       "Highly Protected Area": "no",
@@ -286,7 +299,7 @@ const gmuValueOverlap: MetricGroup = {
   filename: `geomorphic_units${cogFileSuffix}`,
   datasourceId: "geomorphic",
   // @ts-ignore: need to add objective to type
-  // objective: objectives.benthicHabitat,
+  objective: objectives.benthicHabitat,
   layerId: "6216c0f5824398156adaa06f",
   classes: geomorphicClasses.map((curClass) => {
     return {
@@ -296,11 +309,59 @@ const gmuValueOverlap: MetricGroup = {
   }),
 };
 
-const habitatProtection: Report = {
-  reportId: "habitatProtection",
+const benthicHabitat: Report = {
+  reportId: "benthicHabitat",
   metrics: {
     gmuValueOverlap,
   },
+};
+
+//// ESSENTIAL HABITAT ////
+
+// Single-class rasters
+const essentialHabitatClasses: DataClass[] = [
+  {
+    baseFilename: "EFH",
+    filename: `EFH${cogFileSuffix}`,
+    noDataValue: -3.39999995214436425e38,
+    classId: "EssentialFishHabitat",
+    display: "Essential Fish Habitat",
+    layerId: "62311e435679e26d267fe2e0",
+    goalValue: 0.75,
+  },
+  {
+    baseFilename: "SWSM",
+    filename: `SWSM${cogFileSuffix}`,
+    noDataValue: -3.39999995214436425e38,
+    classId: "ShallowSeamount",
+    display: "Shallow Seamount",
+    layerId: "62311e435679e26d267fe2e6",
+    goalValue: 0.75,
+  },
+  {
+    baseFilename: "DWSM",
+    filename: `DWSM${cogFileSuffix}`,
+    noDataValue: -3.39999995214436425e38,
+    classId: "DeepSeamount",
+    display: "Deep Seamount",
+    layerId: "62311e435679e26d267fe2e4",
+    goalValue: 0.75,
+  },
+];
+
+const essentialHabitatGroups: Record<string, MetricGroup> = {
+  essentialValueOverlap: {
+    metricId: "essentialValueOverlap",
+    datasourceId: "essentialHabitat",
+    // @ts-ignore: need to add objective to type
+    objective: objectives.essentialHabitat,
+    classes: essentialHabitatClasses,
+  },
+};
+
+const essentialHabitat: Report = {
+  reportId: "essentialHabitat",
+  metrics: essentialHabitatGroups,
 };
 
 //// COMMERCIALLY IMPORTANT SPECIES ////
@@ -378,10 +439,13 @@ export default {
     fishingImpact: fishingImpactReport,
     commSigSpecies,
     priorityModelReport,
+    benthicHabitat,
+    essentialHabitat,
   },
   metricGroups: {
     oceanUse: oceanUseGroups,
     gmuValueOverlap,
+    essentialHabitatGroups,
     cFishGroups,
     priorityModelGroups,
   },

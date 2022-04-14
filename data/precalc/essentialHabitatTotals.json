@@ -1,0 +1,28 @@
+{
+  "metrics": [
+    {
+      "metricId": "essentialValueOverlap",
+      "sketchId": null,
+      "classId": "EssentialFishHabitat",
+      "groupId": null,
+      "geographyId": null,
+      "value": 55
+    },
+    {
+      "metricId": "essentialValueOverlap",
+      "sketchId": null,
+      "classId": "ShallowSeamount",
+      "groupId": null,
+      "geographyId": null,
+      "value": 74
+    },
+    {
+      "metricId": "essentialValueOverlap",
+      "sketchId": null,
+      "classId": "DeepSeamount",
+      "groupId": null,
+      "geographyId": null,
+      "value": 44
+    }
+  ]
+}

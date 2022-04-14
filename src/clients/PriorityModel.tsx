@@ -39,14 +39,15 @@ const PriorityModel = () => {
           return (
             <>
               <p>
-                63 areas have been identified using a prioritization modeling
-                approach that meets multiple objectives of this planning process
-                while minimizing overlap with current deepwater longline fishing
-                grounds. Consider including these areas in order to reach
-                planning goals while minimizing cost to this fishery.
+                63 areas have been pre-identified using a prioritization
+                modeling approach that meets multiple objectives of this
+                planning process while minimizing overlap with current deepwater
+                longline fishing grounds. Consider including these areas in
+                order to achieve planning goals while minimizing cost to this
+                fishery.
               </p>
               <p>
-                This report summarizes the percentage of these areas that
+                This report summarizes the percentage of the 63 areas that
                 overlap with this plan.
               </p>
 
