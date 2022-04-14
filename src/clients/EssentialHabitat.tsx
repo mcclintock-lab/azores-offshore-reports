@@ -126,7 +126,7 @@ const ReportSection = () => {
                 rows={parentPercMetrics}
                 dataGroup={METRIC}
                 showGoal={false}
-                showLayerToggle={false}
+                showLayerToggle={true}
                 formatPerc
                 percMetricIdName={METRIC.metricId}
                 options={{

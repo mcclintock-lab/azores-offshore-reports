@@ -14,7 +14,6 @@ import {
 } from "@seasketch/geoprocessing/client-ui";
 import { CheckCircleFill } from "@styled-icons/bootstrap";
 import { HorizontalStackedBar } from "./HorizontalStackedBar";
-import { OBJECTIVE_GREEN } from "../types/objective";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
@@ -201,7 +200,6 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
                 targetValueFormatter={(value: number) =>
                   `Target - ${percentWithEdge(goal / 100)}`
                 }
-                targetReachedColor={OBJECTIVE_GREEN}
               />
             </div>
           </div>

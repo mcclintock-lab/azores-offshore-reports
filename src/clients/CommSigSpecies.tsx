@@ -108,6 +108,12 @@ const CommSigSpecies = () => {
                 percMetricIdName={METRIC.metricId}
                 showLayerToggle={false}
                 formatPerc
+                options={{
+                  classColWidth: "45%",
+                  percColWidth: "55%",
+                  showMapWidth: "0%",
+                  goalWidth: "0%",
+                }}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>

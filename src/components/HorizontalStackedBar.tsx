@@ -61,7 +61,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
       width: 0%;
     }
     to {
-      width: ${(props) => (props.showTitle ? 80 : 100)}%;
+      width: ${(props) => (props.showTitle ? 70 : 92)}%;
     }
   }
   @media screen and (min-width: 768px) {
@@ -70,7 +70,7 @@ const StyledHorizontalStackedBar = styled.div<StyledHorizontalStackedBarProps>`
         width: 0%;
       }
       to {
-        width: ${(props) => (props.showTitle ? 70 : 100)}%;
+        width: ${(props) => (props.showTitle ? 70 : 92)}%;
       }
     }
   }

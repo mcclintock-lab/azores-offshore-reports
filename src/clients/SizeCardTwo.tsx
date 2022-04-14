@@ -8,6 +8,8 @@ import {
   ReportTableStyled,
   GroupCircleRow,
   GroupPill,
+  KeySection,
+  LayerToggle,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -23,6 +25,9 @@ import {
   flattenByGroupAllClass,
   GroupMetricAgg,
   capitalize,
+  roundLower,
+  squareMeterToKilometer,
+  toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
 import {
   mpaClassMetrics,
@@ -44,7 +49,7 @@ import {
   rbcsMpaProtectionLevels,
 } from "../types/objective";
 
-import config from "../_config";
+import config, { STUDY_REGION_AREA_SQ_METERS } from "../_config";
 
 import protectionTotals from "../../data/precalc/protectionTotals.json";
 import { RbcsZoneClassPanel } from "../components/RbcsZoneClassPanel";
@@ -81,13 +86,41 @@ export const SmallReportTableStyled = styled(ReportTableStyled)`
 
 const ProtectionCard = () => {
   return (
-    <ResultsCard title="Protection Level" functionName="protection">
+    <ResultsCard title="Size" functionName="protection">
       {(data: ReportResult) => {
+        // Grab overall size metric
+        const areaMetric = firstMatchingMetric(
+          data.metrics,
+          (m) => m.sketchId === data.sketch.properties.id && m.groupId === null
+        );
+
+        const areaDisplay = roundLower(
+          squareMeterToKilometer(areaMetric.value)
+        );
+        const percArea = areaMetric.value / STUDY_REGION_AREA_SQ_METERS;
+        const percDisplay = percentWithEdge(percArea);
+        const areaUnitDisplay = "sq. km";
+
         return (
           <ReportError>
-            {isNullSketchCollection(data.sketch)
-              ? collectionReport(data.sketch, data.metrics)
-              : sketchReport(data.sketch, data.metrics)}
+            <>
+              <KeySection>
+                This plan is{" "}
+                <b>
+                  {areaDisplay} {areaUnitDisplay}
+                </b>
+                , which is <b>{percDisplay}</b> of the Azores Exclusive Economic
+                Zone (EEZ).
+              </KeySection>
+              <LayerToggle
+                label="View EEZ Boundary"
+                layerId="61893947da2f4b683bb7318e"
+              />
+              <br />
+              {isNullSketchCollection(data.sketch)
+                ? collectionReport(data.sketch, data.metrics)
+                : sketchReport(data.sketch, data.metrics)}
+            </>
           </ReportError>
         );
       }}
@@ -121,39 +154,6 @@ const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
 
   return (
     <>
-      <p>This MPA is classified by its allowed actitivities as follows:</p>
-      <div style={{ padding: 10, border: "1px dotted #aaa", borderRadius: 10 }}>
-        <div
-          style={{
-            padding: "0px 10px 10px 10px",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span style={{ width: 60 }}>MPA:</span>
-          <RbcsMpaClassPanel
-            value={sketchRegMpaMetric.value}
-            size={18}
-            displayName={sketchRegMpaMetric.extra?.label || "Missing label"}
-            displayValue={false}
-            group={sketchRegMpaMetric.extra?.label}
-            groupColorMap={groupColorMap}
-          />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            border: "1px dotted #ddd",
-            borderRadius: 10,
-            padding: 10,
-          }}
-        >
-          <span style={{ width: 60 }}>Zone:</span>
-          <RbcsZoneClassPanel value={sketchRegZoneMetric.value} size={18} />
-        </div>
-      </div>
-      <p>Based on those assigned classifications:</p>
       <AzoresMpaObjectives
         objectives={OBJECTIVES}
         level={mpaClassificationName}
@@ -268,6 +268,12 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
   const childAreaMetrics = metrics.filter(
     (m) => m.sketchId !== sketch.properties.id
   );
+
+  const childAreaPercMetrics = toPercentMetric(
+    childAreaMetrics,
+    precalcTotals.metrics
+  );
+
   const regMetrics = mpaClassMetrics(sketch, childAreaMetrics);
   const regChildMetrics = regMetrics.filter(
     (m) => m.sketchId !== sketch.properties.id
@@ -275,22 +281,6 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
 
   return (
     <>
-      <p>
-        MPAs group into protection levels based on their allowed activities as
-        follows:
-      </p>
-      <ReportChartFigure>
-        <HorizontalStackedBar
-          {...chartAllConfig}
-          blockGroupNames={blockGroupNames}
-          blockGroupStyles={blockGroupStyles}
-          showLegend={true}
-          showTitle={true}
-          valueFormatter={valueFormatter}
-        />
-
-        <p></p>
-      </ReportChartFigure>
       <AzoresNetworkObjectiveStatus
         objective={OBJECTIVES.eez}
         objectiveMet={eezMet}
@@ -324,7 +314,7 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
       </Collapse>
 
       <Collapse title="Show by MPA">
-        {genMpaSketchTable(sketchesById, regChildMetrics)}
+        {genMpaSketchTable(sketchesById, childAreaPercMetrics)}
       </Collapse>
     </>
   );
@@ -340,30 +330,16 @@ const genLearnMore = () => (
 
 const genMpaSketchTable = (
   sketchesById: Record<string, NullSketch>,
-  regMetrics: RegBasedClassificationMetric[]
+  regMetrics: Metric[]
 ) => {
-  const columns: Column<RegBasedClassificationMetric>[] = [
+  const columns: Column<Metric>[] = [
     {
       Header: "MPA",
-      accessor: (row) => sketchesById[row.sketchId].properties.name,
+      accessor: (row) => sketchesById[row.sketchId!].properties.name,
     },
     {
-      Header: "Index Score",
-      accessor: (row) => {
-        return (
-          <PointyCircle
-            color={
-              row.extra?.label ? groupColorMap[row.extra.label] : undefined
-            }
-          >
-            {row.value}
-          </PointyCircle>
-        );
-      },
-    },
-    {
-      Header: "Protection Level",
-      accessor: (row) => row.extra?.label,
+      Header: "% EEZ",
+      accessor: (row) => percentWithEdge(row.value),
     },
   ];
 

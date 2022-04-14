@@ -121,43 +121,24 @@ const sketchReport = (sketch: NullSketch, metrics: Metric[]) => {
 
   return (
     <>
-      <p>This MPA is classified by its allowed actitivities as follows:</p>
-      <div style={{ padding: 10, border: "1px dotted #aaa", borderRadius: 10 }}>
-        <div
-          style={{
-            padding: "0px 10px 10px 10px",
-            display: "flex",
-            alignItems: "center",
-          }}
-        >
-          <span style={{ width: 60 }}>MPA:</span>
-          <RbcsMpaClassPanel
-            value={sketchRegMpaMetric.value}
-            size={18}
-            displayName={sketchRegMpaMetric.extra?.label || "Missing label"}
-            displayValue={false}
-            group={sketchRegMpaMetric.extra?.label}
-            groupColorMap={groupColorMap}
-          />
-        </div>
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            border: "1px dotted #ddd",
-            borderRadius: 10,
-            padding: 10,
-          }}
-        >
-          <span style={{ width: 60 }}>Zone:</span>
-          <RbcsZoneClassPanel value={sketchRegZoneMetric.value} size={18} />
-        </div>
+      <p>Based on allowed activities this MPA is a:</p>
+
+      <div
+        style={{
+          padding: "0px 10px 10px 0px",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        <RbcsMpaClassPanel
+          value={sketchRegMpaMetric.value}
+          size={18}
+          displayName={sketchRegMpaMetric.extra?.label || "Missing label"}
+          displayValue={false}
+          group={sketchRegMpaMetric.extra?.label}
+          groupColorMap={groupColorMap}
+        />
       </div>
-      <p>Based on those assigned classifications:</p>
-      <AzoresMpaObjectives
-        objectives={OBJECTIVES}
-        level={mpaClassificationName}
-      />
 
       {genLearnMore()}
     </>
@@ -182,6 +163,8 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
     levelMetrics,
     precalcTotals.metrics
   );
+
+  console.log("groupLevelAggs", groupLevelAggs);
 
   const totalsByObjective = getKeys(OBJECTIVES).reduce<
     Record<string, number[]>
@@ -214,11 +197,18 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
   // Objective charts
 
   // Convert to row of block roups and filter out zero values so they don't show up in the legend
+  const totalSketches = groupLevelAggs.reduce(
+    (sumSoFar, agg) => (agg.numSketches as number) + sumSoFar,
+    0
+  );
   const rowBlocks: HorizontalStackedBarRow = groupLevelAggs.reduce<
     Array<Array<number>>
   >((blockSoFar, agg) => {
     if (agg.percValue > 0) {
-      return [...blockSoFar, [agg.percValue * 100]];
+      return [
+        ...blockSoFar,
+        [((agg.numSketches as number) / totalSketches) * 100],
+      ];
     } else {
       return blockSoFar;
     }
@@ -228,7 +218,7 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
     rows: [rowBlocks],
     rowConfigs: [
       {
-        title: "% EEZ",
+        title: "",
       },
     ],
     max: 100,
@@ -276,8 +266,8 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
   return (
     <>
       <p>
-        MPAs group into protection levels based on their allowed activities as
-        follows:
+        Based on allowed activities, protection levels were assigned to this
+        plans MPAs as follows:
       </p>
       <ReportChartFigure>
         <HorizontalStackedBar
@@ -285,40 +275,11 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
           blockGroupNames={blockGroupNames}
           blockGroupStyles={blockGroupStyles}
           showLegend={true}
-          showTitle={true}
-          valueFormatter={valueFormatter}
-        />
-
-        <p></p>
-      </ReportChartFigure>
-      <AzoresNetworkObjectiveStatus
-        objective={OBJECTIVES.eez}
-        objectiveMet={eezMet}
-      />
-      <ReportChartFigure>
-        <HorizontalStackedBar
-          {...chart1Config}
-          blockGroupNames={blockGroupNames}
-          blockGroupStyles={blockGroupStyles}
-          showLegend={false}
+          showTitle={false}
+          showTotalLabel={false}
           valueFormatter={valueFormatter}
         />
       </ReportChartFigure>
-      <AzoresNetworkObjectiveStatus
-        objective={OBJECTIVES.eezNoTake}
-        objectiveMet={eezNoTakeMet}
-      />
-      <ReportChartFigure>
-        <HorizontalStackedBar
-          {...chart2Config}
-          blockGroupNames={blockGroupNames}
-          blockGroupStyles={blockGroupStyles}
-          showLegend={false}
-          valueFormatter={valueFormatter}
-        />
-      </ReportChartFigure>
-
-      {genLearnMore()}
       <Collapse title="Show by Protection Level">
         {genGroupLevelTable(groupLevelAggs)}
       </Collapse>
@@ -326,6 +287,12 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
       <Collapse title="Show by MPA">
         {genMpaSketchTable(sketchesById, regChildMetrics)}
       </Collapse>
+      <p>
+        MPAs with less than Full protection don't count towards some planning
+        objectives so take note of the requirements for each.
+      </p>
+
+      {genLearnMore()}
     </>
   );
 };
@@ -444,16 +411,6 @@ const genGroupLevelTable = (levelAggs: GroupMetricAgg[]) => {
           }
         />
       ),
-    },
-    {
-      Header: "% EEZ",
-      accessor: (row) => {
-        return (
-          <GroupPill groupColorMap={groupColorMap} group={row.groupId}>
-            {percentWithEdge(row.percValue as number)}
-          </GroupPill>
-        );
-      },
     },
   ];
 
