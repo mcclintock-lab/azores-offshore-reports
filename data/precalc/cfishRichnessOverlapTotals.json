@@ -1,0 +1,52 @@
+{
+  "metrics": [
+    {
+      "metricId": "cFishRichValueOverlap",
+      "sketchId": null,
+      "classId": "1",
+      "groupId": null,
+      "geographyId": null,
+      "value": 98
+    },
+    {
+      "metricId": "cFishRichValueOverlap",
+      "sketchId": null,
+      "classId": "2",
+      "groupId": null,
+      "geographyId": null,
+      "value": 148
+    },
+    {
+      "metricId": "cFishRichValueOverlap",
+      "sketchId": null,
+      "classId": "3",
+      "groupId": null,
+      "geographyId": null,
+      "value": 92
+    },
+    {
+      "metricId": "cFishRichValueOverlap",
+      "sketchId": null,
+      "classId": "4",
+      "groupId": null,
+      "geographyId": null,
+      "value": 47
+    },
+    {
+      "metricId": "cFishRichValueOverlap",
+      "sketchId": null,
+      "classId": "5",
+      "groupId": null,
+      "geographyId": null,
+      "value": 135
+    },
+    {
+      "metricId": "cFishRichValueOverlap",
+      "sketchId": null,
+      "classId": "6",
+      "groupId": null,
+      "geographyId": null,
+      "value": 163
+    }
+  ]
+}

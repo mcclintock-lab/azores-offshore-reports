@@ -63,7 +63,7 @@ export interface ClassTableProps {
 /**
  * Table displaying class metrics, one class per table row.  Must add metricIdName or percMetricIdName
  */
-export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
+export const SpeciesRichnessTable: React.FunctionComponent<ClassTableProps> = ({
   titleText = "Class",
   rows,
   dataGroup,
@@ -121,27 +121,7 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
     classId,
   }));
 
-  let columns: Column<{ classId: string }>[] = [
-    {
-      Header: titleText,
-      accessor: (row) =>
-        classesByName[row.classId || "missing"]?.display || "missing",
-      style: { width: colWidths.classColWidth },
-    },
-  ];
-
-  if (metricIdName) {
-    columns.push({
-      Header: percColText,
-      // Add separate formatter function
-      accessor: (row) => {
-        const value =
-          metricsByClassByMetric[row.classId][metricIdName][0].value;
-        return `${value}${unitLabel ? ` ${unitLabel}` : ""}`;
-      },
-      style: { width: colWidths.areaWidth },
-    });
-  }
+  let columns: Column<{ classId: string }>[] = [];
 
   if (percMetricIdName) {
     columns.push({
@@ -209,6 +189,34 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
     });
   }
 
+  if (metricIdName) {
+    columns.push({
+      Header: percColText,
+      // Add separate formatter function
+      accessor: (row) => {
+        const value =
+          metricsByClassByMetric[row.classId][metricIdName][0].value;
+        return (
+          <span>
+            <b>{value}</b> planning units
+          </span>
+        );
+      },
+      style: { width: colWidths.areaWidth },
+    });
+  }
+
+  columns.push({
+    Header: titleText,
+    accessor: (row) => (
+      <>
+        of areas with <b>{classesByName[row.classId || "missing"]?.display}</b>{" "}
+        species
+      </>
+    ),
+    style: { textAlign: "left", width: colWidths.classColWidth },
+  });
+
   // Optionally insert layer toggle column
   if (showLayerToggle) {
     columns.push({
@@ -245,7 +253,7 @@ export const ClassTable: React.FunctionComponent<ClassTableProps> = ({
   if (showGoal) {
     columns.splice(columns.length - (showLayerToggle ? 1 : 0), 0, {
       Header: goalColText,
-      style: { textAlign: "right", width: colWidths.goalWidth },
+      style: { width: colWidths.goalWidth },
       accessor: (row) => {
         const goalValue = dataGroup.classes.find(
           (curClass) => curClass.classId === row.classId

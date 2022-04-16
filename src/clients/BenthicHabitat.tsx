@@ -43,8 +43,9 @@ const BenthicHabitat = () => {
             <>
               <p>
                 Plans should ensure the protection of representative deep-sea
-                benthic habitats and associated ecosystems. This report
-                summarizes the proportion of each habitat found in the plan.
+                benthic (seabottom) habitats and associated ecosystems. This
+                report summarizes the proportion of each benthic habitat found
+                in the plan.
               </p>
               <Collapse title="Learn more">
                 <p>

@@ -44,6 +44,7 @@
     "src/functions/oceanUse.ts",
     "src/functions/gmu.ts",
     "src/functions/cFish.ts",
+    "src/functions/cFishRichness.ts",
     "src/functions/priorityModel.ts",
     "src/functions/essentialHabitat.ts"
   ]

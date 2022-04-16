@@ -9,11 +9,6 @@ import {
 } from "@seasketch/geoprocessing/client-core";
 import config, { STUDY_REGION_AREA_SQ_METERS } from "../_config";
 
-const METRIC_NAME = "areaOverlap";
-const CONFIG = config;
-const REPORT = CONFIG.reports.sizeReport;
-const METRIC = REPORT.metrics[METRIC_NAME];
-
 const SizeCard = () => (
   <ResultsCard title="Size" functionName="area">
     {(data: ReportResult) => {

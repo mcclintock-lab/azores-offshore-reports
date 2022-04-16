@@ -164,8 +164,6 @@ const collectionReport = (sketch: NullSketchCollection, metrics: Metric[]) => {
     precalcTotals.metrics
   );
 
-  console.log("groupLevelAggs", groupLevelAggs);
-
   const totalsByObjective = getKeys(OBJECTIVES).reduce<
     Record<string, number[]>
   >((acc, objectiveId) => {

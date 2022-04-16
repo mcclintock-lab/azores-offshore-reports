@@ -122,27 +122,7 @@ export const objectives: ProjectObjectives = {
   },
 };
 
-//// AREA ////
-
-const sizeReport: Report = {
-  reportId: "area",
-  metrics: {
-    areaOverlap: {
-      metricId: "areaOverlap",
-      baseFilename: "nearshore_dissolved",
-      filename: "nearshore_dissolved.fgb",
-      classes: [
-        {
-          classId: "eez",
-          display: "EEZ",
-        },
-      ],
-      layerId: "6164aebea04323106537eb5a",
-    },
-  },
-};
-
-//// PROTECTION ////
+//// SIZE / PROTECTION ////
 
 const protection: Report = {
   reportId: "protection",
@@ -426,6 +406,31 @@ const commSigSpecies: Report = {
   metrics: cFishGroups,
 };
 
+//// FISH RICHNESS ////
+
+// N count raster
+const cFishRichClasses: DataClass[] = Array.from({ length: 6 }, (v, i) => ({
+  numericClassId: i + 1,
+  classId: `${i + 1}`,
+  display: `${i + 1}`,
+}));
+
+const cFishRichGroups: Record<string, MetricGroup> = {
+  cFishRichValueOverlap: {
+    metricId: "cFishRichValueOverlap",
+    baseFilename: "cfishRichnessAll",
+    filename: `cfishRichnessAll${cogFileSuffix}`,
+    datasourceId: "cfishRichness",
+    layerId: "621ac583075911e90781aeb0",
+    classes: cFishRichClasses,
+  },
+};
+
+const cFishRichReport: Report = {
+  reportId: "cFishRichness",
+  metrics: cFishRichGroups,
+};
+
 export default {
   STUDY_REGION_AREA_SQ_METERS,
   units,
@@ -434,13 +439,13 @@ export default {
   objectives,
   externalLinks,
   reports: {
-    sizeReport,
     protection,
     fishingImpact: fishingImpactReport,
     commSigSpecies,
     priorityModelReport,
     benthicHabitat,
     essentialHabitat,
+    cFishRichReport,
   },
   metricGroups: {
     oceanUse: oceanUseGroups,
@@ -448,5 +453,6 @@ export default {
     essentialHabitatGroups,
     cFishGroups,
     priorityModelGroups,
+    cFishRichGroups,
   },
 };

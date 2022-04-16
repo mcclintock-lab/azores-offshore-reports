@@ -1,6 +1,9 @@
-All data prep done in QGIS
+# Source Data
 
-Commercially important species are 1 per band from cfish.tif source raster in following order:
+Habitat suitability model data - predicted abundance
+- Box Sync/GIS/Waitt/Azores/Data_Recevied/From_Telmo/SCP_deep_sea/5_Development of planning scenarios/5.1.2_Commercially important deep-sea benthic fish species/HSM_fish_5km.tif
+
+Commercially important species are 1 per band from source raster in following order:
 Beryx_splendens
 Pontinus_kuhlii
 Helicolenus_dactylopterus
@@ -8,9 +11,14 @@ Polyprion_americanus
 Pagellus_bogaraveo
 Beryx_decadactylus
 
-Calculate presence/absence with published thresholds for each band
+# Suitable Habitat
 
-Drafted as:
+Suitable habitat for a species is where predicted abundance is above published threshold value
+Generate 1 binary raster per species (band)
+
+see cfish-0-batch-rastercalc.json implementation saved from qgis raster calculator batch processor
+Load this json file and rerun as needed, paths may need updating
+
 ("HSM_fish_5km@1" <= 0.11) * 0 + ("HSM_fish_5km@1" > 0.11) * 1
 ("HSM_fish_5km@2" <= 0.10) * 0 + ("HSM_fish_5km@2" > 0.10) * 1
 ("HSM_fish_5km@3" <= 0.52) * 0 + ("HSM_fish_5km@3" > 0.52) * 1
@@ -18,17 +26,13 @@ Drafted as:
 ("HSM_fish_5km@5" <= 0.50) * 0 + ("HSM_fish_5km@5" > 0.50) * 1
 ("HSM_fish_5km@6" <= 0.12) * 0 + ("HSM_fish_5km@6" > 0.12) * 1
 
-see cfish-0-batch-rastercalc.json implementation saved from qgis raster calculator batch processor
-Load this json file and rerun as needed, paths may need updating
+# Sum
+Sum the predicted habitat suitability across all bands (not clear what this represents)
 
-Sum presence/absence binary rasters above to produce an N species raster
+"HSM_fish_5km@1" + "HSM_fish_5km@2" + "HSM_fish_5km@3" + "HSM_fish_5km@4" + "HSM_fish_5km@5" + "HSM_fish_5km@6"
 
-"cfish_1@1" + "cfish_2@1" + "cfish_3@1" + "cfish_4@1" + "cfish_5@1" + "cfish_6@1"
+# Richness
+Convert predicted abundance to a 1 (representing presence of species) and sum all bands to get the number of species present out of 6 possible
+Note that thresholds were not used in order to reproduce Figure 31.  Not clear why thresholds were not used.
 
-Alternative version tested without use of threshold values, presence is simply an value > 0
-("HSM_fish_5km@1" > 0) * 1
-("HSM_fish_5km@2" > 0) * 1
-("HSM_fish_5km@3" > 0) * 1
-("HSM_fish_5km@4" > 0) * 1
-("HSM_fish_5km@5" > 0) * 1
-("HSM_fish_5km@6" > 0) * 1
+("HSM_fish_5km@1" > 0) * 1 + ("HSM_fish_5km@2" > 0) * 1 + ("HSM_fish_5km@3" > 0) * 1 + ("HSM_fish_5km@4" > 0) * 1 + ("HSM_fish_5km@5" > 0) * 1 + ("HSM_fish_5km@6" > 0) * 1

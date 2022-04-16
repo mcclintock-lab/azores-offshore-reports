@@ -26,10 +26,7 @@ const CommSigSpecies = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <>
-      <ResultsCard
-        title="Commercially Significant Species"
-        functionName="cFish"
-      >
+      <ResultsCard title="Fish Habitat" functionName="cFish">
         {(data: ReportResult) => {
           // Single sketch or collection top-level
           const parentMetrics = metricsWithSketchId(
@@ -96,10 +93,6 @@ const CommSigSpecies = () => {
                 </ul>
               </Collapse>
 
-              <LayerToggle
-                label="View Fish Richness Layer"
-                layerId={METRIC.layerId}
-              />
               <ClassTable
                 titleText=" "
                 valueColText="Within Plan"
@@ -114,6 +107,10 @@ const CommSigSpecies = () => {
                   showMapWidth: "0%",
                   goalWidth: "0%",
                 }}
+              />
+              <LayerToggle
+                label="View Fish Richness Layer"
+                layerId={METRIC.layerId}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>
