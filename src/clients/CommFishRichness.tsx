@@ -76,12 +76,11 @@ const CommFishRichness = () => {
                   this is limited to the data-rich area.
                 </p>
                 <p>
-                  📈 Report: the report tabulates the number of planning units
+                  📈 Report: the report summarizes the number of planning units
                   within the plan containing N species, where N is 1, 2, 3, 4,
-                  5, or 6. The percentage of N within the plan is then
-                  calculated by dividing the number of units with N species
-                  within the plan by the total number in the whole planning
-                  area.
+                  5, or 6 species. The percentage is then calculated by dividing
+                  the number of units with N species within the plan by the
+                  total number with N species in the whole planning area.
                 </p>
                 <p>
                   Further Information:{" "}

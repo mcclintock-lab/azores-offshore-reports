@@ -1,0 +1,20 @@
+{
+  "metrics": [
+    {
+      "metricId": "vmeValueOverlap",
+      "sketchId": null,
+      "classId": "HydrothermalVent",
+      "groupId": null,
+      "geographyId": null,
+      "value": 13
+    },
+    {
+      "metricId": "vmeValueOverlap",
+      "sketchId": null,
+      "classId": "BenthicCommunities",
+      "groupId": null,
+      "geographyId": null,
+      "value": 89
+    }
+  ]
+}

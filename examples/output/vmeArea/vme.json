@@ -1,0 +1,83 @@
+{
+  "metrics": [
+    {
+      "metricId": "vmeValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "HydrothermalVent",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "vmeValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "BenthicCommunities",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "625a657273095115bb25e275",
+      "name": "vmeArea",
+      "updatedAt": "2022-04-16T06:42:58.543Z",
+      "createdAt": "2022-04-16T06:42:58.543Z",
+      "sketchClassId": "5f46dd53017aa0388f5f87c5",
+      "isCollection": false,
+      "userAttributes": [
+        {
+          "label": "Aquaculture and Bottom Exploitation",
+          "fieldType": "ChoiceField",
+          "exportId": "AQUACULTURE",
+          "value": "NOT_ALLOWED"
+        },
+        {
+          "label": "Allowed Fishing Gear",
+          "fieldType": "ChoiceField",
+          "exportId": "GEAR_TYPES",
+          "value": "[\"CAST_NETS\"]"
+        },
+        {
+          "label": "Boating and Anchoring",
+          "fieldType": "ChoiceField",
+          "exportId": "BOATING",
+          "value": "NOT_ALLOWED"
+        },
+        {
+          "label": "Comments",
+          "fieldType": "TextArea",
+          "exportId": "COMMENTS",
+          "value": ""
+        },
+        {
+          "label": "Exclude nearshore area? (defaults to yes)",
+          "fieldType": "ChoiceField",
+          "exportId": "NEAR_CLIP_DIST",
+          "value": ""
+        },
+        {
+          "label": "Exclude area within 8km of EEZ outer edge? (defaults to yes)",
+          "fieldType": "ChoiceField",
+          "exportId": "EXCLUDE_AREA_",
+          "value": ""
+        }
+      ]
+    },
+    "id": "1",
+    "bbox": [
+      -30.336022712345635,
+      39.769003413733394,
+      -28.792443610783238,
+      40.7873389408102
+    ],
+    "geometry": null
+  }
+}

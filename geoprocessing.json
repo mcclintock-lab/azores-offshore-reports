@@ -46,6 +46,7 @@
     "src/functions/cFish.ts",
     "src/functions/cFishRichness.ts",
     "src/functions/priorityModel.ts",
-    "src/functions/essentialHabitat.ts"
+    "src/functions/essentialHabitat.ts",
+    "src/functions/vme.ts"
   ]
 }

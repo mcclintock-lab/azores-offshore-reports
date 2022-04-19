@@ -36,6 +36,7 @@ export const projectObjectiveIds = [
   "benthicHabitat",
   "essentialHabitat",
   "cFish",
+  "vme",
 ] as const;
 export type ProjectSizeObjectiveId = typeof projectSizeObjectiveIds[number];
 export type ProjectObjectiveId = typeof projectObjectiveIds[number];
@@ -112,6 +113,18 @@ export const objectives: ProjectObjectives = {
     id: "cFish",
     shortDesc: "15% of each species",
     target: 0.15,
+    countsToward: {
+      "Fully Protected Area": "yes",
+      "Highly Protected Area": "no",
+      "Moderately Protected Area": "no",
+      "Poorly Protected Area": "no",
+      "Unprotected Area": "no",
+    },
+  },
+  vme: {
+    id: "vme",
+    shortDesc: "100% of known VME",
+    target: 1.0,
     countsToward: {
       "Fully Protected Area": "yes",
       "Highly Protected Area": "no",
@@ -211,6 +224,45 @@ const priorityModelGroups: Record<string, MetricGroup> = {
 const priorityModelReport: Report = {
   reportId: "priorityModel",
   metrics: priorityModelGroups,
+};
+
+//// VME ////
+
+// Single-class rasters
+const vmeClasses: DataClass[] = [
+  {
+    baseFilename: "hv5km",
+    filename: `hv5km${cogFileSuffix}`,
+    noDataValue: -3.39999995214436425e38,
+    classId: "HydrothermalVent",
+    display: "Hydrothermal Vents",
+    layerId: "623387e0ff85443a71b354cf",
+    goalValue: 1,
+  },
+  {
+    baseFilename: "VMEs_in_PUs_5pct",
+    filename: `VMEs_in_PUs_5pct${cogFileSuffix}`,
+    noDataValue: -3.39999995214436425e38,
+    classId: "BenthicCommunities",
+    display: "Benthic Communities",
+    layerId: "",
+    goalValue: 1,
+  },
+];
+
+const vmeGroups: Record<string, MetricGroup> = {
+  vmeValueOverlap: {
+    metricId: "vmeValueOverlap",
+    datasourceId: "vme",
+    // @ts-ignore: need to add objective to type
+    objective: objectives.vme,
+    classes: vmeClasses,
+  },
+};
+
+const vme: Report = {
+  reportId: "vme",
+  metrics: vmeGroups,
 };
 
 //// GEOMORPHIC ////
@@ -446,6 +498,7 @@ export default {
     benthicHabitat,
     essentialHabitat,
     cFishRichReport,
+    vme,
   },
   metricGroups: {
     oceanUse: oceanUseGroups,
@@ -454,5 +507,6 @@ export default {
     cFishGroups,
     priorityModelGroups,
     cFishRichGroups,
+    vmeGroups,
   },
 };
