@@ -1,0 +1,204 @@
+{
+  "metrics": [
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 322.5211094915867,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.0686110258102417,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 320.4524988234043,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 209.03166446089745,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "625a657273095115bb25e275",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "vmeArea"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "625a657273095115bb25e275",
+      "name": "vmeArea",
+      "updatedAt": "2022-04-16T06:42:58.543Z",
+      "createdAt": "2022-04-16T06:42:58.543Z",
+      "sketchClassId": "5f46dd53017aa0388f5f87c5",
+      "isCollection": false,
+      "userAttributes": [
+        {
+          "label": "Aquaculture and Bottom Exploitation",
+          "fieldType": "ChoiceField",
+          "exportId": "AQUACULTURE",
+          "value": "NOT_ALLOWED"
+        },
+        {
+          "label": "Allowed Fishing Gear",
+          "fieldType": "ChoiceField",
+          "exportId": "GEAR_TYPES",
+          "value": "[\"CAST_NETS\"]"
+        },
+        {
+          "label": "Boating and Anchoring",
+          "fieldType": "ChoiceField",
+          "exportId": "BOATING",
+          "value": "NOT_ALLOWED"
+        },
+        {
+          "label": "Comments",
+          "fieldType": "TextArea",
+          "exportId": "COMMENTS",
+          "value": ""
+        },
+        {
+          "label": "Exclude nearshore area? (defaults to yes)",
+          "fieldType": "ChoiceField",
+          "exportId": "NEAR_CLIP_DIST",
+          "value": ""
+        },
+        {
+          "label": "Exclude area within 8km of EEZ outer edge? (defaults to yes)",
+          "fieldType": "ChoiceField",
+          "exportId": "EXCLUDE_AREA_",
+          "value": ""
+        }
+      ]
+    },
+    "id": "1",
+    "bbox": [
+      -30.336022712345635,
+      39.769003413733394,
+      -28.792443610783238,
+      40.7873389408102
+    ],
+    "geometry": null
+  }
+}

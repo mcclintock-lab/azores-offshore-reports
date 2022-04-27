@@ -25,6 +25,8 @@ export const fgbFileSuffix = ".fgb";
 const externalLinks = {
   scpReport:
     "https://s3.amazonaws.com/SeaSketch/SCP_Azores_final+report_v3.1.pdf",
+  gfwFishingEffort:
+    "https://globalfishingwatch.org/dataset-and-code-fishing-effort",
 };
 
 //// OBJECTIVES ////
@@ -199,6 +201,115 @@ const oceanUseGroups: Record<string, MetricGroup> = {
 const fishingImpactReport: Report = {
   reportId: "fishingImpact",
   metrics: oceanUseGroups,
+};
+
+//// GLOBAL FISHING WATCH 2019-2022 ////
+
+const gfwFishingEffortClasses: DataClass[] = [
+  {
+    baseFilename: "all-fish-19-22",
+    classId: "all",
+    display: "All Fishing 2019-2022",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4c4",
+  },
+  {
+    baseFilename: "drifting_longlines",
+    classId: "gear_type:drifting_longlines",
+    display: "Drifting Longline",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4cc",
+  },
+  {
+    baseFilename: "pole_and_line",
+    classId: "gear_type:pole_and_line",
+    display: "Pole and Line",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4d0",
+  },
+  {
+    baseFilename: "set_longlines",
+    classId: "gear_type:set_longlines",
+    display: "Set Longline",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4d4",
+  },
+  {
+    baseFilename: "fixed_gear",
+    classId: "gear_type:fixed_gear",
+    display: "Fixed Gear",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4ce",
+  },
+  {
+    baseFilename: "purse_seines",
+    classId: "gear_type:purse_seines",
+    display: "Purse Seine",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4d2",
+  },
+  {
+    baseFilename: "other_purse_seines",
+    classId: "gear_type:other_purse_seines",
+    display: "Other Purse Seine",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4d8",
+  },
+  {
+    baseFilename: "set_gillnets",
+    classId: "gear_type:set_gillnets",
+    display: "Set Gillnet",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4d6",
+  },
+  {
+    baseFilename: "trawlers",
+    classId: "gear_type:trawlers",
+    display: "Trawler",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4da",
+  },
+  {
+    baseFilename: "trollers",
+    classId: "gear_type:trollers",
+    display: "Troller",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4dc",
+  },
+  {
+    baseFilename: "PRT",
+    classId: "country:prt",
+    display: "Portugal",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4c6",
+  },
+  {
+    baseFilename: "ESP",
+    classId: "country:esp",
+    display: "Spain",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4c8",
+  },
+  {
+    baseFilename: "RUS",
+    classId: "country:rus",
+    display: "Russia",
+    noDataValue: -3.39999995214436425e38,
+    layerId: "62421ff87c16283c3e3bf4c8",
+  },
+];
+
+const gfwFishingEffortGroups: Record<string, MetricGroup> = {
+  gfwFishingEffortValueOverlap: {
+    metricId: "gfwFishingEffortValueOverlap",
+    datasourceId: "gfwFishingEffort",
+    classes: gfwFishingEffortClasses.map((curClass) => {
+      return {
+        ...curClass,
+        filename: `${curClass.baseFilename}${cogFileSuffix}`,
+      };
+    }),
+  },
 };
 
 //// PRIORITIZATION MODEL SOLUTIONS
@@ -502,6 +613,7 @@ export default {
   },
   metricGroups: {
     oceanUse: oceanUseGroups,
+    gfwFishingEffortGroups,
     gmuValueOverlap,
     essentialHabitatGroups,
     cFishGroups,

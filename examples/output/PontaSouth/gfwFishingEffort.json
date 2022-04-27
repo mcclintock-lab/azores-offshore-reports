@@ -1,0 +1,192 @@
+{
+  "metrics": [
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2207.4108276367188,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.2397220134735107,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2205.171096801758,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 6.26555597782135,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 592.9136052727699,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 744.2294311523438,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 18.601388216018677,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "62054c709557604f3e5f6cd1",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "PontaSouth"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "Feature",
+    "properties": {
+      "id": "62054c709557604f3e5f6cd1",
+      "name": "PontaSouth",
+      "updatedAt": "2022-02-18T16:56:59.790Z",
+      "createdAt": "2022-02-10T17:33:36.081Z",
+      "sketchClassId": "5f46dd53017aa0388f5f87c5",
+      "isCollection": false,
+      "userAttributes": [
+        {
+          "label": "Aquaculture and Bottom Exploitation",
+          "fieldType": "ChoiceField",
+          "exportId": "AQUACULTURE",
+          "value": "SOME_RESTRICTIONS"
+        },
+        {
+          "label": "Allowed Fishing Gear",
+          "fieldType": "ChoiceField",
+          "exportId": "GEAR_TYPES",
+          "value": "[\"CAST_NETS\",\"FISH_TRAPS\"]"
+        },
+        {
+          "label": "Boating and Anchoring",
+          "fieldType": "ChoiceField",
+          "exportId": "BOATING",
+          "value": "UNREGULATED"
+        },
+        {
+          "label": "Comments",
+          "fieldType": "TextArea",
+          "exportId": "COMMENTS",
+          "value": "a comment"
+        }
+      ]
+    },
+    "id": "1",
+    "bbox": [
+      -25.79092302734355,
+      37.579679800006474,
+      -25.36245623046857,
+      37.72320219915908
+    ],
+    "geometry": null
+  }
+}

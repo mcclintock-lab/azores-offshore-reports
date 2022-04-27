@@ -1,0 +1,1490 @@
+{
+  "metrics": [
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 8236.148019567132,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3402.4357858570293,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 22033.709461919032,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 857.2236092761159,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3402.4357858570293,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2244.2195856701583,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 5207.803872823715,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2085.8785887248814,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3085.8268682667986,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1925.514395412989,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 7710.45289500244,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 501.47194270044565,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1925.514395412989,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 156.50090205669403,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2018.1923986040056,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 22.946387961506844,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 5150.321161375381,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1476.921384949237,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 14320.345462358557,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 355.7516666390002,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1476.921384949237,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2087.397012649104,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3187.0220191292465,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2062.932217616588,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.911110907793045,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0.32166698575019836,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.5894439220428467,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 7270.543536186218,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3215.4141003573313,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 16718.58556709718,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 559.0874984413385,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 3215.4141003573313,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 840.02070200257,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 4648.428060352802,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 185.09166975691915,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 140.7686091810465,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1297.6291642934084,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 126.12249636650085,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1030.738058745861,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 20.52999985218048,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 20.52999985218048,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 12.021665036678314,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1730.968323044479,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 297.5741667971015,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1340.5783251225948,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 47.47860932350159,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 33.31555676460266,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 17.293887838721275,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 17.293887838721275,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 123.98888924717903,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 125.05361118912697,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 1.064721941947937,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 19.755834322422743,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 71.68638985976577,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 51.930555537343025,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 5.164444953203201,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.3119449615478516,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 16.814999878406525,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0.5619440078735352,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 2.3119449615478516,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0.32166698575019836,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 8.454998970031738,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbcd9bebba5441ad7a2a",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 60.71499986946583,
+      "extra": {
+        "sketchName": "Full A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcbfd9bebba5441ad7a2d",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622bcc099bebba5441ad7a2e",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 60.71499986946583,
+      "extra": {
+        "sketchName": "Plan b",
+        "isCollection": true
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bac9bebba5441ad7c32",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Moderate A"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8bee53322a4154af6d0a",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High A Copy"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8c239bebba5441ad7c3a",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "622c8e619bebba5441ad7c58",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "High B"
+      }
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": "6238b1979089cd4e3e1f23ee",
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 0,
+      "extra": {
+        "sketchName": "Poor A"
+      }
+    }
+  ],
+  "sketch": {
+    "type": "FeatureCollection",
+    "properties": {
+      "id": "622bcc099bebba5441ad7a2e",
+      "name": "Plan b",
+      "updatedAt": "2022-03-21T17:13:39.160Z",
+      "createdAt": "2022-03-11T22:24:09.566Z",
+      "sketchClassId": "5f46dd57017aa0388f5f87cd",
+      "isCollection": true,
+      "userAttributes": []
+    },
+    "features": [
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622bcbcd9bebba5441ad7a2a",
+          "name": "Full A",
+          "updatedAt": "2022-03-12T12:00:43.640Z",
+          "createdAt": "2022-03-11T22:23:09.353Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": ""
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "1",
+        "bbox": [
+          -28.926146416013914,
+          38.73078165204215,
+          -22.401640800781394,
+          42.07605128679705
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622bcbfd9bebba5441ad7a2d",
+          "name": "High A",
+          "updatedAt": "2022-03-12T12:00:58.751Z",
+          "createdAt": "2022-03-11T22:23:57.736Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "2",
+        "bbox": [
+          -30.048125175779223,
+          34.064316089120766,
+          -25.302031425780566,
+          37.10146256471699
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8bac9bebba5441ad7c32",
+          "name": "Moderate A",
+          "updatedAt": "2022-03-12T12:02:29.835Z",
+          "createdAt": "2022-03-12T12:01:48.984Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"DRIFT_NETS\",\"FISH_TRAPS\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "3",
+        "bbox": [
+          -24.862578300780683,
+          34.536252835165904,
+          -22.44558611328137,
+          36.82054893954891
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8bee53322a4154af6d0a",
+          "name": "High A Copy",
+          "updatedAt": "2022-03-12T12:03:09.401Z",
+          "createdAt": "2022-03-11T22:23:57.736Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "4",
+        "bbox": [
+          -30.048125175779223,
+          34.064316089120766,
+          -25.302031425780566,
+          37.10146256471699
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8c239bebba5441ad7c3a",
+          "name": "High B",
+          "updatedAt": "2022-03-12T12:03:55.492Z",
+          "createdAt": "2022-03-12T12:03:47.768Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"INTERTIDAL_HAND_CAPTURES\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "5",
+        "bbox": [
+          -24.554961113280775,
+          36.50328422531132,
+          -21.259062675781706,
+          38.765054917557954
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "622c8e619bebba5441ad7c58",
+          "name": "High B",
+          "updatedAt": "2022-03-12T12:16:08.316Z",
+          "createdAt": "2022-03-12T12:13:21.088Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"HAND_HARVESTING\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "NOT_ALLOWED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "6",
+        "bbox": [
+          -34.882109550777855,
+          39.07277330557226,
+          -30.88308611327899,
+          41.781804495196965
+        ],
+        "geometry": null
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "id": "6238b1979089cd4e3e1f23ee",
+          "name": "Poor A",
+          "updatedAt": "2022-03-21T17:13:39.162Z",
+          "createdAt": "2022-03-21T17:10:47.104Z",
+          "sketchClassId": "5f46dd53017aa0388f5f87c5",
+          "isCollection": false,
+          "userAttributes": [
+            {
+              "label": "Aquaculture and Bottom Exploitation",
+              "fieldType": "ChoiceField",
+              "exportId": "AQUACULTURE",
+              "value": "SOME_RESTRICTIONS"
+            },
+            {
+              "label": "Allowed Fishing Gear",
+              "fieldType": "ChoiceField",
+              "exportId": "GEAR_TYPES",
+              "value": "[\"DREDGES\",\"DRIFT_NETS\",\"PURSE_SEINING_BOTTOM\"]"
+            },
+            {
+              "label": "Boating and Anchoring",
+              "fieldType": "ChoiceField",
+              "exportId": "BOATING",
+              "value": "FULLY_REGULATED"
+            },
+            {
+              "label": "Comments",
+              "fieldType": "TextArea",
+              "exportId": "COMMENTS",
+              "value": ""
+            }
+          ]
+        },
+        "id": "7",
+        "bbox": [
+          -31.259882835690878,
+          37.93133108053503,
+          -29.7437695544413,
+          39.23663622317214
+        ],
+        "geometry": null
+      }
+    ]
+  }
+}

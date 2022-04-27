@@ -7,31 +7,6 @@
       "name": "AllReports",
       "description": "All reports",
       "source": "src/clients/AllReports.tsx"
-    },
-    {
-      "name": "ProtectionCard",
-      "description": "Calculate regulation-based MPA classification",
-      "source": "src/clients/ProtectionCard.tsx"
-    },
-    {
-      "name": "SketchAttributes",
-      "description": "Display sketch attributes",
-      "source": "src/clients/SketchAttributes.tsx"
-    },
-    {
-      "name": "FishingImpact",
-      "description": "Calculate impact to fishing",
-      "source": "src/clients/FishingImpact.tsx"
-    },
-    {
-      "name": "PriorityModel",
-      "description": "Calculate prioritization model overlap",
-      "source": "src/clients/PriorityModel.tsx"
-    },
-    {
-      "name": "Essential Habitat",
-      "description": "Calculate essential habitat overlap",
-      "source": "src/clients/EssentialHabitat.tsx"
     }
   ],
   "preprocessingFunctions": [
@@ -47,6 +22,7 @@
     "src/functions/cFishRichness.ts",
     "src/functions/priorityModel.ts",
     "src/functions/essentialHabitat.ts",
-    "src/functions/vme.ts"
+    "src/functions/vme.ts",
+    "src/functions/gfwFishingEffort.ts"
   ]
 }

@@ -1,0 +1,108 @@
+{
+  "metrics": [
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "all",
+      "groupId": null,
+      "geographyId": null,
+      "value": 105243.27970947977
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:drifting_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 48513.311874675564
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:pole_and_line",
+      "groupId": null,
+      "geographyId": null,
+      "value": 21067.85809814185
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:set_longlines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 9647.449667099863
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:fixed_gear",
+      "groupId": null,
+      "geographyId": null,
+      "value": 8269.586501637474
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 198.52972282469273
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:other_purse_seines",
+      "groupId": null,
+      "geographyId": null,
+      "value": 128.65805564820766
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:set_gillnets",
+      "groupId": null,
+      "geographyId": null,
+      "value": 765.3888857271522
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:trawlers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 76.68111062981188
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "gear_type:trollers",
+      "groupId": null,
+      "geographyId": null,
+      "value": 552.8126491680741
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "country:prt",
+      "groupId": null,
+      "geographyId": null,
+      "value": 71599.84101833822
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "country:esp",
+      "groupId": null,
+      "geographyId": null,
+      "value": 33596.21929679252
+    },
+    {
+      "metricId": "gfwFishingEffortValueOverlap",
+      "sketchId": null,
+      "classId": "country:rus",
+      "groupId": null,
+      "geographyId": null,
+      "value": 47.05249875038862
+    }
+  ]
+}

@@ -313,7 +313,10 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
               })();
               const targetReached = target && rowTotals[rowNumber] >= target;
               return (
-                <div className={`row row-${rowNumber}`}>
+                <div
+                  key={`row-${rowNumber}`}
+                  className={`row row-${rowNumber}`}
+                >
                   {showTitle && (
                     <div className="title">
                       {titleValue(rowTotals[rowNumber])}
@@ -323,6 +326,7 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
                     {row.map((blockGroup, blockGroupNumber) =>
                       blockGroup.map((blockValue, blockNumber) => (
                         <span
+                          key={`${blockGroupNumber}${blockNumber}`}
                           style={{
                             width: `${blockValue}%`,
                             ...blockGroupStyles[blockGroupNumber],
@@ -365,8 +369,8 @@ export const HorizontalStackedBar: React.FunctionComponent<HorizontalStackedBarP
               <ul className="legend">
                 {blockGroupNames
                   .slice(0, numBlockGroups)
-                  .map((blockGroupName) => (
-                    <li>{blockGroupName}</li>
+                  .map((blockGroupName, blockGroupNameIndex) => (
+                    <li key={blockGroupNameIndex}>{blockGroupName}</li>
                   ))}
               </ul>
             </div>

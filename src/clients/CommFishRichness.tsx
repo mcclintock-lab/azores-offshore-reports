@@ -54,9 +54,9 @@ const CommFishRichness = () => {
               <p>
                 <i>Richness</i> is a measure of the number of species within a
                 defined area. This report summarizes the richness of the 6
-                commercially significant fish species. Plans should consider
-                including these biologically rich areas to achieve planning
-                objectives.
+                commercially significant fish species within this plan. Plans
+                should consider including these biologically rich areas to
+                achieve planning objectives.
               </p>
 
               <Collapse title="Learn more">
