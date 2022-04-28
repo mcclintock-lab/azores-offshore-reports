@@ -7,6 +7,7 @@ import SizeCardTwo from "./SizeCardTwo";
 import BathymetryCard from "./BathymetryCard";
 import FishingImpact from "./FishingImpact";
 import { ReportPageProps } from "../types/ReportPage";
+import GfwFishingEffort from "./GfwFishingEffort";
 
 const ReportPage: FunctionComponent<ReportPageProps> = ({ hidden }) => {
   return (
@@ -15,6 +16,7 @@ const ReportPage: FunctionComponent<ReportPageProps> = ({ hidden }) => {
       <SizeCardTwo />
       <BathymetryCard />
       <RbcsActivitiesCard />
+      <GfwFishingEffort />
       <FishingImpact />
     </div>
   );

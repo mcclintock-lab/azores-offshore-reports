@@ -26,7 +26,7 @@ const FishingImpact = () => {
   const [{ isCollection }] = useSketchProperties();
   return (
     <>
-      <ResultsCard title="Fishing Impact" functionName="oceanUse">
+      <ResultsCard title="Fishing Effort - 2002-2018" functionName="oceanUse">
         {(data: ReportResult) => {
           // Single sketch or collection top-level
           const parentMetrics = metricsWithSketchId(
@@ -36,10 +36,6 @@ const FishingImpact = () => {
 
           return (
             <>
-              <p>
-                Plans should ensure continued access to the most highly valued
-                fishing areas for each sector.
-              </p>
               <p>
                 This report summarizes plan overlap with deep-water bottom
                 longline fishing activity. The higher the percentage, the
@@ -66,10 +62,7 @@ const FishingImpact = () => {
                 </p>
                 <p>
                   🎯 Planning Objective: there is no specific objective/target
-                  for limiting the potential impact to fishing activities. Only
-                  the general guideline that plans should ensure continued
-                  access to the most highly valued fishing areas for each
-                  sector.
+                  for limiting the potential impact to fishing activities.
                 </p>
                 <p>
                   🗺️ Source Data: The footprint of fishing activity and
@@ -81,7 +74,7 @@ const FishingImpact = () => {
                 </p>
                 <p>
                   The resulting dataset represents predicted fishing effort for
-                  the deep water bottom longline fishery. It’s limited to this
+                  the deep water bottom longline fishery. It's limited to this
                   fishery mainly because it is the primary human activity
                   occurring in the deep waters of the Azores.
                 </p>
@@ -106,13 +99,36 @@ const FishingImpact = () => {
               </Collapse>
 
               <ClassTable
-                titleText=" "
-                valueColText="Within Plan"
                 rows={parentMetrics}
                 dataGroup={METRIC}
-                percMetricIdName={METRIC.metricId}
-                showLayerToggle
-                formatPerc
+                columnConfig={[
+                  {
+                    columnLabel: "  ",
+                    type: "class",
+                    width: 40,
+                  },
+                  {
+                    type: "metricValue",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    columnLabel: "Within Plan",
+                    width: 15,
+                    colStyle: { textAlign: "right" },
+                  },
+                  {
+                    type: "metricChart",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    chartOptions: {
+                      showTitle: false,
+                    },
+                    width: 30,
+                  },
+                  {
+                    type: "layerToggle",
+                    width: 15,
+                  },
+                ]}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>

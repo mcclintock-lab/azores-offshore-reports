@@ -98,19 +98,21 @@ const BenthicHabitat = () => {
                 layerId={METRIC.layerId}
               />
               <ClassTable
-                titleText="Habitat Type"
                 rows={parentPercMetrics}
                 dataGroup={METRIC}
-                showGoal={false}
-                showLayerToggle={false}
-                formatPerc
-                percMetricIdName={METRIC.metricId}
-                options={{
-                  classColWidth: "45%",
-                  percColWidth: "55%",
-                  showMapWidth: "0%",
-                  goalWidth: "0%",
-                }}
+                columnConfig={[
+                  {
+                    type: "class",
+                    width: 45,
+                    columnLabel: "Habitat Type",
+                  },
+                  {
+                    type: "metricChart",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    width: 55,
+                  },
+                ]}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">

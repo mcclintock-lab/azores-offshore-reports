@@ -91,13 +91,25 @@ const PriorityModel = () => {
               </Collapse>
 
               <ClassTable
-                titleText=" "
-                valueColText="Within Plan"
                 rows={parentMetrics}
                 dataGroup={METRIC}
-                percMetricIdName={METRIC.metricId}
-                showLayerToggle
-                formatPerc
+                columnConfig={[
+                  {
+                    columnLabel: "  ",
+                    type: "class",
+                    width: 40,
+                  },
+                  {
+                    type: "metricChart",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    width: 45,
+                  },
+                  {
+                    type: "layerToggle",
+                    width: 15,
+                  },
+                ]}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>

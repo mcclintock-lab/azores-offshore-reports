@@ -111,30 +111,36 @@ const ReportSection = () => {
                     Report on Systematic Conservation Planning Scenarios for the
                     Azores Deep-Sea
                   </a>
-                  <ul>
-                    <li>5.1.7 Essential Fish Habitat</li>
-                    <li>5.1.7 Shallow and very deep seamounts</li>
-                  </ul>
                 </p>
+                <ul>
+                  <li>5.1.7 Essential Fish Habitat</li>
+                  <li>5.1.7 Shallow and very deep seamounts</li>
+                </ul>
               </Collapse>
               <LayerToggle
                 label="View Benthic Habitat Layer"
                 layerId={METRIC.layerId}
               />
               <ClassTable
-                titleText="Habitat Type"
                 rows={parentPercMetrics}
                 dataGroup={METRIC}
-                showGoal={false}
-                showLayerToggle={true}
-                formatPerc
-                percMetricIdName={METRIC.metricId}
-                options={{
-                  classColWidth: "45%",
-                  percColWidth: "55%",
-                  showMapWidth: "0%",
-                  goalWidth: "0%",
-                }}
+                columnConfig={[
+                  {
+                    type: "class",
+                    width: 35,
+                    columnLabel: "Habitat Type",
+                  },
+                  {
+                    type: "metricChart",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    width: 50,
+                  },
+                  {
+                    type: "layerToggle",
+                    width: 15,
+                  },
+                ]}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">

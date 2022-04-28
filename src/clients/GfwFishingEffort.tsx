@@ -17,10 +17,12 @@ import {
   Metric,
   MetricGroup,
 } from "@seasketch/geoprocessing/client-core";
-import { ClassTable } from "../components/ClassTable";
+import cloneDeep from "lodash/cloneDeep";
+import { ClassTable, ClassTableColumnConfig } from "../components/ClassTable";
 import config from "../_config";
 
 import gfwFishingEffortTotals from "../../data/precalc/gfwFishingEffortTotals.json";
+import { clone } from "@turf/turf";
 const precalcTotals = gfwFishingEffortTotals as ReportResultBase;
 
 const METRIC =
@@ -31,7 +33,7 @@ const FishingImpact = () => {
   return (
     <>
       <ResultsCard
-        title="Fishing Effort - Global Fishing Watch"
+        title="Fishing Effort - 2019-2022"
         functionName="gfwFishingEffort"
       >
         {(data: ReportResult) => {
@@ -69,7 +71,7 @@ const FishingImpact = () => {
             ),
           };
           const parentMetricsByGearType = metricsWithSketchId(
-            toPercentMetric(metricsByGearType, precalcTotals.metrics),
+            metricsByGearType,
             [data.sketch.properties.id]
           );
 
@@ -82,10 +84,9 @@ const FishingImpact = () => {
               cls.classId.includes("country")
             ),
           };
-          const parentMetricsByCountry = metricsWithSketchId(
-            toPercentMetric(metricsByCountry, precalcTotals.metrics),
-            [data.sketch.properties.id]
-          );
+          const parentMetricsByCountry = metricsWithSketchId(metricsByCountry, [
+            data.sketch.properties.id,
+          ]);
 
           const colWidths = {
             classColWidth: "40%",
@@ -93,6 +94,50 @@ const FishingImpact = () => {
             showMapWidth: "20%",
             goalWidth: "0%",
           };
+
+          const colConfigs: ClassTableColumnConfig[] = [
+            {
+              columnLabel: "All Fishing",
+              type: "class",
+              width: 31,
+            },
+            {
+              type: "metricValue",
+              metricId: METRIC.metricId,
+              valueFormatter: "integer",
+              valueLabel: "hours",
+              width: 20,
+              colStyle: { textAlign: "right" },
+              columnLabel: "Fishing Effort",
+            },
+            {
+              type: "metricValue",
+              metricId: percMetricIdName,
+              valueFormatter: "percent",
+              columnLabel: "Within Plan",
+              width: 15,
+              colStyle: { textAlign: "right" },
+            },
+            {
+              type: "metricChart",
+              metricId: percMetricIdName,
+              valueFormatter: "percent",
+              chartOptions: {
+                showTitle: false,
+              },
+              width: 20,
+            },
+            {
+              type: "layerToggle",
+              width: 14,
+            },
+          ];
+
+          const gearTypeColConfigs = cloneDeep(colConfigs);
+          gearTypeColConfigs[0].columnLabel = "By Gear Type";
+
+          const countryColConfigs = cloneDeep(colConfigs);
+          countryColConfigs[0].columnLabel = "By Country";
 
           return (
             <>
@@ -146,18 +191,9 @@ const FishingImpact = () => {
               </Collapse>
 
               <ClassTable
-                titleText=" "
-                valueColText="Fishing Effort Within Plan"
-                chartColText="% Within Plan"
                 rows={parentMetricsAll}
                 dataGroup={metricGroupAll}
-                metricIdName={METRIC.metricId}
-                percMetricIdName={percMetricIdName}
-                showLayerToggle
-                showValueCol
-                formatPerc
-                unitLabel="hours"
-                options={colWidths}
+                columnConfig={colConfigs}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">
@@ -167,18 +203,9 @@ const FishingImpact = () => {
               <br />
 
               <ClassTable
-                titleText="By Gear Type"
-                valueColText="Fishing Effort Within Plan"
-                chartColText="% Within Plan"
                 rows={parentMetricsByGearType}
                 dataGroup={metricGroupByGearType}
-                metricIdName={METRIC.metricId}
-                percMetricIdName={percMetricIdName}
-                showLayerToggle
-                showValueCol
-                formatPerc
-                unitLabel="hours"
-                options={colWidths}
+                columnConfig={gearTypeColConfigs}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">
@@ -192,18 +219,9 @@ const FishingImpact = () => {
               <br />
 
               <ClassTable
-                titleText="By Country"
-                chartColText="% Within Plan"
-                valueColText="Fishing Effort Within Plan"
                 rows={parentMetricsByCountry}
                 dataGroup={metricGroupByCountry}
-                metricIdName={METRIC.metricId}
-                percMetricIdName={percMetricIdName}
-                showLayerToggle
-                showValueCol
-                formatPerc
-                unitLabel="hours"
-                options={colWidths}
+                columnConfig={countryColConfigs}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">
@@ -230,10 +248,7 @@ const genSketchTable = (
   const childSketches = toNullSketchArray(sketch);
   const childSketchIds = childSketches.map((sk) => sk.properties.id);
 
-  const childSketchMetrics = toPercentMetric(
-    metricsWithSketchId(metrics, childSketchIds),
-    precalcTotals.metrics
-  );
+  const childSketchMetrics = metricsWithSketchId(metrics, childSketchIds);
   const sketchRows = flattenBySketchAllClass(
     childSketchMetrics,
     metricGroup.classes,

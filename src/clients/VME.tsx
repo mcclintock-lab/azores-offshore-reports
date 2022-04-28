@@ -108,19 +108,25 @@ const ReportSection = () => {
                 layerId={METRIC.layerId}
               />
               <ClassTable
-                titleText="VME Type"
                 rows={parentPercMetrics}
                 dataGroup={METRIC}
-                showGoal={false}
-                showLayerToggle={true}
-                formatPerc
-                percMetricIdName={METRIC.metricId}
-                options={{
-                  classColWidth: "45%",
-                  percColWidth: "55%",
-                  showMapWidth: "0%",
-                  goalWidth: "0%",
-                }}
+                columnConfig={[
+                  {
+                    columnLabel: "  ",
+                    type: "class",
+                    width: 40,
+                  },
+                  {
+                    type: "metricChart",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    width: 45,
+                  },
+                  {
+                    type: "layerToggle",
+                    width: 15,
+                  },
+                ]}
               />
               {isCollection && (
                 <Collapse title="Show by MPA">{genSketchTable(data)}</Collapse>

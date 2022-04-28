@@ -94,19 +94,22 @@ const CommSigSpecies = () => {
               </Collapse>
 
               <ClassTable
-                titleText=" "
-                valueColText="Within Plan"
                 rows={parentMetrics}
                 dataGroup={METRIC}
-                percMetricIdName={METRIC.metricId}
-                showLayerToggle={false}
-                formatPerc
-                options={{
-                  classColWidth: "45%",
-                  percColWidth: "55%",
-                  showMapWidth: "0%",
-                  goalWidth: "0%",
-                }}
+                columnConfig={[
+                  {
+                    type: "class",
+                    columnLabel: "Species",
+                    width: 50,
+                  },
+                  {
+                    type: "metricChart",
+                    metricId: METRIC.metricId,
+                    valueFormatter: "percent",
+                    columnLabel: "Within Plan",
+                    width: 50,
+                  },
+                ]}
               />
               <LayerToggle
                 label="View Fish Richness Layer"

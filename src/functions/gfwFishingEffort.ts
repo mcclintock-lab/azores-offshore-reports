@@ -64,5 +64,5 @@ export default new GeoprocessingHandler(gfwFishingEffort, {
   executionMode: "async",
   // Specify any Sketch Class form attributes that are required
   requiresProperties: [],
-  memory: 4096,
+  memory: 8192,
 });
