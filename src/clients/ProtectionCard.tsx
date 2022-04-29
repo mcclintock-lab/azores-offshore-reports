@@ -8,6 +8,8 @@ import {
   ReportTableStyled,
   GroupCircleRow,
   GroupPill,
+  HorizontalStackedBar,
+  HorizontalStackedBarRow,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -50,12 +52,6 @@ import protectionTotals from "../../data/precalc/protectionTotals.json";
 import { RbcsZoneClassPanel } from "../components/RbcsZoneClassPanel";
 import { AzoresNetworkObjectiveStatus } from "../components/AzoresNetworkObjectives";
 import { getKeys } from "../helpers/ts";
-import {
-  BlockGroup,
-  HorizontalStackedBar,
-  HorizontalStackedBarRow,
-} from "../components/HorizontalStackedBar";
-import { ChartLegend } from "../components/ChartLegend";
 const precalcTotals = protectionTotals as ReportResultBase;
 
 const REPORT = config.reports.protection;

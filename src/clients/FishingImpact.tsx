@@ -3,6 +3,7 @@ import {
   Collapse,
   ResultsCard,
   SketchClassTable,
+  ClassTable,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -13,7 +14,6 @@ import {
   metricsWithSketchId,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
-import { ClassTable } from "../components/ClassTable";
 import config from "../_config";
 
 import oceanUseTotals from "../../data/precalc/oceanUseTotals.json";

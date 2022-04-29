@@ -3,6 +3,8 @@ import {
   Collapse,
   ResultsCard,
   SketchClassTable,
+  ClassTable,
+  ClassTableColumnConfig,
   useSketchProperties,
 } from "@seasketch/geoprocessing/client-ui";
 import {
@@ -18,11 +20,9 @@ import {
   MetricGroup,
 } from "@seasketch/geoprocessing/client-core";
 import cloneDeep from "lodash/cloneDeep";
-import { ClassTable, ClassTableColumnConfig } from "../components/ClassTable";
 import config from "../_config";
 
 import gfwFishingEffortTotals from "../../data/precalc/gfwFishingEffortTotals.json";
-import { clone } from "@turf/turf";
 const precalcTotals = gfwFishingEffortTotals as ReportResultBase;
 
 const METRIC =

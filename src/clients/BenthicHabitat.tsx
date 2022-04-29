@@ -5,6 +5,7 @@ import {
   ResultsCard,
   useSketchProperties,
   LayerToggle,
+  ClassTable,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -14,7 +15,6 @@ import {
   metricsWithSketchId,
   toPercentMetric,
 } from "@seasketch/geoprocessing/client-core";
-import { ClassTable } from "../components/ClassTable";
 import config from "../_config";
 
 import gmuValueOverlapTotals from "../../data/precalc/gmuValueOverlapTotals.json";

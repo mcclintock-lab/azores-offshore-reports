@@ -10,6 +10,8 @@ import {
   GroupPill,
   KeySection,
   LayerToggle,
+  HorizontalStackedBar,
+  HorizontalStackedBarRow,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -36,7 +38,6 @@ import {
   getMpaClassificationName,
 } from "../helpers/mpaRegBasedClassification";
 import { scores } from "mpa-reg-based-classification";
-import { RbcsMpaClassPanel } from "../components/RbcsMpaClassPanel";
 import { ZoneRegIcon } from "../components/RbcsIcons";
 import { PointyCircle } from "../components/PointyCircle";
 import { RbcsLearnMore } from "../components/RbcsLearnMore";
@@ -52,15 +53,8 @@ import {
 import config, { STUDY_REGION_AREA_SQ_METERS } from "../_config";
 
 import protectionTotals from "../../data/precalc/protectionTotals.json";
-import { RbcsZoneClassPanel } from "../components/RbcsZoneClassPanel";
 import { AzoresNetworkObjectiveStatus } from "../components/AzoresNetworkObjectives";
 import { getKeys } from "../helpers/ts";
-import {
-  BlockGroup,
-  HorizontalStackedBar,
-  HorizontalStackedBarRow,
-} from "../components/HorizontalStackedBar";
-import { ChartLegend } from "../components/ChartLegend";
 const precalcTotals = protectionTotals as ReportResultBase;
 
 const REPORT = config.reports.protection;

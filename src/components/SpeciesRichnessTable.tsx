@@ -11,9 +11,9 @@ import {
   Table,
   LayerToggle,
   SmallReportTableStyled,
+  HorizontalStackedBar,
 } from "@seasketch/geoprocessing/client-ui";
 import { CheckCircleFill } from "@styled-icons/bootstrap";
-import { HorizontalStackedBar } from "./HorizontalStackedBar";
 
 const Number = new Intl.NumberFormat("en", { style: "decimal" });
 
