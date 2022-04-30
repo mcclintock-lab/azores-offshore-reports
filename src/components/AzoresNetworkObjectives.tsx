@@ -1,14 +1,13 @@
 import React from "react";
+import { isProjectSizeObjectiveId, ProjectSizeObjectiveId } from "../_config";
 import {
+  percentWithEdge,
   OBJECTIVE_YES,
   OBJECTIVE_NO,
   RbcsObjective,
   ObjectiveAnswer,
-} from "../types/objective";
-import { isProjectSizeObjectiveId, ProjectSizeObjectiveId } from "../_config";
-import { percentWithEdge } from "@seasketch/geoprocessing/client-core";
-import { ObjectiveStatus } from "./ObjectiveStatus";
-import { RbcsNetworkObjectiveStatus } from "./RbcsNetworkObjectiveStatus";
+} from "@seasketch/geoprocessing/client-core";
+import { RbcsNetworkObjectiveStatus } from "@seasketch/geoprocessing/client-ui";
 
 export type RenderMsgFunction = (
   objective: RbcsObjective,

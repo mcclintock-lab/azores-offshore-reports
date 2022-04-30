@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SegmentControl } from "@seasketch/geoprocessing/client-ui";
+import { SegmentControl, ReportPage } from "@seasketch/geoprocessing/client-ui";
 import Viability from "./Viability";
 import Representation from "./Representation";
 import KeyResources from "./KeyResources";
@@ -22,8 +22,12 @@ const AllReports = () => {
           ]}
         />
       </div>
-      <Viability hidden={!enableAllTabs && tab !== "Viability"} />
-      <Representation hidden={!enableAllTabs && tab !== "Representation"} />
+      <ReportPage hidden={!enableAllTabs && tab !== "Viability"}>
+        <Viability />
+      </ReportPage>
+      <ReportPage hidden={!enableAllTabs && tab !== "Representation"}>
+        <Representation />
+      </ReportPage>
       <KeyResources hidden={!enableAllTabs && tab !== "Key Resources"} />
       <KeyAreas hidden={!enableAllTabs && tab !== "Key Areas"} />
     </>

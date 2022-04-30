@@ -9,6 +9,11 @@ import {
   GroupCircleRow,
   HorizontalStackedBar,
   HorizontalStackedBarRow,
+  RbcsMpaClassPanel,
+  RbcsZoneRegIcon,
+  PointyCircle,
+  RbcsLearnMore,
+  ReportChartFigure,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -24,31 +29,22 @@ import {
   flattenByGroupAllClass,
   GroupMetricAgg,
   capitalize,
-} from "@seasketch/geoprocessing/client-core";
-import {
-  mpaClassMetrics,
-  mpaClassMetric,
-  RegBasedClassificationMetric,
-  getMpaClassificationName,
-} from "../helpers/mpaRegBasedClassification";
-import { scores } from "mpa-reg-based-classification";
-import { RbcsMpaClassPanel } from "../components/RbcsMpaClassPanel";
-import { ZoneRegIcon } from "../components/RbcsIcons";
-import { PointyCircle } from "../components/PointyCircle";
-import { RbcsLearnMore } from "../components/RbcsLearnMore";
-import { AzoresMpaObjectives } from "../components/AzoresMpaObjectives";
-import {
+  getKeys,
   isRbcsProtectionLevel,
   OBJECTIVE_NO,
   OBJECTIVE_YES,
   RbcsMpaProtectionLevel,
   rbcsMpaProtectionLevels,
-} from "../types/objective";
+  mpaClassMetrics,
+  mpaClassMetric,
+  RegBasedClassificationMetric,
+  getMpaClassificationName,
+  rbcsScores,
+} from "@seasketch/geoprocessing/client-core";
 
 import config from "../_config";
-
 import protectionTotals from "../../data/precalc/protectionTotals.json";
-import { getKeys } from "../helpers/ts";
+
 const precalcTotals = protectionTotals as ReportResultBase;
 
 const REPORT = config.reports.protection;
@@ -64,7 +60,6 @@ const groupColorMap: Record<string, string> = {
 };
 
 import styled from "styled-components";
-import { ReportChartFigure } from "../components/ReportChartFigure";
 
 export const SmallReportTableStyled = styled(ReportTableStyled)`
   .styled {
@@ -347,12 +342,12 @@ const genZoneSketchTable = (
     {
       Header: " ",
       accessor: (row) => {
-        return <ZoneRegIcon value={row.value} />;
+        return <RbcsZoneRegIcon value={row.value} />;
       },
     },
     {
       Header: "Zone Classification",
-      accessor: (row) => scores[row.value].label,
+      accessor: (row) => rbcsScores[row.value].label,
     },
     {
       Header: "MPA",

@@ -12,6 +12,9 @@ import {
   LayerToggle,
   HorizontalStackedBar,
   HorizontalStackedBarRow,
+  RbcsZoneRegIcon,
+  RbcsLearnMore,
+  ReportChartFigure,
 } from "@seasketch/geoprocessing/client-ui";
 import {
   ReportResult,
@@ -30,31 +33,25 @@ import {
   roundLower,
   squareMeterToKilometer,
   toPercentMetric,
-} from "@seasketch/geoprocessing/client-core";
-import {
   mpaClassMetrics,
   mpaClassMetric,
   RegBasedClassificationMetric,
   getMpaClassificationName,
-} from "../helpers/mpaRegBasedClassification";
-import { scores } from "mpa-reg-based-classification";
-import { ZoneRegIcon } from "../components/RbcsIcons";
-import { PointyCircle } from "../components/PointyCircle";
-import { RbcsLearnMore } from "../components/RbcsLearnMore";
-import { AzoresMpaObjectives } from "../components/AzoresMpaObjectives";
-import {
+  rbcsScores,
   isRbcsProtectionLevel,
   OBJECTIVE_NO,
   OBJECTIVE_YES,
   RbcsMpaProtectionLevel,
   rbcsMpaProtectionLevels,
-} from "../types/objective";
+  getKeys,
+} from "@seasketch/geoprocessing/client-core";
+
+import { AzoresMpaObjectives } from "../components/AzoresMpaObjectives";
+import { AzoresNetworkObjectiveStatus } from "../components/AzoresNetworkObjectives";
 
 import config, { STUDY_REGION_AREA_SQ_METERS } from "../_config";
 
 import protectionTotals from "../../data/precalc/protectionTotals.json";
-import { AzoresNetworkObjectiveStatus } from "../components/AzoresNetworkObjectives";
-import { getKeys } from "../helpers/ts";
 const precalcTotals = protectionTotals as ReportResultBase;
 
 const REPORT = config.reports.protection;
@@ -70,7 +67,6 @@ const groupColorMap: Record<string, string> = {
 };
 
 import styled from "styled-components";
-import { ReportChartFigure } from "../components/ReportChartFigure";
 
 export const SmallReportTableStyled = styled(ReportTableStyled)`
   .styled {
@@ -359,12 +355,12 @@ const genZoneSketchTable = (
     {
       Header: " ",
       accessor: (row) => {
-        return <ZoneRegIcon value={row.value} />;
+        return <RbcsZoneRegIcon value={row.value} />;
       },
     },
     {
       Header: "Zone Classification",
-      accessor: (row) => scores[row.value].label,
+      accessor: (row) => rbcsScores[row.value].label,
     },
     {
       Header: "MPA",

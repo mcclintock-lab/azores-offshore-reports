@@ -1,15 +1,15 @@
-import React, { FunctionComponent } from "react";
-import { ReportPageProps } from "../types/ReportPage";
+import React from "react";
+import { ReportPage } from "@seasketch/geoprocessing/client-ui";
 import BenthicHabitat from "./BenthicHabitat";
 import EssentialHabitat from "./EssentialHabitat";
 
-const ReportPage: FunctionComponent<ReportPageProps> = ({ hidden }) => {
+const Representation = () => {
   return (
-    <div style={{ display: hidden ? "none" : "block" }}>
+    <ReportPage hidden={false}>
       <BenthicHabitat />
       <EssentialHabitat />
-    </div>
+    </ReportPage>
   );
 };
 
-export default ReportPage;
+export default Representation;

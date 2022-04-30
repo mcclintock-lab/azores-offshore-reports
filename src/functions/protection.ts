@@ -10,9 +10,9 @@ import {
   Metric,
   overlapAreaGroupMetrics,
   overlapArea,
+  getSketchToMpaProtectionLevel,
+  rbcsMpaProtectionLevels,
 } from "@seasketch/geoprocessing";
-import { getSketchToMpaProtectionLevel } from "../helpers/mpaRegBasedClassification";
-import { rbcsMpaProtectionLevels } from "../types/objective";
 import config, { STUDY_REGION_AREA_SQ_METERS } from "../_config";
 
 const CONFIG = config;
